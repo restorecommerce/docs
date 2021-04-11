@@ -1,0 +1,46 @@
+= Attribute Based Access Control
+
+Restorecommerce features an attribute based access control model (http://en.wikipedia.org/wiki/Attribute_Based_Access_Control[ABAC]) which is heavily inspired by http://en.wikipedia.org/wiki/XACML[XACML].
+XACML is pretty complex but very powerful, which is why Restorecommerce narrows it down to a profile consisting of the essential bits and pieces for JSON driven APIs.
+We use the concepts of XACML as follows with XACML terms in italics:
+
+* The _Subject_ is determined by the defined authentication service.
+* A role represents a single _Policy_.
+* _Policies_ may have multiple _Rules_.
+* The _Target_ of a rule consists of the resource it applies to, the performed actions and an associated scope.
+* The _Effect_ of a rule is always _Permit_ (white listing).
+* There is no pendant to the _Condition_, _Advice_, _Obligation_ and _Environment_ rule components.
+* JSON based syntax instead of XML.
+
+XACML building blocks relate to Restorecommerce as follows:
+
+* The PIP (_Policy Information Point_) is the endpoint of the `role` resource.
+* An API is implicitly a combined PDP/ PEP (_Policy Decision/ Enforcement Point_).
+* The PAP (_Policy Administration Point_) is the API for accessing security related resources.
+
+There is a single _Rule_ type with the following _Target attributes_:
+
+* Resource IRI (`res`).
+* Action mask (`mask`) where the most permissive mask is: `crud`.
+* Scope (`scope`).
+
+The rule combining algorithm is simply to _permit_ the _Authorization Request_ if at least one rule applies (logical or).
+If there are no matching target attributes for a request, the effect is a _deny_.
+
+_Authorization Requests_ corresponding to this rule type take the following form:
+
+* Subject attributes:
+ ** subject with an IRI as value.
+* Resource attributes:
+ ** resource with an IRI as value,
+ ** scope value as defined above.
+* Action attributes:
+ ** action with possible values: `c`, `r`, `u`, `d` as described above.
+
+The scopes are evaluated with their set relationship taken into account;
+For example a request for a resource with scope `user` which is in fact owned by the subject and the subject is granted access to the scope `app`, succeeds as it includes `user`.
+
+PAP-wise, the following is important:
+
+* Roles are the vehicle to delegate access rights but they are never used to make authorization decisions by solely the fact that a subject has assigned a BR.
+Only the rules in the policy of a role are considered.

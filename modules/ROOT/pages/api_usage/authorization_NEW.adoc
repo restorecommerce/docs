@@ -1,0 +1,205 @@
+= Authorization
+:doctype: book
+
+Data privacy protection through fine-grained access control is a key feature of Invend based APIs.
+Read more about the powerful link:xxx[Attribute Based Access Control] concepts employed.
+Access can be restricted by the following orthogonal dimensions which are explained in detail below:
+
+* Resource
+* Operation modification semantics
+* Ownership scope
+
+The general process to implement access restrictions for an API is:
+
+. *Define business roles.* Define the business roles that your application requires.
+For example, you might create roles for unauthenticated users, customers, and administrators.
+. *Define the rules of a business role.* For example, you might allow unauthenticated users to read products, but disallow modifications of them.
+Every action not explicitly allowed by a rule is denied.
+. *Grant business roles.* Business roles are the authorization currency and guarantees are enabled to perform the defined actions.
+
+`code`  in this section denote the values which are used in the JSON based policy definition syntax.
+
+== Resource
+
+Resources are the fundamental elements in a Web API.
+See link:xxx[how to define resources].
+The IRI of such a resource is used to refer to the resource definition with the `res` property.
+
+NOTE: The IRI of resource collection refer to all resources.
+
+== Operation
+
+The following mapping shows the basic resource operations, their HTTP methods and their corresponding IRI used in the policy language:+++<table class="vclTable">++++++<thead>++++++<tr>++++++<th>+++Operation+++</th>+++
+     +++<th>+++HTTP Method+++</th>+++
+     +++<th>+++Modification Semantics+++</th>++++++</tr>++++++</thead>+++
+  +++<tbody>++++++<tr>++++++<td>+++AppendResourceOperation+++</td>+++
+      +++<td>+++POST+++</td>++++++</tr>+++
+    +++<tr>++++++<td>+++CreateOrReplaceOperation</span>+++</td>+++
+      +++<td>+++PUT+++</td>++++++</tr>+++
+    +++<tr>++++++<td>+++RetrieveResourceOperation+++</td>+++
+      +++<td>+++GET+++</td>++++++</tr>+++
+    +++<tr>++++++<td>+++UpdateResourceOperation+++</td>+++
+      +++<td>+++PATCH+++</td>++++++</tr>+++
+    +++<tr>++++++<td>+++DeleteResourceOperation+++</td>+++
+      +++<td>+++DELETE+++</td>++++++</tr>++++++</tbody>++++++</table>+++
+
+NOTE: If the value of `operation` property is an empty array, no access is granted.
+
+=== Blank Operation
+
+An blank hydra operation link:xxx[blank node] is used to mapping a group of resource operations with a definite hydra method, which has the following format:
+
+ "operation": [
+   {
+     "method": "GET"
+   }
+   ...
+ ]
+
+Access is granted to all operations which has the same hydra method as in the set of rules.
+
+=== Extended Operation
+
+Extended operations can be set in the policies explicitly by using IRI.
+
+== Ownership Scope
+
+The ownership scope can be set to the following values with the given meaning:
+
+* `user`: resources owned by a user,
+* `org`:  resources owned by an organization,
+* `app`:  resources belonging to an application (everything below a domain).
+
+These scopes have the following set relations: user &sub;
+org &sub;
+app.
+This _hierarchy is considered_ when authorization decisions are made.
+
+For example access is granted if access is requested in the user scope but the subject is actually granted in the app scope as the user scope is included in the app scope.
+
+=== Possessive Properties
+
+Some of these scopes require possessive properties to be present on resources to take effect.
+Such properties allow to identify the owner of a resource.
+
+NOTE: If an access restriction is defined which corresponds to a possessive property and is missing in a resource instance, the restrictions will not take effect.
+
+The following property types are supported as possessive properties:
+
+* `dct:creator` for `user` and `org` which take the IRI of a user or organization as value.
+* The application is implicitly known by the domain part of the resource IRI.
+
+=== Scope Instances
+
+When access restrictions are enforced, scopes can only take effect in combination with a _scope instance_ which is the IRI of a resource corresponding to the scope.
+The ownership scopes correspond to the following resource types:
+
+* `user`: User resource,
+* `org`: Organization resource,
+* `app`: Application resource.
+
+== Business Roles
+
+Business roles (usually mapped to `/business_roles/`) are used to specify constraints expressed in the aforementioned dimensions in a JSON-based http://en.wikipedia.org/wiki/Domain-specific_language[DSL] which has the following format:
+
+ "policy": [
+   {
+     "res": "<resource IRI>",
+     "operation": [
+       "<operation IRI | operation>"
+     ],
+     "scope": "<user|org|app>"
+   }
+   ...
+ ]
+
+A BR contains a `policy` with a set of rules about which operations, defined by the `operation` property, a guarantee can apply to the resource `res` in the scope `scope`.
+There might be multiple rules for a resource.
+Always the last rule for a resource wins.
+
+NOTE: Only one rule in the policies will take effect per request.
+If the best match rule is found, all remains are not considered when authorization decision is made.
+
+Business roles can freely be modeled according to your needs.
+For example to model the organizational structure of a sales division in a company, a 'generalmanager', 'salesmanager' or 'salesman' might be introduced for an application.
+
+== Granting Business Roles
+
+Business roles are granted to users with the `businessRoles` property on a user resource like so:
+
+ "businessRoles": [
+                   {
+                     "br": "<BR IRI>",
+                     "scopes": [
+                        {
+                          "scope": "<user|org|app>",
+                          "scopeInst": "<scope instance IRI>"
+                        }
+                      ]
+                   },
+                   ...
+                 ]
+
+This BR assignment tells the authorization layer which scope instance should be applied for any rule with the given scope for the given BR.
+From a business perspective you could say that the user takes up the BR within the given scope (application, org or user).
+If no instance is defined for the scope `user` like in this example, the current user is assumed as scope instance;
+this is natural as a user should be able to access resources created by him.
+
+The `scope` of the assignment does not grant or limit any permissions to the user it is merely to define the type of the instances for the corresponding scope in the BR rules.
+
+== Business Role Delegation
+
+The basic principle is natural: A resource owner may grant other clients access to them.
+The granting of BRs is limited by the BR's `grantable` property which allows to define BRs whose grantees may grant the BR to other users.
+As an example, this definition of a BR would allow only the holder of the _appadmin_ BR to grant the BR to other users and the assignment is bound to to the scope _app_ with instance _app-x_:
+
+ "grantable": [
+               {"by":
+                 {"holderOfBr": "<BR IRI>",
+                   "assignment": {
+                     "scope": "<user|org|app>",
+                     "scopeInst": "<scope instance IRI>"
+                   }
+                 }
+               }
+               ...
+            ]
+
+A delegatable BR can be created by allowing the grantees of a BR to grant it.
+This must explicitly allowed by setting the `delegatable` flag to true on the assignment.
+
+= How are Access Restrictions enforced?
+
+To take full advantage of Invend's authorization capabilities, it is beneficial to understand how access restrictions are enforced.
+
+== Scope and Instance Determination
+
+How does the API determine the ownership scope that a client tries to access?
+
+Automatically, the most permissive scope the client is allowed to access is selected implicitly.
+The following scope instances are selected for the respective scopes:
+
+* `user`: defaults to the user IRI of the user conducting the request,
+* `org`: defaults to the IRI of user's organization,
+* `app`: defaults to the IRI of the accessed application.
+
+Scopes and scope instances can also be explicitly defined per request as described in XXX.
+Explicit scope definition is usually not required.
+
+== Decision Algorithm
+
+The following properties of a request are taken into account to make an authorization decision:
+
+* The accessed application.
+* The accessed resource.
+* The hydra method, if explicitly specified.
+* The performed operation, if explicitly specified.
+* The access scope and the associated scope instance, if explicitly specified.
+* The subject accessing the resource.
+* The definitions of the BRs assigned to the user/ subject.
+
+With this information, the authentication layer makes a per-request decision.
+
+== Unauthenticated User
+
+An application may define an _unauthenticated user_ using the `unauthUser` which may receive business roles as any other user allowing for fine-grained access control for public APIs and conversely, to create private applications.

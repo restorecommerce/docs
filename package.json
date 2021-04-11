@@ -1,0 +1,19 @@
+{
+  "name": "restore-commerce-docs",
+  "scripts": {
+    "build": "run-s build:ui build:docs",
+    "build:ui": "sh build_ui.sh",
+    "build:docs": "FORCE_SHOW_EDIT_PAGE_LINK=true CI=true antora antora-playbook.yml --clean --fetch",
+    "serve": "ws -p 8081 -d build/site",
+    "serve:dev": "ws -d build/site",
+    "scrape:dev": "docker run -it --rm --network host -e APPLICATION_ID=$APPLICATION_ID -e API_KEY=$API_KEY -e \"CONFIG=$(cat ./docsearch/config-development.json | jq -r tostring)\" algolia/docsearch-scraper",
+    "scrape:prod": "docker run -it --rm --network host -e APPLICATION_ID=$APPLICATION_ID -e API_KEY=$API_KEY -e \"CONFIG=$(cat ./docsearch/config-production.json | jq -r tostring)\" algolia/docsearch-scraper"
+  },
+  "devDependencies": {
+    "@antora/cli": "^2.3.4",
+    "@antora/site-generator-default": "^2.3.4",
+    "local-web-server": "^4.2.1",
+    "npm-run-all": "^4.1.5",
+    "npx": "^10.2.2"
+  }
+}

@@ -1,0 +1,273 @@
+= API-Key Authentication for Third party Apps
+:doctype: book
+
+The authentication flows for services acting on a client's behalf and browser based applications differ as described in the following.
+
+[discrete]
+=== API Keys
+
+calls that do not need to identify a particular user, you can use an application API key.
+This is useful for server-side applications, or web applications that do not require the user to sign in with Google.
+
+== API Key Endpoint
+
+The api key endpoint is usually mapped to:
+
+ {api domain}/api_keys/
+
+Make sure you always use TLS for any request to the api key endpoint.
+Note that TLS is only available on the sub domain of `invend.eu` and not on DNS aliases.
+
+== Generating an API Key
+
+An authorized user is allowed to generate an api key by using the endpoint.
+
+A request for generating an API key has the following form:
+
+ POST /api_keys/ HTTP/1.1
+ Host: {api domain}.invend.eu
+ Accept: application/ld+json
+ Content-Length: {lengt}
+ Content-Type: application/ld+json
+ Authorization: Bearer {access_token}
+
+=== Response
+
+On successful authentication, the response has the following form:
+
+ HTTP/1.1 201 Created
+ {
+   "@context": {linked_data_context},
+   "title": "Created",
+   "statusCode": 201,
+   "seeAlso": {api_key_id}
+ }
+
+== Using an API Key
+
+The `key` property of created `api_key` resource can be used to perform authenticated requests against the API.
+The key is sent using the HTTP Authorization header.
+A request using an access token has this form:
+
+ GET /{resource path} HTTP/1.1
+ Host: {api domain}.invend.eu
+ Authorization: {api_key}
+
+== Invalidating an API Key
+
+In order to invalidate the api key, `DELETE` against the api key endpoint with a valid bearer token authorization header as with normal API requests like this:
+
+ DELETE /api_keys/{api_key_id} HTTP/1.1
+ Host: {api domain}.invend.eu
+ Authorization: Bearer {access_token}
+
+A successful invalidation is indicated by:
+
+ HTTP/1.1 204 No Content
+
+The response body is empty.
+
+== Error Responses
+
+=== API Key Endpoint
+
+If the request is syntactically incorrect, an error response in accordance to the basic error response of the API
+
+=== API Key Usage
+
+Error responses when accessing protected resources
+
+Invalid api key response:
+
+ HTTP/1.1 401 Unauthorized
+ {
+   "@context": {linked_data_context},
+   "@type": "Error",
+   "date": {error_date},
+   "statusCode": 401,
+   "title": "Unauthorized",
+   "description": "Invalid API key",
+   "seeAlso": "https://dev.invend.eu"
+ }
+
+Expired api key response:
+
+ HTTP/1.1 401 Unauthorized
+ {
+   "@context": {linked_data_context},
+   "@type": "Error",
+   "date": {error_date},
+   "statusCode": 401,
+   "title": "Unauthorized",
+   "description": "API key expired",
+   "seeAlso": "https://dev.invend.eu"
+ }
+
+Please link:mailto:dev@invend.eu[contact us] if you want to integrate Invend with your cloud service.
+
+= OAuth 2 Authentication for Resource Owners
+
+Access restricted resources require clients to be authenticated when accessing them.
+The API uses the http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html[OAuth 2 protocol] for authentication.
+
+== Token Endpoint
+
+The token endpoint is usually mapped to:
+
+ {api domain}/oauth2/token
+
+Make sure you always use TLS for any request to the token endpoint.
+Note that TLS is only available on the sub domain of `invend.eu` and not on DNS aliases.
+
+NOTE: Tokens might have read/ write access and should be treated like passwords.
+
+== Obtaining an Access Token
+
+A token is obtained using the http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html[Resource Owner Password Credentials Grant] authentication scheme.
+
+The corresponding OAuth flow provides an optional token endpoint protection employing the http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html#client-password[Client Password] authentication scheme or the http://en.wikipedia.org/wiki/Basic_access_authentication[HTTP Basic Authentication] scheme.
+The former corresponds to the `client_id`/ `client_secret` parameter pair.
+As the user takes both OAuth defined roles, the resource owner and the client application roles, in this scenario, they are not used.
+As there is no intermediary party involved in the authentication flow, the client can safely send his credentials directly to the server.
+
+A request for an authentication has the following form:
+
+ POST /oauth2/token HTTP/1.1
+ Host: {api domain}.invend.eu
+ Accept: application/json
+ Content-Length: {lengt}
+ Content-Type: application/x-www-form-urlencoded
+ grant_type=password&username={user}&password={pass}
+
+The `username`/ `password` parameters contain the user's credentials.
+
+=== Token Response
+
+On successful authentication, the response has the following form:
+
+ {
+   "access_token": "{access_token}",
+   "token_type": "bearer",
+   "refresh_token": "{refresh_token}"
+   "expires_in": 14400
+ }
+
+The `expires_in` property holds the number of seconds the access token is valid.
+By default, access tokens have a life time of four hours and refresh tokens of one year.
+
+== Using an Access Token
+
+The returned access token can be used to perform authenticated requests against the API.
+The token is sent using the http://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-22[OAuth 2 bearer token scheme] with the corresponding [HTTP Authorization header] (http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html#token-types).
+A request using an access token has this form:
+
+ GET /{resource path} HTTP/1.1
+ Host: {api domain}.invend.eu
+ Authorization: Bearer {access_token}
+
+== Refreshing an Access Token
+
+Expired access tokens can be refreshed using the refresh token.
+In order to stay authenticated, a refresh attempt should be started 25 minutes before the token expires and then re-tried every five minutes if it fails for technical reasons like unavailable Internet connection or server side errors.
+
+A token-refresh request looks as follows:
+
+ POST /oauth2/token HTTP/1.1
+ Host: {api domain}.invend.eu
+ Accept: */*
+ Content-Length: {length}
+ Content-Type: application/x-www-form-urlencoded
+ grant_type=password&username={user}&password={pass}
+ grant_type=refresh_token&refresh_token={access_token}
+
+A new refresh token is issued;
+the client must discard the old refresh token and replace it with the new one.
+The response has the same form as with an initial authentication.
+
+== Permanent Log-Ins
+
+Users may choose to stay logged-in with their current device/ user agent beyond their use of an app.
+Therefore we recommend to persist the token information in the user agent's local storage facility.
+
+== Invalidating Tokens
+
+In order to invalidate the access token and effectively log out, `DELETE` against the token endpoint with a valid bearer token authorization header as with normal API requests like this:
+
+ DELETE /oauth2/token HTTP/1.1
+ Host: {api domain}.invend.eu
+ Authorization: Bearer {access_token}
+
+A successful invalidation is indicated by:
+
+ HTTP/1.1 204 No Content
+
+The response body is empty.
+This request also invalidates the corresponding refresh token.
+
+NOTE: Make sure that you destroy any token information stored on client-side.
+
+== Error Responses
+
+=== Token Endpoint
+
+If the request is syntactically incorrect or carries invalid credentials, an error response in accordance to the http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html#token-errors[error response section] in the OAuth 2 specification is generated.
+
+The format of error responses strictly adheres to the OAuth 2 specification and differs from the others in this API.
+
+In the following some possible error scenarios are exemplified.
+
+A bad request (missing parameter in this case) is responded to with:
+
+ HTTP/1.1 400 Bad Request
+ {
+   "error": "invalid_request",
+   "error_description": "missing password parameter"
+ }
+
+Invalid resource owner credentials response:
+
+ HTTP/1.1 400 Bad Request
+ {
+   "error": "invalid_grant",
+   "error_description": "invalid resource owner credentials"
+ }
+
+Invalid refresh token:
+
+ HTTP/1.1 400 Bad Request
+ {
+   "error": "invalid_grant",
+   "error_description": "invalid refresh token"
+ }
+
+=== Token Usage
+
+Error responses when accessing protected resources accord to the http://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-22[error response section] in the Bearer Token Usage specification.
+
+Invalid bearer token response:
+
+ HTTP/1.1 401 Unauthorized
+ {
+   "error": "invalid_token",
+   "erro_description": "The access token expired"
+ }
+
+== Who am I?
+
+The user resource supports a query string parameter `me` to identify the matching user resource for the current request.
+This is useful if a client wants to check the status of an authentication token.
+For example:
+
+ https://meta.invend.eu/users/?me
+
+The response is a collection with a single entry.
+
+== Account Security
+
+The following measures are taken to prevent accounts from being compromised:
+
+* Passwords must not be shorter than eight characters.
+* After 10 subsequent failed login attempts, the account is locked for 10 seconds to hinder brute force attacks.
+* OAuth 2 access tokens with limited validity require regular token refresh.
+This limits the potential damage imposed by a leaked access token.
+* Permanent logins based on tokens should be persisted in the user agent's local storage instead of cookies which are subject to domain based sniffing an CSRF.

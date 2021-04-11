@@ -1,0 +1,17 @@
+= Introduction
+:page-aliases: index.adoc
+
+The Restorecommerce platform is a free and Open Source e-commerce suite based on a modern architecture.
+It is highly modular and thus very flexible to base instantiate it
+for custom solutions. Be it a simple online shop or an event booking platform, we strive to create the best building blocks for
+a commerce experience of today.
+
+== Status
+
+Currently, Restorecommerce is in phase of *alpha maturity*.
+There are, however, already systems based on the platform in production.
+If you want to use it at this stage, consider that  changes to APIs are likely.
+
+== License
+
+Restorecommerce is licensed under the enterprise friendly https://en.wikipedia.org/wiki/MIT_License[MIT license.

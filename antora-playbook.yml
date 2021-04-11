@@ -1,0 +1,79 @@
+site:
+  title: Restorecommerce Documentation
+  url: /
+  start_page: technical-documentation::introduction/introduction.adoc
+content:
+  sources:
+
+    - url: ./
+      branches: antora
+      edit_url: 'https://gitlab.n-fuse.co/restorecommerce/documentation/edit/{refname}/{path}'
+
+    ## All other services
+
+    ## Identity Service
+    - url: https://github.com/restorecommerce/identity-srv.git
+      branches: [master]
+      start_path: docs
+    ## Access Control Service
+    - url: https://github.com/restorecommerce/access-control-srv.git
+      branches: [master]
+      start_path: docs
+    ## Object Storage Service
+    - url: https://github.com/restorecommerce/ostorage-srv.git
+      branches: [master]
+      start_path: docs
+    ## Resource Service
+    - url: https://github.com/restorecommerce/resource-srv.git
+      branches: [master]
+      start_path: docs
+    ## Notification Service
+    - url: https://github.com/restorecommerce/notification-srv.git
+      branches: [master]
+      start_path: docs
+    ## Rendering Service
+    - url: https://github.com/restorecommerce/rendering-srv.git
+      branches: [master]
+      start_path: docs
+    ## Scheduling Service
+    - url: https://github.com/restorecommerce/scheduling-srv.git
+      branches: [master]
+      start_path: docs
+    ## PDF Rendering Service
+    - url: https://github.com/restorecommerce/pdf-rendering-srv.git
+      branches: [master]
+      start_path: docs
+    ## Chassis Service
+    - url: https://github.com/restorecommerce/chassis-srv.git
+      branches: [master]
+      start_path: docs
+    ## Ordering Service
+    - url: https://github.com/restorecommerce/ordering-srv.git
+      branches: [ master ]
+      start_path: docs
+    ## Catalog Service
+    - url: https://github.com/restorecommerce/catalog-srv.git
+      branches: [ master ]
+      start_path: docs
+    ## Fulfillment Service
+    - url: https://github.com/restorecommerce/fulfillment-srv.git
+      branches: [ master ]
+      start_path: docs
+    ## Indexing Service
+    - url: https://github.com/restorecommerce/indexing-srv.git
+      branches: [ master ]
+      start_path: docs
+    ## Invoicing Service
+    - url: https://github.com/restorecommerce/invoicing-srv.git
+      branches: [ master ]
+      start_path: docs
+
+ui:
+  bundle:
+    url: ./ui/build/ui-bundle.zip
+    snapshot: true
+
+asciidoc:
+  attributes:
+    iconfont-remote: true
+    icons: font

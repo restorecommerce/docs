@@ -1,0 +1,14 @@
+= User Roles
+
+The following roles are defined:
+
+|===
+|Role Name |Description
+
+|Super Admin |Can perform any operation on the whole system for all tenants.
+|Admin |Can perform any operation within the scope of its organization.
+|User |Can read/write account data it owns.
+|===
+
+It's possible to add new roles or come up with a completely different role
+structure that better fits specific requirements.

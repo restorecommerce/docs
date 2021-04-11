@@ -1,0 +1,129 @@
+= Basic CRUD Operations
+
+The RESTful primitives.
+
+== Retrieving Resources with GET
+
+=== Request
+
+Single resources and collections thereof can be retrieved using HTTP `GET` and their IRI:
+
+ GET {resource IRI}
+
+==== Body
+
+Do not supply a request body with this method.
+
+=== Response
+
+A successful GET operation returns a resource representation in the JSON-LD format.
+
+=== Operation
+
+im:operations/RetrieveResourceOperation
+
+== Appending Resources with POST
+
+=== Request
+
+Resources can be created with HTTP `POST` against the collection IRI (therefore appended):
+
+ POST {collection IRI}
+
+==== Body
+
+The request body contains the resource representation encoded in the JSON-LD format.
+
+==== @id
+
+A provided `@id` is ignored, the server generates a http://en.wikipedia.org/wiki/Universally_unique_identifier[UUID] as last path segment and forms an IRI following the format:
+
+ {collection IRI}/{generated UUID}
+
+=== Response
+
+A successful POST operation returns HTTP status code 201 and a `Location` header with the IRI of the newly created resource.
+
+=== Operation
+
+im:operations/AppendResourceOperation
+
+== Creating or Replacing Resources with PUT
+
+=== Request
+
+Resources can be updated with replace semantics (idempotent) with HTTP `PUT` against its IRI:
+
+ PUT {resource IRI}
+
+If the resource does not exists, a new resource is created, otherwise the existing resource is entirely replaced.
+
+==== Body
+
+The request body contains the resource representation encoded in the JSON-LD format.
+
+==== @id
+
+A client provided `@id` in the body is ignored, it is always replaced with the URL of the current request.
+
+==== Possessive Resource Attributes
+
+The possessive resource attributes cannot be changed.
+Client-provided attributes are ignored.
+
+=== Response
+
+A successful PUT operation returns HTTP status code 204 and an empty body.
+
+=== Operation
+
+im:operations/CreateOrReplaceOperation
+
+== Updating Resources with PATCH
+
+=== Request
+
+Resources can be partly updated with HTTP `PATCH` against its IRI:
+
+ PATCH {resource IRI}
+
+==== Body
+
+The request body contains the resource representation encoded in the JSON-LD format.
+
+==== @id
+
+A client provided `@id` in the body is ignored, it is always replaced with the URL of the current request.
+
+==== Possessive Resource Attributes
+
+The possessive resource attributes cannot be changed.
+Client-provided attributes are ignored.
+
+=== Response
+
+A successful PATCH operation returns HTTP status code 204 and an empty body.
+
+=== Operation
+
+im:operations/UpdateResourceOperation
+
+== Deleting Resources with DELETE
+
+=== Request
+
+A HTTP `DELETE` against its IRI deletes it:
+
+ DELETE {resource IRI}
+
+==== Body
+
+Do not supply a request body with this method.
+
+=== Response
+
+A successful DELETE operation returns HTTP status code 204 and an empty body.
+
+=== Operation
+
+im:operations/DeleteResourceOperation

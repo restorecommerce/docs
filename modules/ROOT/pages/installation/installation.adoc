@@ -1,0 +1,46 @@
+= Installation
+
+The procedure of installing and running a Restorecommerce system in an orchestrated manner is described here.
+
+Currently the following options exist:
+
+- Docker-Compose for development and testing and thus not described here.
+- Helm for production.
+
+The intended result of these instructions is to launch a production ready instance of Restorecommerce.
+
+== Prerequisites
+
+The following prerequisites exist:
+
+* https://helm.sh/[Helm] installed on the client host
+* A running K8s https://kubernetes.io/[cluster]
+ ** with at least 16 GiB RAM available
+ ** with enough disk storage to hold file objects (client apps, product images etc.)
+* A public IP address
+* A DNS entry for this IP address
+* An SSL/ TLS certificate for the domain (optional)
+
+As the system is not using sub-domains, a normal SSL certificate is sufficient.
+
+== Steps to be performed
+
+. Bring up of the system containers including in bootstrap mode
+. Import of a test data set
+. Invalidate the bootstrap API key
+
+=== System Bring-up
+
+The helm resources can be found in a https://github.com/restorecommerce/helm[dedicated repository].
+
+TODO
+
+=== Data Import
+
+A freshly installed system has no data. To populate it with example data, enter the data directory, run node import.js <API key>
+and choose which data set to import (API key is generated and output to logs by facade-srv at start).
+The corresponding microservices must be running locally, as well as the facade service.
+
+=== Invalidation of the API Key
+
+TODO

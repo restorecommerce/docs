@@ -1,0 +1,42 @@
+= Operation
+
+Common operational tasks are described in the following.
+
+== Backup
+
+All state is persisted in stateful backing services.
+Some of those backing services are of ephermal nature, so they store information only temporarily, for a short time span.
+Also for some of them, data can be restored from other sources or is irrelevant when expired.
+Obviously, such services do not need to be backed up.
+This leaves the following persistence services which must be part of a full system backup:
+
+* Container volume for ArangoDB
+* Container volume for file based storeage
+
+The search index does not need to be backed up as it can be regenerated from GSS based data.
+
+== Upgrade
+
+Each service of the system can be upgraded individually as long as the upgrade does not introduce a breaking API change.
+It is however advisable to stop the whole platform or at least make it unavailable for clients during the upgrade.
+This is to prevent malfunctions or even data inconsitencies.
+
+The following upgrade procedure is the same for any service:
+
+* stop container
+* pull the latest image version of it
+* start container with same configuration as before
+
+For a minimum to zero downtime, the http://martinfowler.com/bliki/BlueGreenDeployment.html[blue/ green deployment method] can be applied.
+
+== Scale
+
+The server uses a Node.js clustering module but starts only one worker by default.
+It is possible to increase the number of workers in the server configuration file but this requires to modify the server.
+The preferred model to scale is up is to start multiple server containers and have the reverse proxy spraying the requests on them.
+
+Depending on the reverse proxy, there might be multiple strategies for the actual distribution of the load.
+A requirement for the load balancing strategy is to route requests coming from the same client to the same container (sticky sessions) for the duration of a page visit at least.
+As there is no HTTP session in Restorecommerce, the client IP address can be used as a hashing key instead.
+
+One worker is enough for low-traffic sites, even in the case of up to 50 concurrent clients when ran on reasonably powerful server hardware.

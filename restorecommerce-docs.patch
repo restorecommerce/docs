@@ -1,0 +1,339 @@
+diff --git a/src/css/doc.css b/src/css/doc.css
+index 958876d..02293ee 100644
+--- a/src/css/doc.css
++++ b/src/css/doc.css
+@@ -257,7 +257,7 @@
+   top: 0;
+   left: 0;
+   font-size: calc(15 / var(--rem-base) * 1rem);
+-  padding: 0 0.5rem;
++  padding: 0.2rem 0.5rem;
+   height: 1.25rem;
+   line-height: 1;
+   font-weight: var(--admonition-label-font-weight);
+@@ -295,6 +295,7 @@
+   display: inline-flex;
+   align-items: center;
+   height: 100%;
++  font-family: var(--body-font-family);
+ }
+ 
+ .doc .admonitionblock .icon i::after {
+diff --git a/src/css/footer.css b/src/css/footer.css
+index 6521947..877f7cd 100644
+--- a/src/css/footer.css
++++ b/src/css/footer.css
+@@ -3,7 +3,7 @@ footer.footer {
+   color: var(--footer-font-color);
+   font-size: calc(15 / var(--rem-base) * 1rem);
+   line-height: var(--footer-line-height);
+-  padding: 1.5rem;
++  padding: 0.5rem 1.5rem;
+ }
+ 
+ .footer p {
+diff --git a/src/css/header.css b/src/css/header.css
+index c919f83..710165c 100644
+--- a/src/css/header.css
++++ b/src/css/header.css
+@@ -16,6 +16,7 @@ body {
+   width: 100%;
+   word-wrap: break-word;
+   z-index: var(--z-index-navbar);
++  border-bottom: var(--navbar-border-height) solid var(--navbar-border-color);
+ }
+ 
+ .navbar a {
+@@ -25,7 +26,10 @@ body {
+ .navbar-brand .navbar-item:first-child,
+ .navbar-brand .navbar-item:first-child a {
+   color: var(--navbar-font-color);
+-  font-size: calc(22 / var(--rem-base) * 1rem);
++  font-size: 1.4em;
++  font-family: lato, serif;
++  font-weight: bold;
++  margin-top: -0.2em;
+ }
+ 
+ .navbar-brand .separator {
+@@ -141,6 +145,10 @@ body {
+   display: block;
+ }
+ 
++.navbar-item .navbar-icon {
++  color: var(--navbar-font-color);
++}
++
+ .navbar-link {
+   padding-right: 2.5em;
+ }
+diff --git a/src/css/nav.css b/src/css/nav.css
+index 475262f..cb3c305 100644
+--- a/src/css/nav.css
++++ b/src/css/nav.css
+@@ -176,7 +176,7 @@ html.is-clipped--nav {
+ }
+ 
+ .nav-panel-explore {
+-  background: var(--nav-background);
++  background: var(--nav-explore-background);
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+diff --git a/src/css/search.css b/src/css/search.css
+new file mode 100644
+index 0000000..9f5d796
+--- /dev/null
++++ b/src/css/search.css
+@@ -0,0 +1,73 @@
++.navbar-brand .navbar-item + .navbar-item {
++  -ms-flex-positive: 1;
++  -webkit-box-flex: 1;
++  flex-grow: 1;
++  -ms-flex-pack: end;
++  -webkit-box-pack: end;
++  justify-content: flex-end;
++}
++
++.algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-] {
++  max-height: calc(100vh - 3.25rem);
++}
++
++.algolia-autocomplete .ds-dropdown-menu .algolia-docsearch-suggestion--title {
++  font-size: 1em;
++  font-weight: 500;
++}
++
++@media screen and (max-width: 768px) {
++  .navbar-brand .navbar-item + .navbar-item {
++    padding-left: 0;
++    padding-right: 0;
++  }
++
++  .algolia-autocomplete .ds-dropdown-menu {
++    min-width: calc(100vw - 2.75rem) !important;
++  }
++}
++
++@media screen and (min-width: 1024px) {
++  .navbar-brand {
++    -ms-flex-positive: 1;
++    -webkit-box-flex: 1;
++    flex-grow: 1;
++  }
++
++  .navbar-menu {
++    -ms-flex-positive: 0;
++    -webkit-box-flex: 0;
++    flex-grow: 0;
++  }
++}
++
++#search-input {
++  color: #333;
++  font-family: inherit;
++  font-size: 0.95rem;
++  width: 150px;
++  border: none;
++  border-radius: 0.1em;
++  line-height: 2.2;
++  padding: 0 0.25em;
++}
++
++@media screen and (min-width: 769px) {
++  #search-input {
++    width: 200px;
++  }
++}
++
++@media screen and (max-width: 769px) {
++  body {
++    padding-top: 6.5rem;
++  }
++
++  .navbar {
++    height: 6.5rem;
++  }
++
++  .navbar-brand {
++    flex-wrap: wrap;
++  }
++}
+diff --git a/src/css/site.css b/src/css/site.css
+index 36e1767..8e203b7 100644
+--- a/src/css/site.css
++++ b/src/css/site.css
+@@ -15,3 +15,4 @@
+ @import "footer.css";
+ @import "highlight.css";
+ @import "print.css";
++@import "search.css";
+diff --git a/src/css/vars.css b/src/css/vars.css
+index 888cea8..1e1ad1f 100644
+--- a/src/css/vars.css
++++ b/src/css/vars.css
+@@ -16,6 +16,12 @@
+   --color-jet-70: #222;
+   --color-jet-80: #191919;
+   --color-black: #000;
++
++  /* added vars */
++  --color-header-text: #5e5e5e;
++  --color-sidebar-background: #f4f4f4;
++  --color-toolbar-background: #e0dfdf;
++
+   /* fonts */
+   --rem-base: 18; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
+   --body-font-size: 1.0625em; /* 17px */
+@@ -33,9 +39,9 @@
+   --panel-border-color: var(--color-smoke-90);
+   --scrollbar-thumb-color: var(--color-gray-10);
+   /* navbar */
+-  --navbar-background: var(--color-jet-80);
+-  --navbar-font-color: var(--color-white);
+-  --navbar_hover-background: var(--color-black);
++  --navbar-background: var(--color-sidebar-background);
++  --navbar-font-color: var(--color-header-text);
++  --navbar_hover-background: var(--color-smoke-90);
+   --navbar-button-background: var(--color-white);
+   --navbar-button-border-color: var(--panel-border-color);
+   --navbar-button-font-color: var(--body-font-color);
+@@ -43,8 +49,11 @@
+   --navbar-menu-background: var(--color-white);
+   --navbar-menu-font-color: var(--body-font-color);
+   --navbar-menu_hover-background: var(--color-smoke-50);
++  --navbar-border-height: 3px;
++  --navbar-border-color: #ffae44;
+   /* nav */
+-  --nav-background: var(--panel-background);
++  --nav-background: var(--color-sidebar-background);
++  --nav-explore-background: var(--color-toolbar-background);
+   --nav-border-color: var(--color-gray-10);
+   --nav-line-height: 1.35;
+   --nav-heading-font-color: var(--color-jet-30);
+@@ -52,7 +61,7 @@
+   --nav-panel-divider-color: var(--color-smoke-90);
+   --nav-secondary-background: var(--color-smoke-70);
+   /* toolbar */
+-  --toolbar-background: var(--panel-background);
++  --toolbar-background: var(--color-sidebar-background);
+   --toolbar-border-color: var(--panel-border-color);
+   --toolbar-font-color: var(--color-gray-70);
+   --toolbar-muted-color: var(--color-gray-30);
+@@ -93,7 +102,7 @@
+   --abstract-border-color: var(--panel-border-color);
+   --admonition-background: var(--panel-background);
+   --admonition-label-font-weight: var(--body-font-weight-bold);
+-  --caption-font-color: var(--color-gray-70);
++  --caption-font-color: var(--color-white);
+   --caption-font-weight: var(--body-font-weight-bold);
+   --code-background: var(--panel-background);
+   --code-font-color: var(--body-font-color);
+diff --git a/src/partials/footer-content.hbs b/src/partials/footer-content.hbs
+index cdeeb47..c6313e0 100644
+--- a/src/partials/footer-content.hbs
++++ b/src/partials/footer-content.hbs
+@@ -1,4 +1,3 @@
+ <footer class="footer">
+-  <p>This page was built using the Antora default UI.</p>
+-  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
++  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+ </footer>
+diff --git a/src/partials/footer-scripts.hbs b/src/partials/footer-scripts.hbs
+index d106cd3..7cc2b69 100644
+--- a/src/partials/footer-scripts.hbs
++++ b/src/partials/footer-scripts.hbs
+@@ -1,2 +1,13 @@
+ <script src="{{{uiRootPath}}}/js/site.js"></script>
+ <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
++
++<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
++<script>
++  docsearch({
++    apiKey: '{{env.SEARCH_API_KEY}}',
++    appId: '{{env.SEARCH_APP_ID}}',
++    indexName: '{{env.SEARCH_INDEX_NAME}}',
++    inputSelector: '#search-input',
++    debug: true,
++  })
++</script>
+diff --git a/src/partials/header-content.hbs b/src/partials/header-content.hbs
+index 6973507..24d578a 100644
+--- a/src/partials/header-content.hbs
++++ b/src/partials/header-content.hbs
+@@ -2,6 +2,9 @@
+   <nav class="navbar">
+     <div class="navbar-brand">
+       <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}">{{site.title}}</a>
++      <div class="navbar-item hide-for-print">
++        <input id="search-input" type="text" placeholder="Search...">
++      </div>
+       <button class="navbar-burger" data-target="topbar-nav">
+         <span></span>
+         <span></span>
+@@ -10,35 +13,8 @@
+     </div>
+     <div id="topbar-nav" class="navbar-menu">
+       <div class="navbar-end">
+-        <a class="navbar-item" href="#">Home</a>
+-        <div class="navbar-item has-dropdown is-hoverable">
+-          <a class="navbar-link" href="#">Products</a>
+-          <div class="navbar-dropdown">
+-            <a class="navbar-item" href="#">Product A</a>
+-            <a class="navbar-item" href="#">Product B</a>
+-            <a class="navbar-item" href="#">Product C</a>
+-          </div>
+-        </div>
+-        <div class="navbar-item has-dropdown is-hoverable">
+-          <a class="navbar-link" href="#">Services</a>
+-          <div class="navbar-dropdown">
+-            <a class="navbar-item" href="#">Service A</a>
+-            <a class="navbar-item" href="#">Service B</a>
+-            <a class="navbar-item" href="#">Service C</a>
+-          </div>
+-        </div>
+-        <div class="navbar-item has-dropdown is-hoverable">
+-          <a class="navbar-link" href="#">Resources</a>
+-          <div class="navbar-dropdown">
+-            <a class="navbar-item" href="#">Resource A</a>
+-            <a class="navbar-item" href="#">Resource B</a>
+-            <a class="navbar-item" href="#">Resource C</a>
+-          </div>
+-        </div>
+         <div class="navbar-item">
+-          <span class="control">
+-            <a class="button is-primary" href="#">Download</a>
+-          </span>
++          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+         </div>
+       </div>
+     </div>
+diff --git a/src/partials/header-scripts.hbs b/src/partials/header-scripts.hbs
+index b9e907c..67663df 100644
+--- a/src/partials/header-scripts.hbs
++++ b/src/partials/header-scripts.hbs
+@@ -1 +1,5 @@
+ {{!-- Add header scripts here --}}
++<link rel="stylesheet"
++      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
++<link rel="stylesheet"
++      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+diff --git a/src/partials/toolbar.hbs b/src/partials/toolbar.hbs
+index c6e9ea6..a6ec810 100644
+--- a/src/partials/toolbar.hbs
++++ b/src/partials/toolbar.hbs
+@@ -4,10 +4,12 @@
+   <a href="{{{relativize this}}}" class="home-link{{#if @root.page.home}} is-current{{/if}}"></a>
+   {{/with}}
+ {{> breadcrumbs}}
++<!--
+ {{> page-versions}}
++-->
+   {{#if (and page.fileUri (not env.CI))}}
+-  <div class="edit-this-page"><a href="{{page.fileUri}}">Edit this Page</a></div>
++  <div class="edit-this-page"><a href="{{page.fileUri}}"><i class="fa fa-edit"></i></a></div>
+   {{else if (and page.editUrl (or env.FORCE_SHOW_EDIT_PAGE_LINK (not page.origin.private)))}}
+-  <div class="edit-this-page"><a href="{{page.editUrl}}">Edit this Page</a></div>
++  <div class="edit-this-page"><a href="{{page.editUrl}}"><i class="fa fa-edit"></i></a></div>
+   {{/if}}
+ </div>

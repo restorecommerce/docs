@@ -1,0 +1,35 @@
+// INTRODUCTION
+* xref:introduction/introduction.adoc[Introduction]
+
+// ARCHITECTURE
+* xref:architecture/architecture.adoc[Architecture]
+
+// INSTALLATION
+* xref:installation/installation.adoc[Installation]
+
+// OPERATION
+* xref:operation/operation.adoc[Operation]
+
+// API USAGE
+* API Usage
+** xref:api_usage/basics.adoc[Basics]
+** xref:api_usage/crud-actions.adoc[CRUD Actions]
+** xref:api_usage/querying.adoc[Querying]
+** xref:api_usage/authentication.adoc[Authentication]
+** xref:api_usage/authorization.adoc[Authorization]
+
+// DEVELOPMENT
+* Development
+** xref:development/development.adoc[Development]
+** xref:development/development.adoc#building[Building]
+** xref:development/development.adoc#running[Running]
+*** xref:development/development.adoc#running-locally[Locally]
+*** xref:development/development.adoc#running-docker[As a container]
+** xref:development/development.adoc#environment[Environment]
+** xref:development/development.adoc#testing[Testing]
+
+// SECURITY
+* Security
+** xref:security/roles.adoc[Roles]
+** xref:security/tenants.adoc[Tenants]
+** xref:security/attribute-based-access-control.adoc[Attribute Based Access Control]

@@ -1,0 +1,119 @@
+:doctype: book
+
+____
+We embrace the fact that every business is different and the world is ever changing.
+We have designed the Restorecommerce with this awareness and want to enable you to build aspiring applications which can cope with this only constant at minimal effort.
++++<small>+++-- Thomas Hoppe+++</small>+++
+____
+
+= Architecture
+
+In the following we describe the employed architectural principles and the building blocks of Restorecommerce.
+
+== Building Blocks
+
+image::restore_commerce_system_architecture.svg[]
+
+== The Cloud, Microservices, Immutability
+
+Restorecommerce is http://en.wikipedia.org/wiki/Cloud_computing[cloud] native software which means it leverages contemporary deployment models such as containers and doesn't solve problems which are already covered by typical cloud infrastructures.
+It grew up in the era of http://martinfowler.com/articles/microservices.html[microservices] and is therefore properly decomposed into such.
+Furthermote, it adheres to the principle of http://www.slideshare.net/Kevlin/immutability-ftw[immutability] whenever possible.
+This is a very powerful combination which makes Restorecommerce highly scalable and easy to evolve and to operate.
+
+== Semantic Web
+
+Semantic web technologies are the answer to many prevailing computer science problems of the past decade, such as the high coupling in distributed systems or interoperability on a data level.
+We are convinced that most of the potential gains have not yet been realized.
+As semantic web technologies are part of Restorecommerce's DNA, you can benefit from their advantages today and continue to do so in the future.
+
+Generally, structured data in Restorecommerce is semantically tagged to maximize machine readability and data Interoperability.
+This becomes more-and-more important as search engines http://www.seoskeptic.com/json-ld-big-day-at-google/[already understand semantically tagged data] and continuously extend their capabilities in this regard.
+
+== Linked Data
+
+Structured, machine readable data sets published on the web become http://en.wikipedia.org/wiki/Linked_data[linked data] if they are interlinked by meaningful relations.
+The list of publicly funded projects, governmental institutions, research facilities and commercial organizations which participate in this _Web of Data_ is constantly growing.
+Many data sets are also published as _linked open data_ under licenses which allow a commercial use.
+The key principle is that resources are identified by IRIs (URLs) which can be resolved to obtain a representation of that resource (dereferencing).
+
+Restorecommerce is built entirely on linked data principles and allows to use existing linked data sets and keep them in sync as they evolve.
+This is for example important for what we call _data commons_ which describes master data sets such as countries, languages, or country specific taxes.
+This is common knowledge and exists already in a machine readable formats -- we think nobody should be required to set up tax rates in an online shop anymore.
+
+== REST API
+
+A Restorecommerce based application has its individual API which is based on a flexible resource model.
+The resource model is the blueprint of the API as it defines:
+
+* which resources and collections thereof exist,
+* to which paths they are mapped,
+* which affordances a resource exhibits,
+* the semantic mapping of the properties of resources.
+
+The actual API is thus merely a reflection of the resource model.
+
+_API first!_ -- every functionality in Restorecommerce is exposed as part of an API which strictly follows the http://en.wikipedia.org/wiki/Representational_state_transfer[REST] architectural model.
+An API has the following notable qualities:
+
+=== Coherence
+
+We really want developers to only need to work with _one API_, be it for technical aspects or for business related functionality.
+Therefore, developers only need to learn the basic principles of an API once and are empowered to extrapolate it for its entirety.
+
+=== Hypermedia
+
+https://en.wikipedia.org/wiki/Hyperlink[Hypermedia] data formats such as HTML include links to allow its consumers to navigate within and between documents;
+Forms are embedded to allow manipulation of resources.
+A hypermedia API supports these principles on the API level.
+
+Restorecommerce based APIs qualify as hypermedia capable because structured resources are represented in the JSON-LD format which inherently allows interlinking of resources.
+More complex affordances are modelled with Hydra Core.
+
+=== Hydra Core
+
+http://www.hydra-cg.com/spec/latest/core/[Hydra Core] is a lightweight vocabulary for web APIs.
+It allows to enrich resources with affordances (things you can do with a resource at hand) which describe interactions beyond simple links and the simple CRUD semantics of HTTP methods.
+
+== Persistence Tier
+
+Efficient storage and retrieval of data is the essential discipline to succeed with any kind of distributed system arrangement.
+
+=== Flexible Resource Types
+
+As there is no such thing as a universal storage model which can provide this for any scenario, Restorecommerce supports different types of resources.
+Currently _structured data_ and _object data_ based resources are the most relevant for web applications and both are supported.
+There is a corresponding storage service abstraction for each type:
+
+==== Graph Storage Service
+
+Almost every data model of a real-life problem is effectively graph based because as soon as links between entities are introduced they form a graph.
+Graphs are naturally the best fit when it comes to persisting data which contains links.
+This is why Restorecommerce offers a graph storage service to persist structured data.
+Each application operates on a dedicated, technically isolated graph whose nodes can connect to nodes in other graphs via links.
+
+==== Object Storage Service
+
+Object based data (blobs, files) such as static application assets or user provided content such as image uploads can be stored in object data resources.
+
+==== Other Storage Services
+
+Internally, there are two more types of storage engines used: There is an in-memory storage engine which is used to cache data and session information.
+A search index is used to enable complex querying and search on certain resources.
+These storage engines hold structured data as well, they just offer specialized access methods and characteristics which are beneficial for performance reasons.
+
+== Security
+
+Data privacy and integrity is a key concern of Restorecommerce.
+We adhere to the http://en.wikipedia.org/wiki/Secure_by_design[security by design] principle to lower the efforts of application providers to meet their security goals.
+
+Restorecommerce features http://en.wikipedia.org/wiki/OAuth#OAuth_2.0[OAuth 2.0] authentication and an advanced _Attribute Based Access Control_ http://en.wikipedia.org/wiki/Attribute_Based_Access_Control[ABAC] authorization model.
+This allows for manageable fine-grained access control.
+
+= Client Interoperability
+
+== Client Interoperability
+
+Any kind of client such as classical web sites, native mobile apps based on Android, iOS etc., desktop applications and fat clients can be integrated with or can be built based on Restorecommerce.
+
+HTML5 apps based on the single page application architecture are particularly well suited as client of a hypermedia API as they inherently support JSON and Ajax.

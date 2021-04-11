@@ -1,0 +1,58 @@
+= Querying
+
+Querying is the umbrella term for filtering and search in this context.
+
+== Filtering
+
+Resources can be filtered with the `filters` query string parameter:
+
+ ?filters={attribute}{comparator}{value}[,{attribute}{comparator}{value}]
+
+Multiple filters can be combined by colon separated concatenation.
+The filters are combined with a logical _AND_ operation.
+Attributes are the schema defined names of the resource.
+The following comparators are supported:
+
+* `:` equality
+* `<>` inequality
+* `<` lower than
+* `<:` lower than equals
+* `>` greater than
+* `>:` greater than equals
+
+For example:
+
+ ?filters=created>2014,created<2014-10-01
+
+returns all resources, that have been created between _Jan.
+1st, 2014_ and _Oct.
+1st, 2014_.
+By default no filters are applied.
+
+Range values are supported for the equality comparator for numerical attributes only.
+A range value:
+
+ {min}..{max}
+
+Min should be less than or equal to max.
+Min and max values are included in the range.
+For example:
+
+ ?filters=price:100..500
+
+returns all resources whose price attribute lies within the range from 100 to 500, inclusively.
+
+== Full Text Search
+
+Full-text search within a resource is initiated by providing a single or multiple search terms with the `?s` query string parameter on the endpoint of the collection of the resource:
+
+ {?s}
+
+For example:
+
+ ?s=germany
+
+searches in the given resource for an item which has a property with the value 'germany'.
+The result is a collection with matching entries.
+
+The corresponding affordance is the `hydra:search`.
