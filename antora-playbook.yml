@@ -1,6 +1,6 @@
 site:
   title: Restorecommerce Documentation
-  url: /
+  url: /docs
   start_page: technical-documentation::introduction/introduction.adoc
 content:
   sources:
