@@ -3,7 +3,7 @@ name: push
 on: push
 
 jobs:
-  image:
+  pages:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
