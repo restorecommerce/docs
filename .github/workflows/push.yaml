@@ -5,7 +5,6 @@ on: push
 jobs:
   image:
     runs-on: ubuntu-20.04
-    needs: build
     steps:
       - name: Checkout
         uses: actions/checkout@v2
