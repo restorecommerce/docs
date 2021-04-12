@@ -67,6 +67,10 @@ content:
     - url: https://github.com/restorecommerce/invoicing-srv.git
       branches: [ master ]
       start_path: docs
+    ## Payment Service
+    - url: https://github.com/restorecommerce/payment-srv.git
+      branches: [ master ]
+      start_path: docs
 
 ui:
   bundle:
