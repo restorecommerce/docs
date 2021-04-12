@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rendering Service :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rendering-srv" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Rendering Service</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Rendering Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#features">Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#events">Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#emitted-events">Emitted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#consumed-events">Consumed</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#event_messages">Event Messages</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event_messages_render_request"><code>RenderRequest</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#event_messages_render_response"><code>RenderResponse</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Rendering Service</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Rendering Service</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/rendering-srv/edit/master/docs/modules/ROOT/pages/index.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Rendering Service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://travis-ci.org/restorecommerce/rendering-srv?branch=master"><span class="image"><img src="http://img.shields.io/travis/restorecommerce/rendering-srv/master.svg?style=flat-square" alt="Build Status"></span></a>
+<a href="https://david-dm.org/restorecommerce/rendering-srv"><span class="image"><img src="https://img.shields.io/david/restorecommerce/rendering-srv.svg?style=flat-square" alt="Dependencies"></span></a>
+<a href="https://coveralls.io/github/restorecommerce/rendering-srv?branch=master"><span class="image"><img src="http://img.shields.io/coveralls/restorecommerce/rendering-srv/master.svg?style=flat-square" alt="Cover"></span></a></p>
+</div>
+<div class="paragraph">
+<p>A microservice for rendering HTML output from <a href="http://handlebarsjs.com/">Handlebars</a> templates
+part of the <a href="https://github.com/restorecommerce">Restorecommerce</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="anchor" href="#features"></a>Features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Rendering is performed using <a href="https://github.com/restorecommerce/handlebars-helperized">handlebars-helperized</a>,
+a module which has several custom helpers for handlebars.</p>
+</li>
+<li>
+<p>User defined helpers for handlebars are loaded from the
+<a href="https://github.com/restorecommerce/rendering-srv/tree/master/handlebars">handlebars</a> folder on service startup.</p>
+</li>
+<li>
+<p>Additionally, a stylesheet URL can be provided.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="events"><a class="anchor" href="#events"></a>Events</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="emitted-events"><a class="anchor" href="#emitted-events"></a>Emitted</h3>
+<div class="paragraph">
+<p>List of events emitted by this microservice for below topics:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.rendering</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>renderResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when request is rendered</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system health check response</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="consumed-events"><a class="anchor" href="#consumed-events"></a>Consumed</h3>
+<div class="paragraph">
+<p>This microservice consumes messages for the following events by topic:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.rendering</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>renderRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to receive render request</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system health check</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="event_messages"><a class="anchor" href="#event_messages"></a>Event Messages</h4>
+<div class="sect4">
+<h5 id="event_messages_render_request"><a class="anchor" href="#event_messages_render_request"></a><code>RenderRequest</code></h5>
+<div class="paragraph">
+<p><code>io.restorecommerce.rendering.RenderRequest</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payload</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.rendering.Payload</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of templates and data</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.rendering.Payload</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">templates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON mapping labels to body and layout templates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON mapping content to render output</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">style_url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A URL pointing to a stylesheet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">strategy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Strategy to use for applying the stylesheet. Possible values are <code>INLINE</code> and <code>COPY</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional options passed as JSON (for ex: translation texts included)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content type for rendering ex: 'application/html' or 'application/text'</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="event_messages_render_response"><a class="anchor" href="#event_messages_render_response"></a><code>RenderResponse</code></h5>
+<div class="paragraph">
+<p><code>io.restorecommerce.rendering.RenderResponse</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Same value as the respective <code>RenderRequest</code> id</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">response</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.rendering.Response</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of rendered outputs</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.rendering.Response</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON mapping of template labels to rendered output</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content-type ex: 'application\html' or 'application\text'</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

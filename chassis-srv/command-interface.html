@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Command Interface :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="chassis-srv" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Chassis Service</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Chassis Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html#features">Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html#architecture">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html#configuration">Configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#configuration_logging">Logging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#configuration_server">Server</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#configuration_middleware">Middleware</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#configuration_cache">Cache</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#configuration_database">Database</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#configuration_command_interface">Command Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#configuration_offset_store">Offset Store</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Chassis Service</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Chassis Service</a></li>
+    <li><a href="command-interface.html">Command Interface</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/chassis-srv/edit/master/docs/modules/ROOT/pages/command-interface.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Command Interface</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The generic command interface allows querying information from and triggering actions on microservices.
+Commands are usually used for administrative or operational concerns and should not be used for actions
+triggered by ordinary users. There are common commands but also such that are only understood by individual services.
+The command interface supports the following communication patterns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fire-and-forget</p>
+</li>
+<li>
+<p>Request-reply</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Technically, the command interface is described by the <code>Command</code> endpoint.
+This endpoint is available as <a href="https://grpc.io/docs/">gRPC</a> interface and event-driven communication through Kafka.
+Request and response message structures are defined using <a href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a>
+in the <a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/commandinterface.proto">commandinterface.proto</a> file.
+Due to the high variability among all command possible parametes, the <code>payload</code> field is defined as a <code>google.protobuf.Any</code> message
+(see <a href="https://github.com/restorecommerce/protos/tree/master/google/protobuf">google</a> protos), as well as all gRPC response messages.
+The <code>CommandResponse</code> message is mainly used on Kafka events, as it contains a <code>services</code> field, which identifies all services bound to a specific microservice.</p>
+</div>
+<div class="paragraph">
+<p>The following common system commands are available (also see below):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>health_check (microservice health check)</p>
+</li>
+<li>
+<p>restore (re-process <a href="https://kafka.apache.org/">Apache Kafka</a> event messages to restore system data)</p>
+</li>
+<li>
+<p>reset (reset system data and state)</p>
+</li>
+<li>
+<p>version (return runtime version information)</p>
+</li>
+<li>
+<p>set_api_key (sets api key on microservices)</p>
+</li>
+<li>
+<p>config_update (update configuration on microservices)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Unimplemented:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>reconfigure (reload configurations for one or more microservices)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that the provided implementation&#8217;s commands can be extended or even overriden when it is partially or totally
+incompatible with a service&#8217;s context. It is also straightforward to include new commands by extending the given
+<a href="../../../../src/command-interface/index.ts">CommandInterface</a> class.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grpc_interface"><a class="anchor" href="#_grpc_interface"></a>gRPC Interface</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_command"><a class="anchor" href="#_command"></a>Command</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name of the command</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payload</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">command-specific parameters</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_common_commands"><a class="anchor" href="#_common_commands"></a>Common Commands</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_healthcheck"><a class="anchor" href="#_healthcheck"></a>HealthCheck</h3>
+<div class="paragraph">
+<p>This command allows to retrieve a healt status for a service (note that a restorecommerce microservice may have several
+service names bound to it).</p>
+</div>
+<div class="paragraph">
+<p>Possible <code>payload</code> fields in a request:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">service</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name of the service to be checked</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Possible fields in a response:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">serving status; it can be <code>SERVING</code>, <code>NOT_SERVING</code> and <code>UNKNOWN</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_restore"><a class="anchor" href="#_restore"></a>Restore</h3>
+<div class="paragraph">
+<p>This command allows to restore the state of an implementing service, as well as all data managed by that service.
+The default implementation checks the configuration files for all DB instances bound to the implementing service
+and maps a set of Kafka events to a set of CRUD operations.
+These Kafka events are emitted by the service every time a resource is created/ modified in the store.
+The same events are processed from a Kafka consumer offset in order to restore all data since a previous a point in time.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: this event processing can only be done in the correct order with single partitioned-topics,
+as Kafka ensures offset order per-partition.</p>
+</div>
+<div class="paragraph">
+<p>Possible <code>payload</code> fields in a request:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ]RestoreData</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list of topics for message re-processing</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>RestoreData</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The resource&#8217;s entity name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">base_offset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base offset at which to start the restore process; default is <code>0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignore_offset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ]number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topic offset values to ignore while restoring</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_reset"><a class="anchor" href="#_reset"></a>Reset</h3>
+<div class="paragraph">
+<p>This allows to wipe all data owned by a microservice.
+The <code>chassis-srv</code> default implementation only supports the chassis ArangoDB database provider as a valid provider.
+When <code>reset</code> is called, each of the specified resource&#8217;s DB is truncated. There are no specific parameters either
+for the request payload and for the response.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_version"><a class="anchor" href="#_version"></a>Version</h3>
+<div class="paragraph">
+<p>This command returns the NPM package and Node.js version of the implementing service.</p>
+</div>
+<div class="paragraph">
+<p>Response fields:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NPM package version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nodejs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node.js version</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_setapikey"><a class="anchor" href="#_setapikey"></a>SetApiKey</h3>
+<div class="paragraph">
+<p>This command <code>set_api_key</code> sets the <code>authentication:apiKey</code> on the microservices, the configuration to set the API Key is provided
+in the payload of the command. This API Key is used by the <a href="https://github.com/restorecommerce/acs-client"><code>acs-client</code></a>
+to override access control checks for <a href="https://github.com/restorecommerce/acs-client"><code>access-control-srv</code></a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configupdate"><a class="anchor" href="#_configupdate"></a>ConfigUpdate</h3>
+<div class="paragraph">
+<p>This command <code>config_update</code> sets the provided configuration on the microservices. The configuration to be set is provided in the
+payload of the command.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flushcache"><a class="anchor" href="#_flushcache"></a>FlushCache</h3>
+<div class="paragraph">
+<p>This command <code>flush_cache</code> is used to flush / invalidate the cache.</p>
+</div>
+<div class="paragraph">
+<p>Possible <code>payload</code> fields in a request:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FlushCacheData</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flush cache payload</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>FlushCacheData</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">db_index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redis DB index to be flushed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pattern</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pattern to match redis keys to be flushed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="../../../../test/command_test.ts">tests</a>.</p>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

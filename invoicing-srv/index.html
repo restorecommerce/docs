@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Invoicing Service :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="invoicing-srv" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Invoicing Service</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Invoicing Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#features">Features</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#configuration">Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#API">API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#api_invoice">Invoice</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#api_invoice_crud">CRUD Operations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#events">Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#emitted-events">Emitted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#consumed-events">Consumed</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#custom_commands">Custom Commands</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Invoicing Service</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Invoicing Service</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/invoicing-srv/edit/master/docs/modules/ROOT/pages/index.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Invoicing Service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://travis-ci.org/restorecommerce/invoicing-srv?branch=master"><span class="image"><img src="https://img.shields.io/travis/restorecommerce/invoicing-srv/master.svg?style=flat-square" alt="Build Status"></span></a>
+<a href="https://david-dm.org/restorecommerce/invoicing-srv"><span class="image"><img src="https://img.shields.io/david/restorecommerce/invoicing-srv.svg?style=flat-square" alt="Dependencies"></span></a>
+<a href="https://coveralls.io/github/restorecommerce/invoicing-srv?branch=master"><span class="image"><img src="https://img.shields.io/coveralls/restorecommerce/invoicing-srv/master.svg?style=flat-square" alt="Coverage Status"></span></a></p>
+</div>
+<div class="paragraph">
+<p>A microservice for generating invoices.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="anchor" href="#features"></a>Features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Generates invoices for customers based on their purchased products.</p>
+</li>
+<li>
+<p>When all data is aggregated, it is rendered into HTML through the
+<a href="https://github.com/restorecommerce/rendering-srv">rendering-srv</a> and to PDF using the
+<a href="https://github.com/restorecommerce/pdf-rendering-srv">pdf-rendering-srv</a>.</p>
+</li>
+<li>
+<p>The header and footer templates for PDF rendering are served via HTML files.</p>
+</li>
+<li>
+<p>All invoices are sent via notification objects to the
+<a href="https://github.com/restorecommerce/notification-srv">notification-srv</a>
+so that they can be sent via email to the customers' billing addresses.</p>
+</li>
+<li>
+<p>The Invoice Positions sent to this service are stored on redis (db index 7)
+and Invoice creation is triggered by <code>io.restorecommerce.invoice.TriggerInvoices</code>
+event named <code>triggerInvoices</code> which sends out the notifications to customers.
+Invoices are also a resource owned by this microservice. After an invoice is generated,
+it is stored in the database along with useful metadata. Therefore, some CRUD operations
+are exposed via gRPC in order to remotely handle this resource.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following service specific configuration properties are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PDF <a href="https://github.com/restorecommerce/invoicing-srv/blob/master/cfg/config.json#L290">rendering options</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="API"><a class="anchor" href="#API"></a>API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This microservice exposes the following gRPC endpoints:</p>
+</div>
+<div class="sect2">
+<h3 id="api_invoice"><a class="anchor" href="#api_invoice"></a>Invoice</h3>
+<div class="paragraph">
+<p>An Invoice resource.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.Invoice</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User ID, unique, key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date when user was created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">modified</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date when user was modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invoice creation timestamp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customer_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The customer&#8217;s database ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payment_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default: 'unpaid'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">amount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invoice subtotal (gross).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">document</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generated PDF base64-encoded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">invoice_number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generated invoice number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customer_remark</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer&#8217;s remark</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The service exposes <code>Read</code> and <code>Delete</code> operations through gRPC.
+To further read about their interface please refer to <a href="https://github.com/restorecommerce/resource-srv">resource-srv</a>.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.InvoicesPositionsData</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">invoices_positions_data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoicePositions</code> [ ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invoice Positions Data</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.InvoicePositions</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contract or customer identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">invoice_positions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoicePosition</code> [ ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invoice Position</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">recipient_customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.RecipientCustomer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recipient customer identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">recipient_billing_address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.BillingAddress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recipient Billing Address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender_billing_address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.BillingAddress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sender Billing Address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">recipient_organization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.organization.Organization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recipient Organization Address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender_organization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.organization.Organization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sender Organization Address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payment_method_details</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.PaymentMethodDetails</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method Details</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.InvoicePosition</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">currency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tableList</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoiceRow</code> [ ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invoice row data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">totalPrice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoicePrice</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total price</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.InvoiceRow</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">currency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pricePerUnit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">price per unit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">quantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of products</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value added tax</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">amount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total amount</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.InvoicePrice</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gross</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gross price</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">net</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">net price</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.RecipientCustomer</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customer identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customer_number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customer number</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.BillingAddress</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">website</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient website</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">street</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient street name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">building_number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient building number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient postcode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">region</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient region</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">country_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient country</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">phone_country_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient phone country code</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">phone_number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient phone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timezone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient time zone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">economic_area</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sender or recipient country economic area</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.PaymentMethodDetails</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iban</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method iban</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method bic</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bankName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method bank name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transferType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method transfer type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eMail</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment Method email</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="api_invoice_crud"><a class="anchor" href="#api_invoice_crud"></a>CRUD Operations</h4>
+<div class="paragraph">
+<p>The microservice exposes the below CRUD operations for creating or modifying Invoice resources.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.invoice.Service</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 23%;">
+<col style="width: 25%;">
+<col style="width: 27%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method Name</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+<th class="tableblock halign-left valign-top">Response Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoiceList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoiceList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a list of Invoice resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.ReadRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoiceList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read a list of Invoice resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoiceList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoiceList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update a list of Invoice resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.DeleteRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a list of Invoice resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upsert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoiceList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoice.InvoiceList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create or Update a list of Invoice resources</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For the detailed protobuf message structure of <code>io.restorecommerce.resourcebase.ReadRequest</code> and
+<code>io.restorecommerce.resourcebase.DeleteRequest</code> refer <a href="https://github.com/restorecommerce/resource-base-interface">resource-base-interface</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="events"><a class="anchor" href="#events"></a>Events</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="emitted-events"><a class="anchor" href="#emitted-events"></a>Emitted</h3>
+<div class="paragraph">
+<p>List of events emitted by this microservice for below topics:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.notification_req</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sendEmail</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">send generated notifications</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.rendering</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>renderRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">request notifications content rendering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.jobs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>jobDone</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">commit job failure or completion</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoices.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>triggerInvoices</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trigger invoices</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="consumed-events"><a class="anchor" href="#consumed-events"></a>Consumed</h3>
+<div class="paragraph">
+<p>This microservice consumes messages for the following events by topic:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.invoices.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>storeInvoicePositions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">storing invoice positions and triggering invoices</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>restoreCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for triggering system restore</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>resetCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for triggering system reset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system health check</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>versionCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.rendering</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>renderResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">receive rendered notifications content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.organizations.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deleteOrgData</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for deleting organization data</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="custom_commands"><a class="anchor" href="#custom_commands"></a>Custom Commands</h3>
+<div class="paragraph">
+<p>This service extends the
+<a href="https://github.com/restorecommerce/chassis-srv/blob/master/command-interface.md">command-interface</a>
+in order to provide custom functionality:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>restore</code> - the base restore operation is extended to additionally restore the invoice number&#8217;s incremental counter in Redis</p>
+</li>
+<li>
+<p><code>reset</code> - the base reset operation is overridden in order to reset the invoice&#8217;s number incremental counter in Redis</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="todo"><a class="anchor" href="#todo"></a>TODO: Resource Caching with Redis</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Resources are loaded via gRPC calls.
+Currently, they are stored in local variables which are then statically accessed.
+An efficient caching mechanism using Redis with some expiration time is to be used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Part of the <a href="https://github.com/restorecommerce">Restorecommerce</a>.</p>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

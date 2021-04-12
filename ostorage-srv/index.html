@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Object Storage Service :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ostorage-srv" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Object Storage Service</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Object Storage Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#features">Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#configuration">Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#API">API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_ostorage_put"><code>Put</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_ostorage_get"><code>Get</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_ostorage_list"><code>List</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_ostorage_delete"><code>Delete</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_ostorage_copy"><code>Copy</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#events">Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#emitted-events">Emitted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#consumed-events">Consumed</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Object Storage Service</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Object Storage Service</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/ostorage-srv/edit/master/docs/modules/ROOT/pages/index.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Object Storage Service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://travis-ci.org/restorecommerce/ostorage-srv?branch=master"><span class="image"><img src="http://img.shields.io/travis/restorecommerce/ostorage-srv/master.svg?style=flat-square" alt="Build Status"></span></a>
+<a href="https://david-dm.org/restorecommerce/ostorage-srv"><span class="image"><img src="https://img.shields.io/david/restorecommerce/ostorage-srv.svg?style=flat-square" alt="Dependencies"></span></a>
+<a href="https://coveralls.io/github/restorecommerce/ostorage-srv?branch=master"><span class="image"><img src="http://img.shields.io/coveralls/restorecommerce/ostorage-srv/master.svg?style=flat-square" alt="Cover"></span></a></p>
+</div>
+<div class="paragraph">
+<p>A microservice for object storage  part of the <a href="https://github.com/restorecommerce">Restorecommerce</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="anchor" href="#features"></a>Features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Abstracting object storage through <a href="https://grpc.io/docs/">gRPC</a>.</p>
+</li>
+<li>
+<p>It uses an <a href="https://www.npmjs.com/package/aws-sdk">AWS SDK</a> client for connecting to an object storage framework.</p>
+</li>
+<li>
+<p>This service can be used with an Object Storage Server compatible with the S3 API and this can be configured in
+<a href="https://github.com/restorecommerce/ostorage-srv/blob/master/cfg/config.json">config.json</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following Object Storage Server configuration properties under the <a href="https://github.com/restorecommerce/ostorage-srv/blob/master/cfg/config.json#L2"><code>s3</code></a> configuration are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>client.accessKeyId</code>: access key ID for Object Storage Server.</p>
+</li>
+<li>
+<p><code>client.secretAccessKey</code>: secret access key for Object Storage Server.</p>
+</li>
+<li>
+<p><code>client.endpoint</code>: Object Storage Server endpoint.</p>
+</li>
+<li>
+<p><code>client.s3ForcePathStyle</code>: Whether to force path style URLs for S3 objects.</p>
+</li>
+<li>
+<p><code>buckets</code>: list of buckets to be created on server start up.</p>
+</li>
+<li>
+<p><code>bucketsLifecycleConfigs.Bucket</code>: name of bucket which receives the lifecycle configuration.</p>
+</li>
+<li>
+<p><code>bucketsLifecycleConfigs.LifecycleConfiguration.Rules</code>: array containing multiple predefined rules.</p>
+</li>
+<li>
+<p><a href="https://github.com/restorecommerce/ostorage-srv/blob/master/cfg/config.json#L19"><code>Rules.Status</code></a>: status of predefined
+rule (e.g. Enabled | Disabled ).</p>
+</li>
+<li>
+<p><a href="https://github.com/restorecommerce/ostorage-srv/blob/master/cfg/config.json#L21"><code>Rules.Expiration.Date</code></a>: the date
+when the expiration will occur. The value must conform to the ISO 8601 format.
+The time is always midnight UTC (e.g. '2019-05-30T00:00:00.000Z').</p>
+</li>
+<li>
+<p><a href="https://github.com/restorecommerce/ostorage-srv/blob/master/cfg/config.json#L38"><code>Rules.Expiration.Days</code></a>: the number
+of days since object creation when the expiration will occur (e.g. 30).
+Amazon S3 calculates the time by adding the number of days specified in the rule to the object creation time and
+rounding the resulting time to the next day midnight UTC. For example, if an object was created at '1/15/2014 10:30 AM UTC'
+and you specify 3 days in a transition rule, then the transition date of the object would be calculated as '1/19/2014 00:00 UTC'.</p>
+</li>
+<li>
+<p><a href="https://github.com/restorecommerce/ostorage-srv/blob/master/cfg/config.json#L24"><code>Rules.Filter.Prefix</code></a>: filtering
+based on prefix identifying one or more objects (files or folders) to which the rule applies
+(e.g. 'temp/' expires all objects under 'temp' folder).</p>
+</li>
+<li>
+<p><a href="https://github.com/restorecommerce/ostorage-srv/blob/master/cfg/config.json#L41"><code>Rules.Filter.Tag</code></a>: filtering based
+on Tag which is identifying one or more objects to which the rule applies
+(e.g. 'Tag { Key: 'id_1', Value: 'value_1' }' expires all objects tagged with the respective key-value pair).</p>
+</li>
+<li>
+<p><a href="https://github.com/restorecommerce/ostorage-srv/blob/master/cfg/config.json#L26"><code>Rules.ID</code></a>: unique identifier for the rule.
+The value cannot be longer than 255 characters.</p>
+</li>
+<li>
+<p><code>authorization:enable</code>: default value is <code>true</code>, if set to <code>true</code> then access-control check is performed, if value is set to <code>false</code> then access-control check is overridden.</p>
+</li>
+<li>
+<p><code>authorization:enforce</code>: default value is <code>true</code>, if set to <code>true</code> then result of access-control-check is enforced, if value is set to <code>false</code> the result of access-control check if logged and ignored.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="API"><a class="anchor" href="#API"></a>API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This microservice exposes the following gRPC endpoints:</p>
+</div>
+<div class="sect2">
+<h3 id="api_ostorage_put"><a class="anchor" href="#api_ostorage_put"></a><code>Put</code></h3>
+<div class="paragraph">
+<p>Used to store the Object to the Storage Server.
+Requests are performed using <code>io.restorecommerce.ostorage.Object</code> protobuf message as input and response
+is <code>io.restorecommerce.ostorage.Response</code> message. For Object key characters described as safe to use in the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">S3
+Object Key Naming Guidelines</a> are allowed.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.Object</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bucket to which the object should be mapped to.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blob.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object Key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metadata attached to Object.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/ostorage.proto"><code>io.restorecommerce.ostorage.Options</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">headers attached to Object.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject details</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.Options</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ContentEncoding header - Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ContentType header - A standard MIME type describing the format of the contents</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content_language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ContentLanguage header - The language the content is in</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content_disposition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ContentDisposition header - Specifies presentational information for the object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">length</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ContentLength header - Content size in bytes. This parameter is useful when the content size cannot be determined automatically</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x-amz-version-id header - Version ID of the newly created object, in case the bucket has versioning turned on</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">md5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ETag - Entity tag that identifies the newly created object&#8217;s data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/ostorage.proto"><code>io.restorecommerce.access_control.Attribute</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The tag-set for the object. The tag-set is used for filtering by tag</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">google.protobuf.Any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">additional data <code>data</code> provided as JSON object</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.Response</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Url of saved Object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bucket to which the object is mapped to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object Key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metadata attached to Object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/ostorage.proto"><code>io.restorecommerce.access_control.Attribute</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The tag-set for the object. The tag-set is used for filtering by tag</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">length</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size of uploaded object</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_ostorage_get"><a class="anchor" href="#api_ostorage_get"></a><code>Get</code></h3>
+<div class="paragraph">
+<p>Used to retrieve the Object from the Storage Server.
+Requests are performed using <code>io.restorecommerce.ostorage.GetRequest</code> protobuf message as input and response is <code>io.restorecommerce.ostorage.Object</code> message.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.GetRequest</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object Key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bucket to which the object is mapped to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If flag is set to <code>true</code> only metadata of object is fetched</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">download</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If flag is set to <code>true</code> then Content-Disposition is set as <code>attachment</code> else is set as <code>inline</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject details</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_ostorage_list"><a class="anchor" href="#api_ostorage_list"></a><code>List</code></h3>
+<div class="paragraph">
+<p>Used to list all the Objects in a Bucket from the Storage Server.
+Requests are performed using <code>io.restorecommerce.ostorage.ListRequest</code> protobuf message as input and response is <code>io.restorecommerce.ostorage.ObjectsData</code> message.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.ListRequest</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If bucket name provied it will return its files otherwise it will return all files</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">google.protobuf.Struct</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter based on fieldName, operation, value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject details</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.ObjectsData</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object_data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.ostorage.ObjectData</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objects data</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.ObjectData</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">url for Object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metadata attached to Object</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_ostorage_delete"><a class="anchor" href="#api_ostorage_delete"></a><code>Delete</code></h3>
+<div class="paragraph">
+<p>Used to delete the Object mapped to the Bucket from the Storage Server.
+Requests are performed using <code>io.restorecommerce.ostorage.Bucket</code> protobuf message as input and response is <code>google.protobuf.Empty</code> message.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.DeleteRequest</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bucket to which the object is mapped to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject details</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_ostorage_copy"><a class="anchor" href="#api_ostorage_copy"></a><code>Copy</code></h3>
+<div class="paragraph">
+<p>Used to copy the Object from one location to another in the Storage Server.
+If options are not provided, the object&#8217;s metadata is being preserved.
+When options are provided the metadata is being replaced.</p>
+</div>
+<div class="paragraph">
+<p>Requests are performed using <code>io.restorecommerce.ostorage.CopyRequest</code> protobuf message as input
+and response is <code>io.restorecommerce.ostorage.CopyResponse</code> message.</p>
+</div>
+<div class="paragraph">
+<p>The copy operation can also be used to update the metadata of an object (including tagging).
+In this case the concatenation of <code>bucket</code> and <code>key</code> input parameters should match the <code>copySource</code> string, in case if only object meta data information
+is specified in the <code>io.restorecommerce.ostorage.CopyRequest</code> and if tagging is not specified then by default the tags from source objects are copied to the new object.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.CopyRequest</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/ostorage.proto"><code>[] io.restorecommerce.ostorage.CopyRequestItem</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of objects to be copied</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject details</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.CopyResponse</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">response</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/ostorage.proto"><code>[] io.restorecommerce.ostorage.CopyResponseItem</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of response objects</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.CopyRequestItem</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Destination bucket</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">copySource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source path of object to be copied</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of object to be created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user defined metadata attached to Object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/ostorage.proto"><code>io.restorecommerce.ostorage.Options</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object metadata attached to Object.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.CopyResponseItem</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Destination bucket</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">copySource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source path of object to be copied</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of object to be created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user defined metadata attached to Object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/ostorage.proto"><code>io.restorecommerce.ostorage.Options</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object metadata attached to Object.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.OstorageMessage</code></p>
+</div>
+<div class="paragraph">
+<p><code>OstorageMessage</code> is used for firing events when objects are downloaded or
+uploaded:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bucket to which the object is mapped to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metadata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">google.protobuf.Any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object metadata</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="events"><a class="anchor" href="#events"></a>Events</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="emitted-events"><a class="anchor" href="#emitted-events"></a>Emitted</h3>
+<div class="paragraph">
+<p>List of events emitted by this microservice for below topics:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>restoreResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system restore response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>resetResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system reset response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system health check response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>versionResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system version response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>configUpdateResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">configuration update response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flushCacheResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flush ACS Cache response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.ostorage</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>objectUploaded</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fired after an object was uploaded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>objectDownloaded</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fired after an object was downloaded</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The <code>objectUploaded</code> and <code>objectDownloaded</code> events are using the message object
+<code>io.restorecommerce.ostorage.OstorageMessage</code>. Structure of message is defined above.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="consumed-events"><a class="anchor" href="#consumed-events"></a>Consumed</h3>
+<div class="paragraph">
+<p>This microservice consumes messages for the following events by topic:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>restoreCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for triggering for system restore</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>resetCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for triggering system reset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system health check</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>versionCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>configUpdateCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used to update configurations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>setApiKeyCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used to set API key</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Note</strong>: currently restore and reset are not implemented.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

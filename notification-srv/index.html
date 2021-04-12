@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Notification Service :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="notification-srv" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Notification Service</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Notification Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#features">Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#configuration">Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#API">API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_notification_send"><code>Send</code></a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#events">Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#emitted-events">Emitted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#consumed-events">Consumed</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Notification Service</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Notification Service</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/notification-srv/edit/master/docs/modules/ROOT/pages/index.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Notification Service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://travis-ci.org/restorecommerce/notification-srv?branch=master"><span class="image"><img src="http://img.shields.io/travis/restorecommerce/notification-srv/master.svg?style=flat-square" alt="Build Status"></span></a>
+<a href="https://david-dm.org/restorecommerce/notification-srv"><span class="image"><img src="https://img.shields.io/david/restorecommerce/notification-srv.svg?style=flat-square" alt="Dependencies"></span></a>
+<a href="https://coveralls.io/github/restorecommerce/notification-srv?branch=master"><span class="image"><img src="http://img.shields.io/coveralls/restorecommerce/notification-srv/master.svg?style=flat-square" alt="Coverage Status"></span></a></p>
+</div>
+<div class="paragraph">
+<p>A microservice for sending notifications part of the
+<a href="https://github.com/restorecommerce">Restorecommerce</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="anchor" href="#features"></a>Features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Sends notifications through different channels.</p>
+</li>
+<li>
+<p>Implemented channels are <em>Email</em> and <em>Log</em> (via <a href="https://github.com/winstonjs/winston">winston</a> or classic console).</p>
+</li>
+<li>
+<p>Internally the microservice uses the mailer module for sending email notifications which is a wrapper for <code>nodemailer</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: Unimplemented channels as of now are: Slack, Mattermost, SMS.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following Mail Server configuration properties under the
+<a href="https://github.com/restorecommerce/notification-srv/blob/master/cfg/config.json#L109">server:mailer</a>
+configuration are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>host</code>: hostname of mail server.</p>
+</li>
+<li>
+<p><code>port</code>: port of mail server to connect to.</p>
+</li>
+<li>
+<p><code>auth.user</code>: user name for mail server.</p>
+</li>
+<li>
+<p><code>auth.pass</code>: password for mail server.</p>
+</li>
+<li>
+<p><code>address</code>: specifies the from address for every message.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Alternatively the credentials for the mail server <code>auth.user</code> and <code>auth.pass</code> can be added as separate resource
+<code>Credential</code> resource using resources-srv.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="API"><a class="anchor" href="#API"></a>API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This microservice exposes the following gRPC endpoints:</p>
+</div>
+<div class="sect2">
+<h3 id="api_notification_send"><a class="anchor" href="#api_notification_send"></a><code>Send</code></h3>
+<div class="paragraph">
+<p>This is a generic operation which can be invoked to send any type of notifications.
+Requests are performed providing <code>io.restorecommerce.notification_req.NotificationReq</code> protobuf message as input
+and responses are a <code>google.protobuf.Empty</code> message.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.notification_req.NotificationReq</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20.4081%;">
+<col style="width: 16.3265%;">
+<col style="width: 30.6122%;">
+<col style="width: 20.4081%;">
+<col style="width: 12.2451%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Email</th>
+<th class="tableblock halign-left valign-top">Log</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.notification_req.Email</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email channel properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">log</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.notification_req.Log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">log channel properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL of a hbs template</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL of a hbs template</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transport</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directly declares the transportation channel. Possible values: <code>email</code> or <code>log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provider</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Further specifies the chosen transport. Example: use <code>winston</code> when transport is set to <code>log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attachments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[]<code>io.restorecommerce.notification_req.Attachment</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An array of attachment objects, see below</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.notification_req.Email</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20.4081%;">
+<col style="width: 16.3265%;">
+<col style="width: 30.6122%;">
+<col style="width: 20.4081%;">
+<col style="width: 12.2451%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Email</th>
+<th class="tableblock halign-left valign-top">Log</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string [ ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">an array of recipients email addresses that will appear on the to: field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string [ ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">an array of recipients email addresses that will appear on the cc: field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bcc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string [ ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">an array of recipients email addresses that will appear on the bcc: field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">replyto</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If set, the outgoing mail will have this replyTo header set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.notification_req.Log</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20.4081%;">
+<col style="width: 16.3265%;">
+<col style="width: 30.6122%;">
+<col style="width: 20.4081%;">
+<col style="width: 12.2451%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Email</th>
+<th class="tableblock halign-left valign-top">Log</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logging level ex: <code>info</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Attachments may be used in case of email notifications.
+Attachment properties are based on the standard <a href="https://community.nodemailer.com/using-attachments/">nodemailer API</a>:</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.notification_req.Attachment</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20.4081%;">
+<col style="width: 16.3265%;">
+<col style="width: 30.6122%;">
+<col style="width: 20.4081%;">
+<col style="width: 12.2451%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Email</th>
+<th class="tableblock halign-left valign-top">Log</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filename to be reported as the name of the attached file, use of unicode is allowed. If you do not want to use a filename, set this value as false, otherwise a filename is generated automatically</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String, Buffer or a Stream contents for the attachment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">buffer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">binary data eg.: images</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">path to a file or an URL (data uris are allowed as well) if you want to stream the file instead of including it (better for larger attachments)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional content type for the attachment, if not set will be derived from the filename property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">content_disposition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional content disposition type for the attachment, defaults to <code>attachment</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional content ID for using inline images in HTML message source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If set and content is string, then encodes the content to a Buffer using the specified encoding. Example values: base64, hex, binary etc. Useful if you want to use binary attachments in a JSON formatted e-mail object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Because of limitations in the protobuf protocol, there is single hatch:
+<code>content</code> should be specified as one of the attributes <code>text</code> (for strings) or <code>buffer</code> (raw bytes, like images).</p>
+</div>
+<div class="paragraph">
+<p>Textual attachments are appended in the mail as-is, while binary attachments are converted to base64 and then included
+(see <a href="https://github.com/restorecommerce/notification-srv/blob/master/test/notification_test.ts">tests</a>).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="events"><a class="anchor" href="#events"></a>Events</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="emitted-events"><a class="anchor" href="#emitted-events"></a>Emitted</h3>
+<div class="paragraph">
+<p>List of events emitted by this microservice for below topics:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system health check response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>versionResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system version response</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="consumed-events"><a class="anchor" href="#consumed-events"></a>Consumed</h3>
+<div class="paragraph">
+<p>This microservice consumes messages for the following events by topic:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system health check</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>versionCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.notification_req</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sendEmail</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to send email</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>sendEmail</code> events are based on the same protobuf message as the gRPC call for the <code>Send</code> endpoint.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

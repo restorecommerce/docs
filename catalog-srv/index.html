@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Catalog Service :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="catalog-srv" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Catalog Service</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Catalog Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#features">Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#API">API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_manufacturer">Manufacturer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_price_group">PriceGroup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_product_category">ProductCategory</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_product_prototype">ProductPrototype</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_product">Product</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_bundle">Bundle</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_offer">Offer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_product_crud">CRUD Operations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#events">Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#emitted-events">Emitted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#consumed-events">Consumed</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Catalog Service</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Catalog Service</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/catalog-srv/edit/master/docs/modules/ROOT/pages/index.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Catalog Service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://travis-ci.org/restorecommerce/catalog-srv?branch=master"><span class="image"><img src="https://img.shields.io/travis/restorecommerce/catalog-srv/master.svg?style=flat-square" alt="Build Status"></span></a>
+<a href="https://david-dm.org/restorecommerce/catalog-srv"><span class="image"><img src="https://img.shields.io/david/restorecommerce/catalog-srv.svg?style=flat-square" alt="Dependencies"></span></a>
+<a href="https://coveralls.io/github/restorecommerce/catalog-srv?branch=master"><span class="image"><img src="https://img.shields.io/coveralls/restorecommerce/catalog-srv/master.svg?style=flat-square" alt="Coverage Status"></span></a></p>
+</div>
+<div class="paragraph">
+<p>A microservice for catalog and offer management.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="anchor" href="#features"></a>Features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>It provides a <a href="https://grpc.io/docs">gRPC</a> interface for handling CRUD operations, catalog and offer functionality.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="API"><a class="anchor" href="#API"></a>API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This microservice exposes the following gRPC endpoints:</p>
+</div>
+<div class="sect2">
+<h3 id="api_manufacturer"><a class="anchor" href="#api_manufacturer"></a>Manufacturer</h3>
+<div class="paragraph">
+<p>A Manufacturer resource.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.manufacturer.Manufacturer</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer ID, unique, key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta info</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A list of Manufacturer resources.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.manufacturer.ManufacturerList</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturer.Manufacturer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Manufacturers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total_count</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of Manufacturers</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_price_group"><a class="anchor" href="#api_price_group"></a>PriceGroup</h3>
+<div class="paragraph">
+<p>A PriceGroup resource.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.price_group.PriceGroup</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PriceGroup ID, unique, key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta info</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A list of PriceGroup resources.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.price_group.PriceGroupList</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_group.PriceGroup</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of PriceGroups</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total_count</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of PriceGroups</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_product_category"><a class="anchor" href="#api_product_category"></a>ProductCategory</h3>
+<div class="paragraph">
+<p>A ProductCategory resource.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.product_category.ProductCategory</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ProductCategory ID, unique, key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta info</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">price_group_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_group.PriceGroup.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">price group identifier</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A list of ProductCategory resources.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.product_category.ProductCategoryList</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_category.ProductCategory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Product Categories</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total_count</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of Product Categories</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_product_prototype"><a class="anchor" href="#api_product_prototype"></a>ProductPrototype</h3>
+<div class="paragraph">
+<p>A ProductPrototype resource.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.product_prototype.ProductPrototype</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ProductPrototype ID, unique, key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta info</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">category_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_category.ProductCategory.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">price group identifier</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A list of ProductPrototype resources.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.product_prototype.ProductPrototypeList</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototype.ProductPrototype</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Product Prototypes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total_count</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of Product Prototypes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_product"><a class="anchor" href="#api_product"></a>Product</h3>
+<div class="paragraph">
+<p>A Product resource.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.product.Product</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product ID, unique, key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta info</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manufacturer_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturer.Manufacturer.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prototype_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototype.ProductPrototype.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product Prototype identifier</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A list of Product resources.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.product.ProductList</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product.Product</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Products</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total_count</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of Products</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_bundle"><a class="anchor" href="#api_bundle"></a>Bundle</h3>
+<div class="paragraph">
+<p>A Bundle resource.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.bundle.Bundle</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bundle ID, unique, key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta info</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product_ids</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[] <code>io.restorecommerce.product.Product.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Product identifiers</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A list of Bundle resources:</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.bundle.BundleList</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.bundle.Bundle</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Bundles</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total_count</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of Bundles</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_offer"><a class="anchor" href="#api_offer"></a>Offer</h3>
+<div class="paragraph">
+<p>A Offer resource.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.offer.Offer</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Offer ID, unique, key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta info</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bundle_ids</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.bundle.Bundle.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">one of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list of Bundle Identifiers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product_ids</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.product.Product.id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">one of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Product identifiers</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A list of Offer resources.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.offer.OfferList</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.offer.Offer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Offers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">total_count</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of Offers</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="api_product_crud"><a class="anchor" href="#api_product_crud"></a>CRUD Operations</h4>
+<div class="paragraph">
+<p>The microservice exposes the below CRUD operations for creating or
+modifying Product, ProductPrototype, ProductCategory, PriceGroup, Manufacturer, Bundle and Offer resources.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.product.Service</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method Name</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+<th class="tableblock halign-left valign-top">Response Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product.ProductList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product.ProductList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a list of Product resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.ReadRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product.ProductList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read a list of Product resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product.ProductList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product.ProductList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update a list of Product resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.DeleteRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a list of Prodeuct resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upsert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product.ProductList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product.ProductList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create or Update a list of Product resources</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.product_prototype.Service</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method Name</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+<th class="tableblock halign-left valign-top">Response Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototype.ProductPrototypeList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototype.ProductPrototypeList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a list of ProductPrototype resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.ReadRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototype.ProductPrototypeList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read a list of ProductPrototype resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototype.ProductPrototypeList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototype.ProductPrototypeList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update a list of ProductPrototype resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.DeleteRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a list of ProductPrototype resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upsert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototype.ProductPrototypeList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototype.ProductPrototypeList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create or Update a list of ProductPrototype resources</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.product_category.Service</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method Name</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+<th class="tableblock halign-left valign-top">Response Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_category.ProductCategoryList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_category.ProductCategoryList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a list of ProductCategory resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.ReadRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_category.ProductCategoryList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read a list of ProductCategory resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_category.ProductCategoryList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_category.ProductCategoryList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update a list of ProductCategory resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.DeleteRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a list of ProductCategory resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upsert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_category.ProductCategoryList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_category.ProductCategoryList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create or Update a list of ProductCategory resources</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.price_group.Service</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method Name</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+<th class="tableblock halign-left valign-top">Response Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_group.PriceGroupList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_group.PriceGroupList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a list of PriceGroup resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.ReadRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_group.PriceGroupList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read a list of PriceGroup resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_group.PriceGroupList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_group.PriceGroupList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update a list of PriceGroup resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.DeleteRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a list of PriceGroup resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upsert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_group.PriceGroupList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_group.PriceGroupList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create or Update a list of PriceGroup resources</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.manufacturer.Service</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method Name</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+<th class="tableblock halign-left valign-top">Response Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturer.ManufacturerList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturer.ManufacturerList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a list of Manufacturer resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.ReadRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturer.ManufacturerList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read a list of Manufacturer resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturer.ManufacturerList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturer.ManufacturerList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update a list of Manufacturer resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.DeleteRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a list of Manufacturer resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upsert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturer.ManufacturerList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturer.ManufacturerList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create or Update a list of Manufacturer resources</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.bundle.Service</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method Name</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+<th class="tableblock halign-left valign-top">Response Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.bundle.BundleList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.bundle.BundleList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a list of Bundle resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.ReadRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.bundle.BundleList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read a list of Bundle resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.bundle.BundleList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.bundle.BundleList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update a list of Bundle resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.DeleteRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a list of Bundle resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upsert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.bundle.BundleList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.bundle.BundleList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create or Update a list of Bundle resources</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.offer.Service</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method Name</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+<th class="tableblock halign-left valign-top">Response Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.offer.OfferList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.offer.OfferList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a list of Offer resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.ReadRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.offer.OfferList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read a list of Offer resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.offer.OfferList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.offer.OfferList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update a list of Offer resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.DeleteRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a list of Offer resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upsert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.offer.OfferList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.offer.OfferList</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create or Update a list of Offer resources</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For the detailed protobuf message structure of
+<code>io.restorecommerce.resourcebase.ReadRequest</code> and <code>io.restorecommerce.resourcebase.DeleteRequest</code>
+refer <a href="https://github.com/restorecommerce/resource-base-interface">resource-base-interface</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="events"><a class="anchor" href="#events"></a>Events</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="emitted-events"><a class="anchor" href="#emitted-events"></a>Emitted</h3>
+<div class="paragraph">
+<p>List of events emitted by this microservice for below topics:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.products.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product deleted</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_prototypes.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productPrototypeCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product prototype created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productPrototypeCreatedModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product prototype created modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productPrototypeCreatedDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product prototype created deleted</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.product_categorys.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productCategoryCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product category created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productCategoryModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product category modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>productCategoryDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">product category deleted</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.price_groups.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>priceGroupCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">price group created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>priceGroupModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">price group modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>priceGroupDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">price group deleted</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.manufacturers.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>manufacturerCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manufacturer created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>manufacturerModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manufacturer modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>manufacturerDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manufacturer deleted</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.bundles.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bundleCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bundle created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bundleModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bundle modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bundleDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bundle deleted</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.offers.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offerCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offer created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offerModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offer modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offerDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offer deleted</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="consumed-events"><a class="anchor" href="#consumed-events"></a>Consumed</h3>
+<div class="paragraph">
+<p>This microservice consumes messages for the following events by topic:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>restoreCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for triggering for system restore</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>resetCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">for triggering system reset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system health check</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>versionCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system version</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

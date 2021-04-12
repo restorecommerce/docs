@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Chassis Service :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="chassis-srv" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Chassis Service</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Chassis Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#features">Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#architecture">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#configuration">Configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#configuration_logging">Logging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#configuration_server">Server</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#configuration_middleware">Middleware</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#configuration_cache">Cache</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#configuration_database">Database</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#configuration_command_interface">Command Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#configuration_offset_store">Offset Store</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Chassis Service</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Chassis Service</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/chassis-srv/edit/master/docs/modules/ROOT/pages/index.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Chassis Service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.npmjs.com/package/@restorecommerce/chassis-srv"><span class="image"><img src="http://img.shields.io/npm/v/@restorecommerce/chassis-srv.svg?style=flat-square" alt="Version"></span></a>
+<a href="https://travis-ci.org/restorecommerce/chassis-srv?branch=master"><span class="image"><img src="http://img.shields.io/travis/restorecommerce/chassis-srv/master.svg?style=flat-square" alt="Build Status"></span></a>
+<a href="https://david-dm.org/restorecommerce/chassis-srv"><span class="image"><img src="https://img.shields.io/david/restorecommerce/chassis-srv.svg?style=flat-square" alt="Dependencies"></span></a>
+<a href="https://coveralls.io/github/restorecommerce/chassis-srv?branch=master"><span class="image"><img src="http://img.shields.io/coveralls/restorecommerce/chassis-srv/master.svg?style=flat-square" alt="Coverage Status"></span></a></p>
+</div>
+<div class="paragraph">
+<p>A base service part of the <a href="https://github.com/restorecommerce">Restorecommerce</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="anchor" href="#features"></a>Features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Business logic exposable via gRPC</p>
+</li>
+<li>
+<p>Retry and timeout logic</p>
+</li>
+<li>
+<p>Even sourcing via Kafka messaging</p>
+</li>
+<li>
+<p>Endpoint calls with custom middleware</p>
+</li>
+<li>
+<p>Primitives for logging, database access, cache handling or exposing system commands.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="architecture"><a class="anchor" href="#architecture"></a>Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The chassis service consists of the following components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a configuration loader</p>
+</li>
+<li>
+<p>a multi-transport configurable log infrastructure</p>
+</li>
+<li>
+<p>a base Restorecommerce microservice structure provided by the <a href="../../../../src/microservice/server.ts">Server</a> class,
+which emits state-related events and can be bound to a number of <a href="https://grpc.io/docs/">gRPC</a> endpoints,
+given a <a href="https://developers.google.com/protocol-buffers/docs/overview">Protocol Buffer</a> interface and a transport config</p>
+</li>
+<li>
+<p>custom middleware</p>
+</li>
+<li>
+<p>a cache-loader based on configuration files</p>
+</li>
+<li>
+<p>a provider-based mechanism to access different databases</p>
+</li>
+<li>
+<p>a base implementation for a <a href="https://github.com/restorecommerce/chassis-srv/blob/master/docs/modules/ROOT/pages/command-interface.adoc">command-interface</a></p>
+</li>
+<li>
+<p>periodic storage for <a href="https://kafka.apache.org/">Apache Kafka</a> topic offsets</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Configs are loaded using the <a href="https://github.com/indexzero/nconf">nconf</a>-based module
+<a href="https://github.com/restorecommerce/service-config">service-config</a>.</p>
+</li>
+<li>
+<p>Such configuration files may contain endpoint specifications
+along with their associated transports or simple access configs for backing services such as a database or even a Kafka instance.</p>
+</li>
+<li>
+<p>To remove the buffered data from being logged
+<a href="https://github.com/restorecommerce/chassis-srv/blob/master/test/cfg/config.json#L343">bufferedFields</a>
+configuration can be set.</p>
+</li>
+<li>
+<p>To mask the confidential data (such as password) from being logged
+link <code>maskFields</code> an array of fields can be set in configuration similar to buffer fields.</p>
+</li>
+<li>
+<p>To avoid a gRPC protobuf error when making a read query for resources which have
+oneOf fields defined in the protobuf file, the oneOf fields can be removed from
+the request items by providing the oneOfFields like in the service configuration
+below:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "oneOfFields": {
+    "resourceName": {
+      "oneOfName": [
+        "fieldName1",
+        "fieldName2"
+      ]
+    }
+  }
+}</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration_logging"><a class="anchor" href="#configuration_logging"></a>Logging</h3>
+<div class="paragraph">
+<p>Logging functionality is provided through <a href="https://github.com/restorecommerce/logger">logger</a>,
+which uses <a href="https://github.com/winstonjs/winston">winston</a>.
+Logger output transport, severity levels and other options are configurable.</p>
+</div>
+<div class="paragraph">
+<p>Default logging levels are:
+- <code>silly</code>
+- <code>verbose</code>
+- <code>debug</code>
+- <code>info</code>
+- <code>warn</code>
+- <code>error</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration_server"><a class="anchor" href="#configuration_server"></a>Server</h3>
+<div class="paragraph">
+<p>A <a href="https://github.com/restorecommerce/chassis-srv/blob/master/src/microservice/server.ts">Server</a> instance can provide multiple service endpoints
+and emits events related with the microservice&#8217;s state.
+An endpoint is a wrapped gRPC method accessible from any gRPC clients.
+It is also possible to configure the Server with number of times a request should be
+<a href="https://github.com/restorecommerce/chassis-srv/blob/master/test/microservice_test.ts#L456"><code>retried and timeout configurations</code></a>.
+Service responses always include a result or an error. When a <code>Server</code> is instantiated,
+it is possible to bind one or more services to it, each of them exposing its own RPC endpoints
+with an associated transport configuration (port, protobuf interfaces, service name, etc).
+Note that other transport types beside <code>gRPC</code> are theoretically possible,
+although that would require an extension of the <code>Server</code> class with a custom transport config.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration_middleware"><a class="anchor" href="#configuration_middleware"></a>Middleware</h3>
+<div class="paragraph">
+<p>Endpoint calls may be intercepted with any number of <a href="https://github.com/restorecommerce/chassis-srv/blob/master/test/middleware_test.ts">custom chained middlewares</a>.
+The request traverses the middleware before reaching the service function.
+The middleware can call the next middleware until the last middleware calls the service function.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration_cache"><a class="anchor" href="#configuration_cache"></a>Cache</h3>
+<div class="paragraph">
+<p>Multiple cache providers can be registered and loaded within a microservice.
+Such providers are managed with <a href="https://github.com/BryanDonovan/node-cache-manager">node-cache-manager</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration_database"><a class="anchor" href="#configuration_database"></a>Database</h3>
+<div class="paragraph">
+<p>The following database providers are implemented:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.arangodb.com/documentation/">ArangoDB</a></p>
+</li>
+<li>
+<p><a href="https://github.com/louischatriot/nedb">NeDB</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Providers include generic database handling operations (find, insert, upsert delete, truncate, etc).
+Query parameter structure for all exposed operations is similar with the structure used in
+<a href="https://docs.mongodb.com/manual/tutorial/getting-started/">MongoDB</a> queries.
+The ArangoDB provider supports graph database creation and exposes a simple API to manage vertices and edges.
+It also provides a flexible traversal method. For more details, see <a href="https://github.com/restorecommerce/chassis-srv/blob/master/test/graphs_test.ts">graph tests</a>
+and the <a href="https://docs.arangodb.com/3.3/HTTP/Gharial/">ArangoDB graphs documentation</a>.
+Database providers can be used as a database abstraction by any service that owns a set of resources.
+Furthermore, services can later expose their database operations via gRPC.
+Exposure of these operations is easily achieved using the <a href="https://github.com/restorecommerce/resource-base-interface">resource-base-interface</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration_command_interface"><a class="anchor" href="#configuration_command_interface"></a>Command Interface</h3>
+<div class="paragraph">
+<p>An interface for system commands (useful information retrieval, system control, etc) is also provided.
+For more details about all implemented operations please refer
+<a href="https://github.com/restorecommerce/chassis-srv/blob/master/docs/modules/ROOT/pages/command-interface.adoc">command-interface</a>.
+This interface can be directly exposed as a gRPC endpoint and it can be extended by a microservice for custom functionality.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration_offset_store"><a class="anchor" href="#configuration_offset_store"></a>Offset Store</h3>
+<div class="paragraph">
+<p>This stores the offset values for each Kafka topic within each microservice at a fixed interval
+to a <a href="https://redis.io/">Redis</a> database.
+Such intervals are configurable through the <code>offsetStoreInterval</code> configuration value.
+The offset values are stored with key <code>{kafka:clientId}:{topicName}</code>.
+In case of a service failure, a microservice can then read the last offset it stored before crashing and thus
+consume all pending messages since that moment.
+This feature can be disabled if the <code>latestOffset</code> configuration value is set to <code>true</code> - in this case,
+the service subscribes to the latest topic offset value upon system restart.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

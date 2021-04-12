@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Access Control Service :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="access-control-srv" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Access Control Service</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="index.html">Access Control Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#features">Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#configuration">Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#API">API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_rule"><code>Rule</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_policy"><code>Policy</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_policy_set"><code>PolicySet</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_is_allowed"><code>IsAllowed</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_what_is_allowed"><code>WhatIsAllowed</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#api_access_crud">CRUD Operations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#events">Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#emitted-events">Emitted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#consumed-events">Consumed</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Access Control Service</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Access Control Service</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/access-control-srv/edit/master/docs/modules/ROOT/pages/index.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Access Control Service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://travis-ci.org/restorecommerce/access-control-srv?branch=master"><span class="image"><img src="http://img.shields.io/travis/restorecommerce/access-control-srv/master.svg?style=flat-square" alt="Build Status"></span></a>
+<a href="https://david-dm.org/restorecommerce/access-control-srv"><span class="image"><img src="https://img.shields.io/david/restorecommerce/access-control-srv.svg?style=flat-square" alt="Dependencies"></span></a>
+<a href="https://coveralls.io/github/restorecommerce/access-control-srv?branch=master"><span class="image"><img src="http://img.shields.io/coveralls/restorecommerce/access-control-srv/master.svg?style=flat-square" alt="Coverage Status"></span></a></p>
+</div>
+<div class="paragraph">
+<p>A microservice for access control part of
+the <a href="https://github.com/restorecommerce">Restorecommerce</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="anchor" href="#features"></a>Features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Attribute-based_access_control">Attribute-based access control</a>
+inspired by <a href="https://en.wikipedia.org/wiki/XACML">XACML</a>.</p>
+</li>
+<li>
+<p>Implementing the PAP (partially), PDP, PRP.</p>
+</li>
+<li>
+<p>Supports arbitrary policies based on arbitrary attributes such as scoped roles as supported
+by the <a href="https://github.com/restorecommerce/identity-srv">Identity Service</a>.</p>
+</li>
+<li>
+<p>Control access to distributed resources centrally using
+<a href="https://github.com/restorecommerce/access-control-srv/blob/master/docs/modules/ROOT/pages/restorecommerce_ABAC.adoc">Rule, Policy and PolicySet</a>.</p>
+</li>
+<li>
+<p>Authorization policies can be updated at run time and affect all clients immediately.</p>
+</li>
+<li>
+<p><a href="https://github.com/restorecommerce/access-control-srv/blob/master/docs/modules/ROOT/pages/restorecommerce_ABAC.adoc">A detailed description</a>
+on how ABAC is implemented and URN references
+for <code>subject</code>, <code>resources</code> and <code>action</code> attributes.</p>
+</li>
+<li>
+<p>Mechanism to calculate HieararchicalScopes for Subject using <a href="https://kafka.apache.org/">Kafka</a>, caching of subject and HieararchicalScopes and invalidating the cache</p>
+</li>
+<li>
+<p>Invalidate <a href="https://github.com/restorecommerce/acs-client#caching">acs-client</a> cache via <code>flushCacheCommand</code> event.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration"><a class="anchor" href="#configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A GraphQL adapter has been integrated into the service for executing context queries
+<a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/rule.proto#L18">io.restorecommerce.rule.ContextQuery</a>
+to obtain required information to make the access decision.
+This GraphQL endpoint can be configured using <code>adapter.graphql.url</code> property in the
+<a href="https://github.com/restorecommerce/access-control-srv/blob/master/cfg/config.json#L283">configuration</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="API"><a class="anchor" href="#API"></a>API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This microservice exposes the following gRPC endpoints:</p>
+</div>
+<div class="sect2">
+<h3 id="api_rule"><a class="anchor" href="#api_rule"></a><code>Rule</code></h3>
+<div class="paragraph">
+<p>A Rule resource.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.rule.Rule</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rule ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rule name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rule description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Target</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rule target</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">context_query</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.rule.ContextQuery</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GraphQL query which can be performed to obtain required info for request</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom Javascript code to check if rule is applicable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Effect</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rule effect; possible values are <code>PERMIT</code> and <code>DENY</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.access_control.Target</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Property</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entity requesting access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">resources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Property</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resources to be accessed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Property</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Action to be performed on resources</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.access_control.Property</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute value</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.rule.ContextQuery</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">query</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query to retrieve external resources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.rule.Filter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of argument keys to be passed from <code>Request#context</code> to <code>query</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.rule.Filter</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">field to query</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_policy"><a class="anchor" href="#api_policy"></a><code>Policy</code></h3>
+<div class="paragraph">
+<p>A Policy resource consisting of set of Rules.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.policy.Policy</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Target</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy target</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.rule.Rule</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of rules bounded to a policy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">combining_algorithm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Combining algorithm to be applied to the rules set</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_policy_set"><a class="anchor" href="#api_policy_set"></a><code>PolicySet</code></h3>
+<div class="paragraph">
+<p>A PolicySet resource consisting of set of Policies.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.policy_set.PolicySet</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Target</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy target</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.policy.Policy</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of policies binded to a policy set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">combining_algorithm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Combining algorithm to be applied to the policy set</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_is_allowed"><a class="anchor" href="#api_is_allowed"></a><code>IsAllowed</code></h3>
+<div class="paragraph">
+<p>This operation is used when the target resource is known and it decides the outcome of an access control request.
+The policy or policy set is found to apply to a given request, its rules are evaluated to determine the access decision
+and response. Requests are performed providing <code>io.restorecommerce.access_control.Request</code> protobuf message as input
+and responses are a <code>io.restorecommerce.access_control.Response</code> message.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.access_control.Request</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Target</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request target</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">context</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Context</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Context variables for access control decisions based on custom scripts</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.access_control.Context</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subject requesting access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">resources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resources to access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">security</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Any</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">security context</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.access_control.Response</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">decision</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Decision</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access decision; possible values are <code>PERMIT</code>, <code>DENY</code> and <code>INDETERMINATE</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">obligation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obligation attached to decision</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_what_is_allowed"><a class="anchor" href="#api_what_is_allowed"></a><code>WhatIsAllowed</code></h3>
+<div class="paragraph">
+<p>This operation is used when there is not a specific target resource for a request. It returns a reverse query containing
+only the policies and rules applicable to a given request. They can then be used on the client side to infer permissions.
+Requests are performed providing <code>io.restorecommerce.access_control.Request</code> protobuf message as input and responses are
+a <code>io.restorecommerce.access_control.ReverseQuery</code> message.</p>
+</div>
+<div class="paragraph">
+<p>NOTE : For <code>IsAllowed</code> and <code>WhatIsAllowed</code> operations if <code>context</code> contains only the subject identifier, then the service will emit a message
+to <a href="https://github.com/restorecommerce/access-control-srv/blob/master/cfg/config.json#L326">Kafka-topic</a> with event name <code>hierarchicalScopesRequest</code>
+and service resonsible for creating the HieararchicalScopes will consume this message and send back <code>hierarchicalScopesResponse</code> which is then saved
+to redis <a href="https://github.com/restorecommerce/access-control-srv/blob/master/cfg/config.json#L11">subject</a> cache by this service.
+If the Subject <a href="https://docs.restorecommerce.io/identity-srv/index.html#api_user">role associations</a> are modified then this service invalidates both the subject cache and <code>acs-client</code> cache.</p>
+</div>
+<div class="paragraph">
+<p><code>io.restorecommerce.access_control.Request</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Target</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request target</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">context</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Context</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Context variables for access control decisions based on custom scripts</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.access_control.ReverseQuery</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">policy_sets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.policy_set.PolicySetRQ</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of applicable policy sets</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.policy_set.PolicySetRQ</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy Set ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Target</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy set target</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">combining_algorithm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Combining algorithm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Effect</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A policy target&#8217;s effect (only applicable if there are no rules)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.policy.PolicyRQ</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of policies bound to a policy set</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.policy.PolicyRQ</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Target</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy target</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">combining_algorithm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Combining algorithm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Effect</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A policy&#8217;s effect (only applicable if there are no rules)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">has_rules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to infer if effect should be considered or not</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.rule.RuleRQ</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of policies bound to a policy set</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.rule.RuleRQ</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy Set ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Target</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Policy set target</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Effect</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A policy&#8217;s effect (only applicable if there are no rules)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="api_access_crud"><a class="anchor" href="#api_access_crud"></a>CRUD Operations</h3>
+<div class="paragraph">
+<p>The microservice exposes the below CRUD operations for creating or modifying Rule, Policy and PolicySet resources.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Method Name</th>
+<th class="tableblock halign-left valign-top">Request Type</th>
+<th class="tableblock halign-left valign-top">Response Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.&lt;resource&gt;.&lt;resourceName&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.&lt;resource&gt;.&lt;resourceName&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of \&lt;resourceName&gt; be created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.ReadRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.&lt;resource&gt;.&lt;resourceName&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of \&lt;resourceName&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.&lt;resource&gt;.&lt;resourceName&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.&lt;resource&gt;.&lt;resourceName&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of \&lt;resourceName&gt; to be updated</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upsert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.&lt;resource&gt;.&lt;resourceName&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.&lt;resource&gt;.&lt;resourceName&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of \&lt;resourceName&gt; to be created or updated</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.resourcebase.DeleteRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of resource IDs to be deleted</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For detailed fields of protobuf messages <code>io.restorecommerce.resourcebase.ReadRequest</code> and
+<code>io.restorecommerce.resourcebase.DeleteRequest</code> refer <a href="https://github.com/restorecommerce/resource-base-interface/">resource-base-interface</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="events"><a class="anchor" href="#events"></a>Events</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="emitted-events"><a class="anchor" href="#emitted-events"></a>Emitted</h3>
+<div class="paragraph">
+<p>List of events emitted by this microservice for below topics:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>restoreResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system restore response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>resetResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system reset response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system health check response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>versionResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system version response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>configUpdateResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">configuration update response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flushCacheCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command event to flush ACS Cache</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flushCacheResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flush ACS Cache response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>setApiKeyResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set API Key response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.policy_sets.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>policy_setCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when policy_set is created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>policy_setModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when policy_set is modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>policy_setDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when policy_set is deleted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.policies.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>policyCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when policy is created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>policyModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when policy is modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>policyDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when policy is deleted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.rules.resource</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ruleCreated</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when rule is created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ruleModified</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when rule is modified</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ruleDeleted</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when rule is deleted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.user</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hierarchicalScopesRequest</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when HierarchicalScope does not exist in subject <code>context</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="consumed-events"><a class="anchor" href="#consumed-events"></a>Consumed</h3>
+<div class="paragraph">
+<p>This microservice consumes messages for the following events by topic:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 33%;">
+<col style="width: 36%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Topic Name</th>
+<th class="tableblock halign-left valign-top">Event Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.command</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>restoreCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used for system restore</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>resetCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used for system reset</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>healthCheckCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system health check</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>versionCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to get system version</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>flushCacheCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flushes ACS Cache</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>configUpdateCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used to update configurations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>setApiKeyCommand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used to set API key</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.user</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hierarchicalScopesResponse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emitted when HierarchicalScope response is received</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

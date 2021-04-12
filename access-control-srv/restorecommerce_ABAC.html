@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ABAC Core for Restorecommerce :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="access-control-srv" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Access Control Service</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Access Control Service</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html#features">Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html#configuration">Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html#API">API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#api_rule"><code>Rule</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#api_policy"><code>Policy</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#api_policy_set"><code>PolicySet</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#api_is_allowed"><code>IsAllowed</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#api_what_is_allowed"><code>WhatIsAllowed</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#api_access_crud">CRUD Operations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html#events">Events</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#emitted-events">Emitted</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="index.html#consumed-events">Consumed</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Access Control Service</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Access Control Service</a></li>
+    <li><a href="restorecommerce_ABAC.html">ABAC Core for Restorecommerce</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/access-control-srv/edit/master/docs/modules/ROOT/pages/restorecommerce_ABAC.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">ABAC Core for Restorecommerce</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://en.wikipedia.org/wiki/Attribute_Based_Access_Control">Attribute based access control</a> with for Restorecommerce
+inspired by <a href="http://en.wikipedia.org/wiki/XACML">XACML</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_model_message_structure"><a class="anchor" href="#_data_model_message_structure"></a>Data Model / Message Structure</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_policy"><a class="anchor" href="#_policy"></a>Policy</h3>
+<div class="paragraph">
+<p>A Policy consisting of rules.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- name
+- description
+- combiningAlgorithm [urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-overrides | urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:permit-overrides]
+(- target)
+- rule                    Reference to 1..n rules
+- effect [permit, deny]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_policyset"><a class="anchor" href="#_policyset"></a>PolicySet</h3>
+<div class="paragraph">
+<p>A set of policies.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- name
+- description
+- combiningAlgorithm      See policy
+- policy                  Reference to 1..n policies</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rule"><a class="anchor" href="#_rule"></a>Rule</h3>
+<div class="paragraph">
+<p>Atomic element of the ABAC system.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- name
+- description
+- contextQuery            GraphQL Queries whose results are provided in the data context of the evaluated code to provide essential information for the decision making
+- target
+  - resource
+    - attribute
+      - id                ex: urn:restorecommerce:acs:names:model:entity
+      - value             ex: urn:restorecommerce:model:device.Device
+  - action
+    - attribute
+      - id                ex: urn:oasis:names:tc:xacml:1.0:action:action-id
+      - value             ex: urn:restorecommerce:acs:names:action:create
+- condition               JavaScript Code, ex: subject.roles.includes('admin')
+- effect [permit, deny]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_general"><a class="anchor" href="#_general"></a>General</h3>
+<div class="paragraph">
+<p>The <code>subject</code>, <code>resource</code>, <code>action</code> properties are arrays and can contain 1..n elements.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_core_interface"><a class="anchor" href="#_api_core_interface"></a>API (Core Interface)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two main operations exposed through the API:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">isAllowed(request: Request): Response</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This method is used to evaluate a request based on the active policies.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ts hljs" data-lang="ts">whatIsAllowed(request: Request): PolicySetList</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This method returns a set of policies which match the request&#8217;s target for client-side evaluation.
+It is useful for cases in which there is not a specific target resource for a request like, for example,
+when a user aims to see as much resources as possible; in a such case, it is possible to call <code>whatIsAllowed</code> in order to infer on the
+client side how the resources would be filtered.</p>
+</div>
+<div class="paragraph">
+<p><em>Note</em>: this feature does not return any rule based on policy evaluation through dynamic code execution (through the <code>condition</code> property)
+as demanding such evaluation would require a replication of this functionality at client-side.</p>
+</div>
+<div class="sect2">
+<h3 id="_request"><a class="anchor" href="#_request"></a>Request</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- subject
+  # To identify subject by its ID
+  - id         ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
+  - value      ex: &lt;subject identifier&gt;
+
+  # To identify role scoping entity
+  - id         ex: urn:restorecommerce:acs:names:roleScopingEntity
+  - value      ex: urn:restorecommerce:model:organization.Organization
+
+  # To identify role scoping instance
+  - id         ex: urn:restorecommerce:acs:names:roleScopeInstance
+    value:     ex: &lt;organization identifier&gt;
+- resource
+  # To identify a domain model type
+  - id         ex: urn:restorecommerce:acs:names:model:entity
+  - value      ex: urn:restorecommerce:model:user.User
+
+  # To identify a single resource by its ID
+  - id         ex: urn:oasis:names:tc:xacml:1.0:resource:resource-id
+  - value      ex: &lt;some unique ID&gt;
+
+  # To identify a property of the selected resource(s)
+  - id         ex: urn:restorecommerce:acs:names:model:property
+  - value      ex: urn:xingular:model:User#password
+- action
+  - id         ex: urn:oasis:names:tc:xacml:1.0:action:action-id
+  - value      ex: urn:restorecommerce:acs:names:action:modify
+- context</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response"><a class="anchor" href="#_response"></a>Response</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- decision [PERMIT, DENY, NOT-APPLICABLE, INDETERMINATE]
+- obligation              TBD</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_policysetlist"><a class="anchor" href="#_policysetlist"></a>PolicySetList</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- policy_sets List of applicable policy sets containing only the applicable policies and rules</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_urn_reference"><a class="anchor" href="#_urn_reference"></a>URN Reference</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_restorecommerce_defined"><a class="anchor" href="#_restorecommerce_defined"></a>Restorecommerce defined</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>urn:restorecommerce:acs:*</code> ACS Related</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:model:*</code> Domain model related</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:*</code> Keywords for access control related concepts</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:role</code> Role as in RBAC</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:roleScopingEntity</code> Scopes a role by a given type</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:roleScopeInstance</code> Specify an actual instance of a scoping entity by its ID</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:hierarchicalRoleScoping</code> Specify if hierarchical role scope matching is done (if the property is not configured by default HR scoping is done)</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:ownerIndicatoryEntity</code> Specify the entity which indicates the owner of a resource</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:ownerInstance</code> Specify an actual instance of an owner entity</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:model:entity</code> An entity (type)</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:model:property</code> A property of an entity</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:operation</code> An operation (e. g. a mutation or query in a GraphQL API or a gRPC method)</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:read</code> Read access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:modify</code> Modify (update) access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:create</code> Create access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:delete</code> Delete access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:execute</code> Execute access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:drop</code> Drop access</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_xacml"><a class="anchor" href="#_xacml"></a>XACML</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>urn:oasis:names:tc:xacml:1.0:resource:resource-id</code> A resource ID which can uniquely identify an instance of a given entity type</p>
+</li>
+<li>
+<p>ex: <code>urn:oasis:names:tc:xacml:1.0:subject:subject-id</code> An ID of a subject</p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm</code> Diverse rule combining algorithms</p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:xacml:1.0:action:action-id</code> Denotes an action ID that in-turn defines an action performed on the given resource</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concepts"><a class="anchor" href="#_concepts"></a>Concepts</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_role_scoping"><a class="anchor" href="#_role_scoping"></a>Role Scoping</h3>
+<div class="paragraph">
+<p>A role might be scoped with a scoping entity which introduces a scope as third dimension to the typical RBAC tupel of user and role.
+This is an important concept for multi-tenancy whereas the scope can be perceived as a tenant. As an example take a multi-national corporation with
+lots of branches and business units and these business units need to be separated from each other in terms of data visibility.
+As the entity might be modeled to have a hierarchical relationship via a <code>parent</code> property, hierarchy aware separation is possible. Thus the hierarchy supports a tree data structure.</p>
+</div>
+<div class="sect3">
+<h4 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h4>
+<div class="sect4">
+<h5 id="_isallowed_resource_based_and_involving_hierarchical_scope_evaluation"><a class="anchor" href="#_isallowed_resource_based_and_involving_hierarchical_scope_evaluation"></a><code>isAllowed</code> - Resource based and involving hierarchical Scope Evaluation</h5>
+<div class="paragraph">
+<p>When a target resource is known and to decide the outcome of an access control request <code>isAllowed</code> operation is invoked.
+A Subject with ID as 'Alice' and having the role 'admin' within the scoping entity <code>Organization</code> with ID 'OrgA'.
+This user aims to 'read' a resource of type <code>Device</code>. The device is owned by an <code>Organization</code> with ID 'OrgB'.</p>
+</div>
+<div class="paragraph">
+<p>Request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">request:
+  target:
+    subject:
+      - id: ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
+        value: Alice
+      - id: urn:restorecommerce:acs:names:roleScopingEntity
+        value: urn:restorecommerce:model:organization.Organization
+      - id: urn:restorecommerce:acs:names:roleScopeInstance
+        value: OrgB
+    resources:
+      - id: urn:restorecommerce:acs:names:model:entity
+        value: urn:restorecommerce:model:device.Device
+      - id: urn:oasis:names:tc:xacml:1.0:resource:resource-id
+        value: deviceX
+    action:
+      - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+        value: urn:restorecommerce:acs:names:action:read
+    context:
+      subject:
+        id: Alice
+        name: Alice
+        role_associations:
+          - role: admin
+          attributes: # a list of attributes associated with the role
+            - id: urn:restorecommerce:acs:names:roleScopingEntity
+              value: urn:restorecommerce:model:organization.Organization
+            - id: urn:restorecommerce:acs:names:roleScopeInstance
+              value: OrgA
+        hierarchical_scope: # sub-tree of the scoping entity
+          - id: orgA
+            children:
+              - id: orgB
+      resources:
+        - id: deviceX
+          name: Device X
+          description: A simple device
+          meta:
+          created: &lt;timestamp&gt;
+          modified: &lt;timestamp&gt;
+          modified_by: RandomUser
+          owner:
+            - id: urn:restorecommerce:acs:names:ownerIndicatoryEntity
+              value: urn:restorecommerce:model:organization.Organization
+            - id: urn:restorecommerce:acs:names:ownerInstance
+              value: OrgB
+            - id: urn:restorecommerce:acs:names:ownerIndicatoryEntity
+              value: urn:restorecommerce:model:user.User
+            - id: urn:restorecommerce:acs:names:ownerInstance
+              value: RandomUser</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Policies:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">policy_sets:
+ - name: PolicySet A
+   description: General policy set.
+   combining_algorithm: urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:permit-overrides
+   policies:
+    - name: Policy A
+      description: A policy which contains device-related rules
+      combining_algorithm: urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:permit-overrides
+      rules:
+        - name: Rule A
+          description: A simple rule targeting a `read` by `Organization`-scoped users on Devices
+          target:
+            resources:
+                - id: urn:restorecommerce:acs:names:model:entity
+                  value: urn:restorecommerce:model:device.Device
+            action:
+                - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+                  value: urn:restorecommerce:acs:names:action:read
+            subject:
+                - id: urn:restorecommerce:acs:names:role
+                  value: admin
+                - id: urn:restorecommerce:acs:names:roleScopingEntity
+                  value: urn:restorecommerce:model:organization.Organization
+                - id: urn:restorecommerce:acs:names:hierarchicalRoleScoping
+                  value: 'true'
+          effect: PERMIT</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the example, the target resource&#8217;s owner has among its attributes an <code>Organization</code> with ID <code>OrgA</code>,
+which is passed in the subject&#8217;s contextual information with organization ID <code>OrgB</code> as its children.
+Since the device is owned by <code>OrgB</code>, it is considered to be under the subject&#8217;s hierarchical scope and therefore the matching rules can be checked.</p>
+</div>
+<div class="paragraph">
+<p>There is one policy with one rule, which permits access by <code>Organization</code>-scoped users with role <code>admin</code> to resources of entity <code>Device</code>.
+Since the request&#8217;s target matches all attributes from this rule a <code>PERMIT</code> effect is returned,
+which according to the policy&#8217;s combining algorithm means access should be granted to the resource. If the value of <code>urn:restorecommerce:acs:names:hierarchicalRoleScoping</code> was set to 'false' in the Rule above then the subject would be denied access to resource since <code>Device</code> resource is owned by <code>OrgB</code> and the hierarchical scope matching would be skipped.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_whatisallowed_no_specific_resource_or_specific_action_is_defined"><a class="anchor" href="#_whatisallowed_no_specific_resource_or_specific_action_is_defined"></a><code>whatIsAllowed</code> - No Specific Resource or Specific Action is defined</h5>
+<div class="paragraph">
+<p>The operation <code>whatIsAllowed</code> is used when there is not a specific target resource for a request, for example, when Subject aims to see as much resources as possible.
+This example illustrates permissible actions on two resource entities <code>Address</code> and <code>Country</code> for Subject <code>Alice</code> who has the role <code>admin</code> within the scoping entity
+<code>Organization</code> with ID 'OrgA'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">request:
+    target:
+      subject:
+        - id: ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
+          value: Alice
+        - id: urn:restorecommerce:acs:names:roleScopingEntity
+          value: urn:restorecommerce:model:organization.Organization
+        - id: urn:restorecommerce:acs:names:roleScopeInstance
+          value: OrgA
+      resources:
+        - id: urn:restorecommerce:acs:names:model:entity
+          value: urn:restorecommerce:model:address.Address
+        - id: urn:restorecommerce:acs:names:model:entity
+          value: urn:restorecommerce:model:country.Country
+      action:
+        - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+          value: urn:restorecommerce:acs:names:action:create
+        - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+          value: urn:restorecommerce:acs:names:action:read
+        - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+          value: urn:restorecommerce:acs:names:action:modify
+        - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+          value: urn:restorecommerce:acs:names:action:delete
+    context:
+      subject:
+        id: Alice
+        name: Alice
+        role_associations:
+          - role: admin
+            attributes: # a list of attributes associated with the role
+              - id: urn:restorecommerce:acs:names:roleScopingEntity
+                value: urn:restorecommerce:model:organization.Organization
+              - id: urn:restorecommerce:acs:names:roleScopeInstance
+                value: OrgA
+        hierarchical_scope: # sub-tree of the scoping entity
+          - id: orgA
+            children:
+              - id: orgB</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There are two policy sets, <code>Address</code> policy containing <code>PERMIT</code> rules for <code>create</code> and <code>read</code> action.
+<code>Conuntry</code> policy containing <code>PERMIT</code> rules for <code>modify</code> and <code>delete</code> action.
+Response containing list of applicable rules for above request.</p>
+</div>
+<div class="paragraph">
+<p>PolicySetList:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">policy_sets:
+ - name: PolicySet A
+   description: General policy set.
+   combining_algorithm: urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:permit-overrides
+   policies:
+    - name: Address Policy
+      description: A policy which contains address-related rules
+      combining_algorithm: urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:permit-overrides
+      rules:
+        - name: Rule A
+          description: A rule targeting a `create` and `read` by `Organization`-scoped users on Address
+          target:
+            resources:
+                - id: urn:restorecommerce:acs:names:model:entity
+                  value: urn:restorecommerce:model:address.Address
+            action:
+                - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+                  value: urn:restorecommerce:acs:names:action:create
+                - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+                  value: urn:restorecommerce:acs:names:action:read
+            subject:
+                - id: urn:restorecommerce:acs:names:role
+                  value: admin
+                - id: urn:restorecommerce:acs:names:roleScopingEntity
+                  value: urn:restorecommerce:model:organization.Organization
+          effect: PERMIT
+    - name: Country Policy
+      description: A policy which contains country-related rules
+      combining_algorithm: urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:permit-overrides
+      rules:
+        - name: Rule A
+          description: A rule targeting a `modify` and `delete` by `Organization`-scoped users on Country
+          target:
+            resources:
+                - id: urn:restorecommerce:acs:names:model:entity
+                  value: urn:restorecommerce:model:country.Country
+            action:
+                - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+                  value: urn:restorecommerce:acs:names:action:modify
+                - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+                  value: urn:restorecommerce:acs:names:action:delete
+            subject:
+                - id: urn:restorecommerce:acs:names:role
+                  value: admin
+                - id: urn:restorecommerce:acs:names:roleScopingEntity
+                  value: urn:restorecommerce:model:organization.Organization
+          effect: PERMIT</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_operation_based"><a class="anchor" href="#_operation_based"></a>Operation based</h5>
+<div class="paragraph">
+<p>Policies:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">...
+      rules:
+        - name: Rule A
+          description: A simple rule targeting a high level operation in the GraphQL API
+          target:
+            resources:
+                - id: urn:restorecommerce:acs:names:operation
+                  value: mutation.orgDelete
+            action:
+                - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+                  value: urn:restorecommerce:acs:names:action:execute
+            subject:
+                - id: urn:restorecommerce:acs:names:role
+                  value: admin
+                - id: urn:restorecommerce:acs:names:roleScopingEntity
+                  value: urn:restorecommerce:model:organization.Organization
+          effect: PERMIT</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture_decisions"><a class="anchor" href="#_architecture_decisions"></a>Architecture Decisions</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>No internal attribute store such as Predix ACS.</p>
+</li>
+<li>
+<p>Adapters to pull resource or subject attributes for example via GQL.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_future_stuff"><a class="anchor" href="#_future_stuff"></a>Future Stuff</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_further_attributes_describing_a_subject"><a class="anchor" href="#_further_attributes_describing_a_subject"></a>Further Attributes describing a Subject</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>type [systemuser|]</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_further_potential_attributes_describing_a_request_environment"><a class="anchor" href="#_further_potential_attributes_describing_a_request_environment"></a>Further potential Attributes describing a Request (Environment)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>geoLocation</code></p>
+</li>
+<li>
+<p><code>dateTimeFron</code> / <code>dateTimeTo</code></p>
+</li>
+<li>
+<p><code>connection</code></p>
+</li>
+<li>
+<p><code>remoteIpv4Address</code></p>
+</li>
+<li>
+<p><code>remoteIpv6Address</code></p>
+</li>
+<li>
+<p><code>callRate</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>
