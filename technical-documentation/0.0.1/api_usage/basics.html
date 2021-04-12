@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Basics :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item hide-for-print">
+        <input id="search-input" type="text" placeholder="Search...">
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="technical-documentation" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Technical Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction/introduction.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/architecture.html">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../installation/installation.html">Installation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../operation/operation.html">Operation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API Usage</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="basics.html">Basics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crud-actions.html">CRUD Actions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="querying.html">Querying</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authorization.html">Authorization</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html">Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#building">Building</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../development/development.html#running">Running</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-locally">Locally</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-docker">As a container</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#environment">Environment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#testing">Testing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/roles.html">Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/tenants.html">Tenants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/attribute-based-access-control.html">Attribute Based Access Control</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Technical Documentation</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Access Control Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Catalog Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Chassis Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Fulfillment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Identity Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Indexing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Invoicing Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Notification Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Object Storage Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Ordering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Payment Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">PDF Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rendering Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Resource Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Scheduling Service</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Technical Documentation</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../introduction/introduction.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Technical Documentation</a></li>
+    <li>API Usage</li>
+    <li><a href="basics.html">Basics</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/docs/edit/master/modules/ROOT/pages/api_usage/basics.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Basics</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Data hosted on Invend is exposed as resources accessible through a uniform hypermedia API which allows retrieval and manipulation.
+The API-entry-point is either the application&#8217;s ID as subdomain of <code>invend.eu</code>&#8201;&#8212;&#8201;called <em>API domain</em>, or a DNS CNAME alias which of it:</p>
+</div>
+<div class="paragraph">
+<p><code>{app ID}.invend.eu</code></p>
+</div>
+<div class="paragraph">
+<p>The API follows the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> architectural model.
+Resources are acted upon with <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> action methods (verbs) having the following purpose:<table class="vclTable"><thead><tr><th>HTTP Method</th>
+     <th>Description</th></tr></thead>
+  <tbody><tr><td>OPTION</td>
+      <td>Used for preflight requests in a CORS scenario (see XXX).</td></tr>
+    <tr><td>HEAD&lt;/span&gt;</td>
+      <td>Just get the HTTP header info.</td></tr>
+    <tr><td>GET</td>
+      <td>Read a resource.</td></tr>
+    <tr><td>POST</td>
+      <td><ul><li>Append a resource to the specified collection (an identifier is
+              generated by the server).</li>
+          <li>Perform resource specific operations such as
+              initiating a password reset process for a user.</li></ul></td></tr>
+    <tr><td>PUT</td>
+      <td>Create or replace a resource with a given identifier.</td></tr>
+    <tr><td>PATCH</td>
+      <td>Partially update a resource (add, remove or overwrite single
+      properties of the resource).</td></tr>
+    <tr><td>DELETE</td>
+      <td>Delete a resource.</td></tr></tbody></table></p>
+</div>
+<div class="paragraph">
+<p><a href="xxx">Resources</a> reside on the server.
+Client and server exchange representations of these resources as <a href="http://en.wikipedia.org/wiki/HTTP_body_data">HTTP body data</a>.
+In the following, the term <em>resource</em> is used as abbreviation of <em>resource representation</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_transport_encoding_and_format"><a class="anchor" href="#_data_transport_encoding_and_format"></a>Data Transport, Encoding and Format</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_http_1_1_protocol"><a class="anchor" href="#_http_1_1_protocol"></a>HTTP 1.1 Protocol</h3>
+<div class="paragraph">
+<p>HTTP 1.1 is used to transfer data and should be used in favor of 1.0.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_https_protected_transport"><a class="anchor" href="#_https_protected_transport"></a>HTTPS protected Transport</h3>
+<div class="paragraph">
+<p>Data privacy is ensured by using the HTTP over <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">TLS</a>&#8201;&#8212;&#8201;the HTTPS protocol.</p>
+</div>
+<div class="paragraph">
+<p>TLS is only available on the API domain and not on DNS aliases.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spdy_extension"><a class="anchor" href="#_spdy_extension"></a>SPDY Extension</h3>
+<div class="paragraph">
+<p>The <a href="http://en.wikipedia.org/wiki/SPDY">SPDY</a> protocol (baed on TLS, HTTP) used if supported by the client.
+SPDY is a precursor of HTTP 2.0 and yields better performance in terms of latency.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_utf_8_data_encoding"><a class="anchor" href="#_utf_8_data_encoding"></a>UTF-8 Data Encoding</h3>
+<div class="paragraph">
+<p>Structured resources are <a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> encoded.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_json_ld_data_format"><a class="anchor" href="#_json_ld_data_format"></a>JSON-LD Data Format</h3>
+<div class="paragraph">
+<p>Linked data resources are serialized in <a href="http://www.w3.org/TR/json-ld/">JSON-LD</a>, a format to serialize <em>Linked Data</em> based on <a href="http://en.wikipedia.org/wiki/JavaScript_Object_Notation">JSON</a> and transferred in the HTTP body with the <a href="http://en.wikipedia.org/wiki/MIME">MIME</a> media type <code>application/ld+json</code>.
+No other serialization formats such as XML or Turtle are supported for linked resources at this time.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_iso_time_and_date_format"><a class="anchor" href="#_iso_time_and_date_format"></a>ISO Time and Date Format</h3>
+<div class="paragraph">
+<p>If not specified otherwise, all date values are <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> formatted and represented in the <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC time zone</a>: <code>{YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}.{SSS}{TZ}</code>.
+An example date string: <code>2014-08-31T12:00:00.000Z</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_internationalized_resource_identifiers"><a class="anchor" href="#_internationalized_resource_identifiers"></a>Internationalized Resource Identifiers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Resources itself and many other concepts such as types and classes are identified by <a href="http://en.wikipedia.org/wiki/Internationalized_Resource_Identifier">Internationalized Resource Identifiers</a> (IRI).
+An IRI in short is a generalized URI with a less restrictive character set.</p>
+</div>
+<div class="paragraph">
+<p>IRIs are treated as <a href="http://xml2rfc.ietf.org/public/rfc/html/rfc3986.html#uri-reference">RFC3986 URI reference</a> and thus relative references are resolved according to the corresponding <a href="http://xml2rfc.ietf.org/public/rfc/html/rfc3986.html#reference-resolution">reference resolution</a> rules.
+In general absolute and relative forms can be distinguished.
+Relative IRIs might be relative to a collection or the API domain (authority part of the IRI).</p>
+</div>
+<div class="paragraph">
+<p>For reference resolution, the following ways to define the base IRIs, against which the relative reference is applied, are supported in order of precedence:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Base IRI embedded in content via the <code>@base</code> property for LD resources.</p>
+</li>
+<li>
+<p>IRI used to access the resource.</p>
+</li>
+<li>
+<p>Default base IRI which is defined by in the resource model (API domain and <code>path</code> property).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The server validates client provided IRIs in cases where ambiguous may exist and informs the client accordingly.</p>
+</div>
+</div>
+</div>
+<h1 id="_interacting_with_resources_through_operations" class="sect0"><a class="anchor" href="#_interacting_with_resources_through_operations"></a>Interacting with Resources through Operations</h1>
+<div class="openblock partintro">
+<div class="content">
+This section describes how to interact with resources through operations.
+The description of these affordances is based on <a href="http://www.hydra-cg.com/spec/latest/core/">Hydra Core</a>&#8201;&#8212;&#8201;an emergeing vocabulary to describe Web APIs.
+</div>
+</div>
+<div class="sect1">
+<h2 id="_crud_operations"><a class="anchor" href="#_crud_operations"></a>CRUD Operations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The basic operations to create, read, update and delete a resource are shared by all resource types.
+The following table provides an overview of the operations, mapping to HTTP methods and their modification semantics.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Operation</th>
+<th class="tableblock halign-left valign-top">HTTP Method</th>
+<th class="tableblock halign-left valign-top">Modification Semantics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RetrieveResourceOperation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>read</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AppendResourceOperation&lt;/span&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>create</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CreateOrReplaceOperation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>create</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UpdateResourceOperation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PATCH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>update</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeleteResourceOperation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DELETE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>delete</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Operations do not obsolete the HTTP methods like <em>GET</em>&#8201;&#8212;&#8201;they are just mapped to them to have a formal identifier for those operations which can be referred to.</p>
+</div>
+<div class="paragraph">
+<p>Operations supported by a resource are announced in the <code>operation</code> property.
+For example a client having read and write access to an address resource receives this when getting a resource:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"operation": [
+  {
+    "@type": "RetrieveResourceOperation",
+    "method": "GET",
+    "returns": "http://meta.invend.eu/classes/Address"
+  },
+  {
+    "@type": "AppendResourceOperation",
+    "method": "POST",
+    "expects": "http://meta.invend.eu/classes/Address"
+  },
+  {
+    "@type": "CreateOrReplaceOperation",
+    "method": "PUT",
+    "expects": "http://meta.invend.eu/classes/Address"
+  },
+  {
+    "@type": "UpdateResourceOperation",
+    "method": "PATCH"
+  },
+  {
+    "@type": "DeleteResourceOperation",
+    "method": "DELETE"
+  }
+]</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_request_headers"><a class="anchor" href="#_request_headers"></a>Request Headers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The API applies <a href="http://en.wikipedia.org/wiki/Content_negotiation">content negotiation</a> via the <code>Accept</code> header.
+When data is requested, the following content types will negotiate to <code>application/ld+json</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/ld+json</code></p>
+</li>
+<li>
+<p><code>application/json</code></p>
+</li>
+<li>
+<p><code><strong>/</strong></code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sending data requires the <code>Content-Type</code> header to be set to <code>application/ld+json</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following header is required in case of a cross origin request:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="http://tools.ietf.org/id/draft-abarth-origin-03.html">origin</a> URL: <code>Origin: {proto}{fqdn}/{area}</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These headers are omitted in the following examples to keep them brief.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_response_codes"><a class="anchor" href="#_response_codes"></a>Response Codes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Responses carry a meaningful HTTP status code and a response body.
+API consumers must interpret the HTTP response code as outcome of the request and react accordingly.
+All supported status codes are listed in the following table:<table class="vclTable"><thead><tr><th>HTTP Status Code</th>
+      <th>Description</th></tr></thead>
+  <tbody><tr><td>200 OK</td>
+      <td>The operation was successful.</td></tr>
+    <tr><td>204 No Content</td>
+      <td>The operation was successful but the server did not return any content.
+        For resource updates: returned when the key already existed and the
+        file was replaced with what you sent.</td></tr>
+    <tr><td>301 Moved Permanently</td>
+      <td>The requested resource has been assigned a new permanent URI
+        and any future references to this resource should use one of
+        the returned URIs.</td></tr>
+    <tr><td>303 See Other</td>
+      <td>The resource was created.
+        The <code>Location</code> header contains the URL to query the newly
+        created resource.</td></tr>
+    <tr><td>400 Bad Request</td>
+      <td>The submitted data in the request body or the query string parameters are
+        syntactically incorrect or invalid in terms of format.</td></tr>
+    <tr><td>401 Unauthorized</td>
+      <td>No or invalid authentication credentials have been provided</td></tr>
+    <tr><td>402 Payment Required</td>
+      <td>A payment according to the contract with the provider of Invend is required</td></tr>
+    <tr><td>403 Forbidden</td>
+      <td><ul><li>A request has been made from an origin domain which is not
+          granted to issue CORS requests.This might be the case if the
+          application domain is not or nor correctly registered.</li>
+          <li>Although the provided authentication information were valid,
+          the client is not granted to perform the requested operation on
+          the resource</li></ul></td></tr>
+    <tr><td>404 Not Found</td>
+      <td>The requested resource could not be found.</td></tr>
+    <tr><td>406 Not Acceptable</td>
+      <td>An unsupported response format was requested.</td></tr>
+    <tr><td>415 Unsupported Media Type</td>
+      <td>Data has been sent in an unsupported format.</td></tr>
+    <tr><td>409 Conflict</td>
+      <td>A resource with the provided ID already exists.</td></tr>
+    <tr><td>413 Request Entity Too Large</td>
+      <td>Request size limit exceeded.</td></tr>
+    <tr><td>429 Too Many Requests</td>
+      <td>Rate limit exceeded.</td></tr>
+    <tr><td>500 Internal Server Error</td>
+      <td>An internal error on the server occurred.</td></tr>
+    <tr><td>503 Service Unavailable</td>
+      <td>We are temporarily unable to return the representation.
+      Try again in a reasonable amount of time.</td></tr></tbody></table></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_responses"><a class="anchor" href="#_error_responses"></a>Error Responses</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Client errors are denoted by a <code>4xx</code> status code, sever errors by a <code>5xx</code>.
+For some errors, also the body should be interpreted to derive a cause.</p>
+</div>
+<div class="paragraph">
+<p>A request yielding an error results in a response like this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "hydra": "http://www.w3.org/ns/hydra/core#",
+    "dct": "http://www.w3.org/ns/hydra/core#",
+    "Error": "hydra:Error",
+    "date": "dct:created",
+    "request": "dct:identifier",
+    "statusCode": "hydra:statusCode",
+    "title": "hydra:title",
+    "description": "hydra:description",
+    "seeAlso": { "@id": "rdfs:seeAlso", "@type": "@id" },
+   },
+  "@type": "Error",
+  "date": "2014-03-13T19:43:18.139Z",
+  "request": "4d32dd9f-311b-47c6-97a3-8babf9b2d0b1",
+  "statusCode": 403,
+  "title": "Forbidden",
+  "description": "The provided authentication information were valid but permission based on your credentials is not granted to perform the requested operation.",
+  "seeAlso": "https://dev.invend.eu"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<h1 id="_content_negotiation" class="sect0"><a class="anchor" href="#_content_negotiation"></a>Content Negotiation</h1>
+<div class="openblock partintro">
+<div class="content">
+The API strictly adheres to the <a href="http://en.wikipedia.org/wiki/Content_negotiation">content negotiation</a> principle of HTTP.
+While the content representation (via the content type headers) is defined above, this section deals with the negotiable aspects of the content itself.
+</div>
+</div>
+<div class="sect1">
+<h2 id="_multilingual_resources"><a class="anchor" href="#_multilingual_resources"></a>Multilingual Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Subject to negotiation are the values of properties which have language variants.
+Language tags are formatted according to the <a href="http://tools.ietf.org/html/bcp47">BCP 47</a> standard.
+Typically they consist of locale and an optional territory specific variant suffix.
+So a valid locale is for example: <code>en-GB</code>.</p>
+</div>
+<div class="paragraph">
+<p>If a suffix (<code>GB</code> in this example) is given, the exact translation for this variant is tried to be resolved, if it does not exist, the base locale (<code>en</code> in this example) is used;
+The so-called <em>fall back locale</em> is only considered in the case of absence of both.
+There are the following ways to specify the preferred locale of which only the first is real HTTP based content negotiation.</p>
+</div>
+<div class="sect2">
+<h3 id="_accept_language_header"><a class="anchor" href="#_accept_language_header"></a>Accept Language Header</h3>
+<div class="paragraph">
+<p>Locales specified in the <code>accept-language</code> header are tried to be accorded to in the weighted order representing their priority.
+The primary locale is the one with the highest priority and the second priority is the fall back locale.
+If non of the primary locales can be resolved, the fall back locale is tried to be resolved.
+For the value <code>en-us,de-de;q=0.8</code>, <code>en-US</code> is used as primary locale and through the variant based fall back also <code>en</code>.
+<code>de-DE</code> as it is explicitly specified as second priority and thus the fall back locale.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_query_string_parameters"><a class="anchor" href="#_query_string_parameters"></a>Query String Parameters</h3>
+<div class="paragraph">
+<p>There are the optional query string parameters <code>locale</code> and <code>fallbackLocale</code> which may be used if the corresponding HTTP request headers cannot be influenced.
+Each parameter takes a single language tag.
+The query string parameters take precedence over the corresponding headers.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getting_multiple_translations"><a class="anchor" href="#_getting_multiple_translations"></a>Getting multiple Translations</h3>
+<div class="paragraph">
+<p>Multiple translations at once can be retrieved with the <code>locales</code> query parameter.
+It accepts a colon separated list of the desired locales.</p>
+</div>
+</div>
+</div>
+</div>
+<h1 id="_client_based_caching" class="sect0"><a class="anchor" href="#_client_based_caching"></a>Client based Caching</h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p>All resource types are returned with the <code>last-modified</code> response header to enable clients to caching them.
+Clients may remember this date and make a conditional request using the request header <code>if-modified-since: {date}</code> for subsequent requests.</p>
+</div>
+<div class="paragraph">
+<p>The last-modified date is derived from the date properties <code>created</code> and <code>modified</code> (both from the <a href="http://dublincore.org/documents/dcmi-terms/">DC terms namespace</a>) for LD resources.
+For collections of resources, the most recently changed entry is used as last-modified date.</p>
+</div>
+<div class="paragraph">
+<p>Etags are not used by this API.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exceptions"><a class="anchor" href="#_exceptions"></a>Exceptions</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Files ending with <code>.appcache</code> are delivered as not cacheable to force user agents to check for updates.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h1 id="_cross_origin_resource_sharing" class="sect0"><a class="anchor" href="#_cross_origin_resource_sharing"></a>Cross Origin Resource Sharing</h1>
+<div class="openblock partintro">
+<div class="content">
+<a href="http://www.w3.org/TR/cors">Cross Origin Resource Sharing</a> (CORS) is supported by the API and may be controlled by the API owner.
+The relevant header to denote the origin of a request is the <code>origin</code> header which must have a value of the form <code>{proto}{fqdn}</code>.
+The following CORS requests exemplify the outcomes of typical cases.
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A simple and allowed cross origin request which does not involve a preflight request looks like this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ curl -v -H 'Origin: https://www.invend.eu' -H 'Access-Control-Request-Method: GET' https://app-x.invend.eu/addresses/
+&lt; Access-Control-Allow-Origin: https://www.invend.eu
+&lt; Access-Control-Allow-Credentials: true
+&lt; Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, Link, Cache-Control, ETag, Last-Modified
+&lt; Access-Control-Max-Age: 1728000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The client may cache the response for 20 days considering the <code>Access-Control-Max-Age</code> header.</p>
+</div>
+<div class="paragraph">
+<p>A preflight request with positive reply:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ curl -v -X OPTIONS -H 'Origin: https://www.invend.eu' -H 'Access-Control-Request-Method: GET' https://app-x.invend.eu/addresses/
+&lt; HTTP/1.1 204 No Content
+&lt; Access-Control-Allow-Origin: https://www.invend.eu
+&lt; Access-Control-Allow-Credentials: true
+&lt; Access-Control-Expose-Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, Link, Cache-Control, ETag, Last-Modified
+&lt; Access-Control-Max-Age: 1728000
+&lt; Access-Control-Allow-Methods: HEAD, GET, PUT, POST, DELETE, OPTIONS
+&lt; Access-Control-Allow-Headers: Authorization, Content-Length, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since
+&lt; Strict-Transport-Security: max-age=1728000; includeSubDomains</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A preflight request with negative reply due to an invalid origin:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ curl -v -X OPTIONS -H 'Origin: http://invalid-origin.tld' -H 'Access-Control-Request-Method: GET' https://app-x.invend.eu/addresses/
+&lt; HTTP/1.1 403 Forbidden</pre>
+</div>
+</div>
+</div>
+</div>
+<h1 id="_limits" class="sect0"><a class="anchor" href="#_limits"></a>Limits</h1>
+<div class="openblock partintro">
+<div class="content">
+Certain limits are lined up to prevent abuse of the API.
+</div>
+</div>
+<div class="sect1">
+<h2 id="_request_rate"><a class="anchor" href="#_request_rate"></a>Request Rate</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The request rate is limited per IP address at a maximum of 180 within a time window of 15 minutes.
+The following HTTP headers inform about the current call quota status:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Header Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-Rate-Limit-Limit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of requests that the consumer is permitted to make within a 15 minute window.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-Rate-Limit-Remaining</code>&lt;/span&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of requests remaining in the current rate limit window.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-Rate-Limit-Reset</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time at which the current rate limit window resets in UTC epoch seconds.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If the call limit is hit, HTTP status code <code>429</code> is returned.</p>
+</div>
+<div class="paragraph">
+<p>If you require a higher volume, please contact <a href="mailto:support@invend.eu">support@invend.eu</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_request_size"><a class="anchor" href="#_request_size"></a>Request Size</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The size of an HTTP request body is limited depending on the type of the resource and the content type (<code>content-type</code> header) as shown below.
+If the limit is hit, HTTP status code <code>413</code> is returned and the request is cancelled.</p>
+</div>
+<div class="paragraph">
+<p><em>Structured data resources:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/*+json</code>: 5.0 MiB.</p>
+</li>
+<li>
+<p><code>application/x-www-form-urlencoded</code>: 512 kiB.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Object data resources:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><strong>/</strong></code>: 5.0 GiB (object + meta data).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h1 id="_seriously_rest" class="sect0"><a class="anchor" href="#_seriously_rest"></a>Seriously REST</h1>
+<div class="openblock partintro">
+<div class="content">
+In this section it is shown how some of the advanced aspects of REST are realized in the API.
+</div>
+</div>
+<div class="sect1">
+<h2 id="_self_descriptive_resources"><a class="anchor" href="#_self_descriptive_resources"></a>Self-Descriptive Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each resource corresponds to a type which is defined by means of JSON-LD&#8217;s feature to <a href="http://www.w3.org/TR/json-ld/#dfn-coercion">corece</a> values to particular data types.
+The <code>@type</code> keyword is used to define the data type of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a resource (graph node)&#8201;&#8212;&#8201;whose type is a concept typically defined as <em>RDFS Class</em>.</p>
+</li>
+<li>
+<p>a value&#8201;&#8212;&#8201;whose type is a relation (or predicate) which is typically an <em>RDFS Property</em> or just a plain data type like <em>XSD boolean</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example obtaining the <code>@type</code> of the resource <code>https://meta.invend.eu/timezones/</code> yields <code>http://www.w3.org/ns/hydra/core#PagedCollection</code>.
+Picking the resource <code>http://www.w3.org/2006/timezone-world#ZTZ</code> from this collection and inspecting its <code>@type</code> tells the client that it is of the type <code>http://www.w3.org/2006/timezone#TimeZone</code>.</p>
+</div>
+<div class="paragraph">
+<p>Linked data and Semantic Web principles imply that a coerced type is an IRI which usually can be dereferenced.
+Type IRIs usually dereference to an entry in a formal vocabulary which define the unambiguous meaning of the class or property thus enabling a client to introspect a resource.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hypermedia_support"><a class="anchor" href="#_hypermedia_support"></a>Hypermedia Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Affordances (things that can be done with a resource or in the current state of the application) make an API a <a href="http://en.wikipedia.org/wiki/Hypermedia">hypermedia</a>&#8201;&#8212;&#8201;a nonlinear medium which can be browsed without prior knowledge.
+Hypermedia is the prerequisite to support REST&#8217;s <a href="http://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a> constraint.
+Affordances can be differentiated in two types, hyperlinks and operations.
+How they materialize in the API is described in the following.</p>
+</div>
+<div class="sect2">
+<h3 id="_hyperlinks"><a class="anchor" href="#_hyperlinks"></a>Hyperlinks</h3>
+<div class="paragraph">
+<p>Resource interlinking a native feature of the JSON-LD data format which is used to represent resources.
+The <code>@id</code> keyword allows definition of links like this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"website": { "@id": "http://www.invend.eu" }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This allows to distinguish links to other resources from data where IRIs are used exclusively as identifiers.</p>
+</div>
+<div class="paragraph">
+<p>Property values can also be declared as hyperlink by the intrinsic semantics of the property.
+For example the property type <code>http://schema.org/url</code> denotes that its value is a URL.
+A client may use this knowledge accordingly.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operations"><a class="anchor" href="#_operations"></a>Operations</h3>
+<div class="paragraph">
+<p>As described above operations or controls are modeled using Hydra Core.</p>
+</div>
+</div>
+</div>
+</div>
+<h1 id="_machine_readable_api_documentation" class="sect0"><a class="anchor" href="#_machine_readable_api_documentation"></a>Machine Readable API Documentation</h1>
+<div class="sect1">
+<h2 id="_machine_readable_api_documentation_2"><a class="anchor" href="#_machine_readable_api_documentation_2"></a>Machine Readable API Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A machine readable API documentation expressed in the terms of Hydra Core, listing all availableresources and its operations is available through the corresponding resource.
+Usually it is mapped to <code>/apidoc/</code>.</p>
+</div>
+</div>
+</div>
+<h1 id="_performance_tips" class="sect0"><a class="anchor" href="#_performance_tips"></a>Performance Tips</h1>
+<div class="sect1">
+<h2 id="_gzip_compression"><a class="anchor" href="#_gzip_compression"></a>GZip Compression</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An easy and convenient way to reduce the bandwidth needed for each request is to use Gzip compression.
+Although this consumes additional processing resources to uncompress data, the trade-off with reduced latencies usually makes it very worthwhile.</p>
+</div>
+<div class="paragraph">
+<p>Data is generally served Gzip encoded, if the <code>Accept-Encoding</code> header contains the associated token.
+For example, a properly formed HTTP request header for receiving a Gzip encoded response is:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Accept-Encoding: gzip</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To specify that multiple content encodings are acceptable, they can be concatenated as shown in <a href="https://tools.ietf.org/html/rfc2616#section-14.3">RFC2616</a>.</p>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+  docsearch({
+    apiKey: '',
+    appId: '',
+    indexName: '',
+    inputSelector: '#search-input',
+    debug: true,
+  })
+</script>
+  </body>
+</html>
