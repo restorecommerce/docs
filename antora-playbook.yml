@@ -6,8 +6,8 @@ content:
   sources:
 
     - url: ./
-      branches: antora
-      edit_url: 'https://gitlab.n-fuse.co/restorecommerce/documentation/edit/{refname}/{path}'
+      branches: master
+      edit_url: 'https://github.com/restorecommerce/docs/edit/{refname}/{path}'
 
     ## All other services
 
