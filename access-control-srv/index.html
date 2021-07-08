@@ -59,6 +59,28 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="abac.html#abac">ABAC Core for Restorecommerce</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="abac.html#data_model">Data Model / Message Structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="abac.html#abstract_api">Abstract API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="abac.html#advanced_concepts">Advanced Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="abac.html#urn_reference">URN Reference</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="#configuration">Configuration</a>
   </li>
 </ul>
@@ -291,28 +313,26 @@ inspired by <a href="https://en.wikipedia.org/wiki/XACML">XACML</a>.</p>
 <p>Implementing the PAP (partially), PDP, PRP.</p>
 </li>
 <li>
-<p>Supports arbitrary policies based on arbitrary attributes such as scoped roles as supported
+<p>Supports arbitrary policies based on arbitrary attributes such as scoped roles as supported.
 by the <a href="https://github.com/restorecommerce/identity-srv">Identity Service</a>.</p>
 </li>
 <li>
-<p>Control access to distributed resources centrally using
-<a href="https://github.com/restorecommerce/access-control-srv/blob/master/docs/modules/ROOT/pages/restorecommerce_ABAC.adoc">Rule, Policy and PolicySet</a>.</p>
+<p>Control access to distributed resources centrally using.
+<a href="abac.adoc">Rule, Policy and PolicySet</a>.</p>
 </li>
 <li>
-<p>Authorization policies can be updated at run time and affect all clients immediately.</p>
+<p>Authorization policies can be updated at run time.</p>
 </li>
 <li>
-<p><a href="https://github.com/restorecommerce/access-control-srv/blob/master/docs/modules/ROOT/pages/restorecommerce_ABAC.adoc">A detailed description</a>
-on how ABAC is implemented and URN references
-for <code>subject</code>, <code>resources</code> and <code>action</code> attributes.</p>
+<p>Emits events to trigger cache invalidation of the <a href="https://github.com/restorecommerce/acs-client#caching">acs-client</a> via <code>flushCacheCommand</code> event.</p>
 </li>
 <li>
-<p>Mechanism to calculate HieararchicalScopes for Subject using <a href="https://kafka.apache.org/">Kafka</a>, caching of subject and HieararchicalScopes and invalidating the cache</p>
-</li>
-<li>
-<p>Invalidate <a href="https://github.com/restorecommerce/acs-client#caching">acs-client</a> cache via <code>flushCacheCommand</code> event.</p>
+<p>Mechanism to calculate hierarchical scopes for subject using <a href="https://kafka.apache.org/">Kafka</a>, caching of subject and hierarchical scopes and invalidating the cache.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><a href="abac.adoc">A detailed description</a> on how ABAC is implemented in Restorecommerce.</p>
 </div>
 </div>
 </div>
@@ -798,7 +818,7 @@ a <code>io.restorecommerce.access_control.ReverseQuery</code> message.</p>
 <div class="paragraph">
 <p>NOTE : For <code>IsAllowed</code> and <code>WhatIsAllowed</code> operations if <code>context</code> contains only the subject identifier, then the service will emit a message
 to <a href="https://github.com/restorecommerce/access-control-srv/blob/master/cfg/config.json#L326">Kafka-topic</a> with event name <code>hierarchicalScopesRequest</code>
-and service resonsible for creating the HieararchicalScopes will consume this message and send back <code>hierarchicalScopesResponse</code> which is then saved
+and service resonsible for creating the hierarchical scopes will consume this message and send back <code>hierarchicalScopesResponse</code> which is then saved
 to redis <a href="https://github.com/restorecommerce/access-control-srv/blob/master/cfg/config.json#L11">subject</a> cache by this service.
 If the Subject <a href="https://docs.restorecommerce.io/identity-srv/index.html#api_user">role associations</a> are modified then this service invalidates both the subject cache and <code>acs-client</code> cache.</p>
 </div>

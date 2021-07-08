@@ -306,6 +306,9 @@ and <a href="https://github.com/restorecommerce/scheduling-srv/blob/master/test/
 for job processing, where <code>max</code> is the maximum number of jobs processed, per <code>duration</code> in milliseconds.</p>
 </li>
 <li>
+<p>Queues can be configured for <a href="https://github.com/OptimalBits/bull/blob/develop/REFERENCE.md#queue">advancedSettings</a> for configuring <code>lockDuration</code> and other properties in the <a href="https://github.com/restorecommerce/scheduling-srv/blob/master/cfg/config.json#L79">configuration</a>, if the values are missing then <code>bull</code> configures to default values.</p>
+</li>
+<li>
 <p><code>authorization:enable</code>: default value is <code>true</code>, if set to <code>true</code> then access-control check is performed, if value is set to <code>false</code> then access-control check is overridden.</p>
 </li>
 <li>

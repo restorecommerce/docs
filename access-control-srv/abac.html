@@ -59,6 +59,28 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#abac">ABAC Core for Restorecommerce</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#data_model">Data Model / Message Structure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#abstract_api">Abstract API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#advanced_concepts">Advanced Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#urn_reference">URN Reference</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html#configuration">Configuration</a>
   </li>
 </ul>
@@ -256,12 +278,12 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Access Control Service</a></li>
-    <li><a href="restorecommerce_ABAC.html">ABAC Core for Restorecommerce</a></li>
+    <li><a href="#abac">ABAC Core for Restorecommerce</a></li>
   </ul>
 </nav>
 <!--
 -->
-  <div class="edit-this-page"><a href="https://github.com/restorecommerce/access-control-srv/edit/master/docs/modules/ROOT/pages/restorecommerce_ABAC.adoc"><i class="fa fa-edit"></i></a></div>
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/access-control-srv/edit/master/docs/modules/ROOT/pages/abac.adoc"><i class="fa fa-edit"></i></a></div>
   </div>
   <div class="content">
 <article class="doc">
@@ -275,10 +297,10 @@ inspired by <a href="http://en.wikipedia.org/wiki/XACML">XACML</a>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_data_model_message_structure"><a class="anchor" href="#_data_model_message_structure"></a>Data Model / Message Structure</h2>
+<h2 id="data_model"><a class="anchor" href="#data_model"></a>Data Model / Message Structure</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_policy"><a class="anchor" href="#_policy"></a>Policy</h3>
+<h3 id="_policy"><a class="anchor" href="#_policy"></a><code>Policy</code></h3>
 <div class="paragraph">
 <p>A Policy consisting of rules.</p>
 </div>
@@ -294,7 +316,7 @@ inspired by <a href="http://en.wikipedia.org/wiki/XACML">XACML</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_policyset"><a class="anchor" href="#_policyset"></a>PolicySet</h3>
+<h3 id="_policyset"><a class="anchor" href="#_policyset"></a><code>PolicySet</code></h3>
 <div class="paragraph">
 <p>A set of policies.</p>
 </div>
@@ -308,7 +330,7 @@ inspired by <a href="http://en.wikipedia.org/wiki/XACML">XACML</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rule"><a class="anchor" href="#_rule"></a>Rule</h3>
+<h3 id="_rule"><a class="anchor" href="#_rule"></a><code>Rule</code></h3>
 <div class="paragraph">
 <p>Atomic element of the ABAC system.</p>
 </div>
@@ -340,7 +362,7 @@ inspired by <a href="http://en.wikipedia.org/wiki/XACML">XACML</a>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_api_core_interface"><a class="anchor" href="#_api_core_interface"></a>API (Core Interface)</h2>
+<h2 id="abstract_api"><a class="anchor" href="#abstract_api"></a>Abstract API</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>There are two main operations exposed through the API:</p>
@@ -369,7 +391,7 @@ client side how the resources would be filtered.</p>
 as demanding such evaluation would require a replication of this functionality at client-side.</p>
 </div>
 <div class="sect2">
-<h3 id="_request"><a class="anchor" href="#_request"></a>Request</h3>
+<h3 id="_request"><a class="anchor" href="#_request"></a><code>Request</code></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- subject
@@ -404,111 +426,46 @@ as demanding such evaluation would require a replication of this functionality a
 </div>
 </div>
 <div class="sect2">
-<h3 id="_response"><a class="anchor" href="#_response"></a>Response</h3>
+<h3 id="_response"><a class="anchor" href="#_response"></a><code>Response</code></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- decision [PERMIT, DENY, NOT-APPLICABLE, INDETERMINATE]
-- obligation              TBD</code></pre>
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- decision: PERMIT | DENY | NOT-APPLICABLE | INDETERMINATE
+- obligation: [environment]</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_policysetlist"><a class="anchor" href="#_policysetlist"></a>PolicySetList</h3>
+<h3 id="_policysetlist"><a class="anchor" href="#_policysetlist"></a><code>PolicySetList</code></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- policy_sets List of applicable policy sets containing only the applicable policies and rules</code></pre>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_urn_reference"><a class="anchor" href="#_urn_reference"></a>URN Reference</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_restorecommerce_defined"><a class="anchor" href="#_restorecommerce_defined"></a>Restorecommerce defined</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><code>urn:restorecommerce:acs:*</code> ACS Related</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:model:*</code> Domain model related</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:*</code> Keywords for access control related concepts</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:role</code> Role as in RBAC</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:roleScopingEntity</code> Scopes a role by a given type</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:roleScopeInstance</code> Specify an actual instance of a scoping entity by its ID</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:hierarchicalRoleScoping</code> Specify if hierarchical role scope matching is done (if the property is not configured by default HR scoping is done)</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:ownerIndicatoryEntity</code> Specify the entity which indicates the owner of a resource</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:ownerInstance</code> Specify an actual instance of an owner entity</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:model:entity</code> An entity (type)</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:model:property</code> A property of an entity</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:operation</code> An operation (e. g. a mutation or query in a GraphQL API or a gRPC method)</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:action:read</code> Read access</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:action:modify</code> Modify (update) access</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:action:create</code> Create access</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:action:delete</code> Delete access</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:action:execute</code> Execute access</p>
-</li>
-<li>
-<p><code>urn:restorecommerce:acs:names:action:drop</code> Drop access</p>
-</li>
-</ul>
+<h3 id="_environment"><a class="anchor" href="#_environment"></a><code>environment</code></h3>
+<div class="paragraph">
+<p>An array of all environment properties along with their values (if applicable)
+that are spcified in the rules that have matched. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">environment:
+  - id: urn:restorecommerce:acs:names:environment:autenticationMaxAge
+    value: 600</code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_xacml"><a class="anchor" href="#_xacml"></a>XACML</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><code>urn:oasis:names:tc:xacml:1.0:resource:resource-id</code> A resource ID which can uniquely identify an instance of a given entity type</p>
-</li>
-<li>
-<p>ex: <code>urn:oasis:names:tc:xacml:1.0:subject:subject-id</code> An ID of a subject</p>
-</li>
-<li>
-<p><code>urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm</code> Diverse rule combining algorithms</p>
-</li>
-<li>
-<p><code>urn:oasis:names:tc:xacml:1.0:action:action-id</code> Denotes an action ID that in-turn defines an action performed on the given resource</p>
-</li>
-</ul>
+<div class="sect3">
+<h4 id="_urnrestorecommerceacsnamesenvironmentautenticationmaxage"><a class="anchor" href="#_urnrestorecommerceacsnamesenvironmentautenticationmaxage"></a><code>urn:restorecommerce:acs:names:environment:autenticationMaxAge</code></h4>
+<div class="paragraph">
+<p>The property allows the rule author specify the maximum time in seconds since the last authentication of the subject has been performed. This rule requres the property <code>lastLogin</code> with an ISO data-time string as value to be present in the <code>context</code>.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_concepts"><a class="anchor" href="#_concepts"></a>Concepts</h2>
+<h2 id="advanced_concepts"><a class="anchor" href="#advanced_concepts"></a>Advanced Concepts</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_role_scoping"><a class="anchor" href="#_role_scoping"></a>Role Scoping</h3>
@@ -584,7 +541,7 @@ This user aims to 'read' a resource of type <code>Device</code>. The device is o
 </div>
 </div>
 <div class="paragraph">
-<p>Policies:</p>
+<p>Policy set:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -628,7 +585,7 @@ which according to the policy&#8217;s combining algorithm means access should be
 </div>
 </div>
 <div class="sect4">
-<h5 id="_whatisallowed_no_specific_resource_or_specific_action_is_defined"><a class="anchor" href="#_whatisallowed_no_specific_resource_or_specific_action_is_defined"></a><code>whatIsAllowed</code> - No Specific Resource or Specific Action is defined</h5>
+<h5 id="_whatisallowed_no_specific_resource_or_specific_action_is_defined"><a class="anchor" href="#_whatisallowed_no_specific_resource_or_specific_action_is_defined"></a><code>whatIsAllowed</code> - No specific Resource or specific Action is defined</h5>
 <div class="paragraph">
 <p>The operation <code>whatIsAllowed</code> is used when there is not a specific target resource for a request, for example, when Subject aims to see as much resources as possible.
 This example illustrates permissible actions on two resource entities <code>Address</code> and <code>Country</code> for Subject <code>Alice</code> who has the role <code>admin</code> within the scoping entity
@@ -678,11 +635,8 @@ This example illustrates permissible actions on two resource entities <code>Addr
 </div>
 <div class="paragraph">
 <p>There are two policy sets, <code>Address</code> policy containing <code>PERMIT</code> rules for <code>create</code> and <code>read</code> action.
-<code>Conuntry</code> policy containing <code>PERMIT</code> rules for <code>modify</code> and <code>delete</code> action.
-Response containing list of applicable rules for above request.</p>
-</div>
-<div class="paragraph">
-<p>PolicySetList:</p>
+<code>Country</code> policy containing <code>PERMIT</code> rules for <code>modify</code> and <code>delete</code> action.
+Here the matching response as <code>PolicySetList</code> containing list of applicable rules for above request:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -739,27 +693,27 @@ Response containing list of applicable rules for above request.</p>
 <div class="sect4">
 <h5 id="_operation_based"><a class="anchor" href="#_operation_based"></a>Operation based</h5>
 <div class="paragraph">
-<p>Policies:</p>
+<p>A rule using an operation attribute:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">...
-      rules:
-        - name: Rule A
-          description: A simple rule targeting a high level operation in the GraphQL API
-          target:
-            resources:
-                - id: urn:restorecommerce:acs:names:operation
-                  value: mutation.orgDelete
-            action:
-                - id: urn:oasis:names:tc:xacml:1.0:action:action-id
-                  value: urn:restorecommerce:acs:names:action:execute
-            subject:
-                - id: urn:restorecommerce:acs:names:role
-                  value: admin
-                - id: urn:restorecommerce:acs:names:roleScopingEntity
-                  value: urn:restorecommerce:model:organization.Organization
-          effect: PERMIT</code></pre>
+rules:
+  - name: Rule A
+    description: A simple rule targeting a high level operation in the GraphQL API
+    target:
+      resources:
+          - id: urn:restorecommerce:acs:names:operation
+            value: mutation.orgDelete
+      action:
+          - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+            value: urn:restorecommerce:acs:names:action:execute
+      subject:
+          - id: urn:restorecommerce:acs:names:role
+            value: admin
+          - id: urn:restorecommerce:acs:names:roleScopingEntity
+            value: urn:restorecommerce:model:organization.Organization
+    effect: PERMIT</code></pre>
 </div>
 </div>
 </div>
@@ -773,10 +727,7 @@ Response containing list of applicable rules for above request.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>No internal attribute store such as Predix ACS.</p>
-</li>
-<li>
-<p>Adapters to pull resource or subject attributes for example via GQL.</p>
+<p>No internal attribute store, all context data to make decisions needs to be provided in the context.</p>
 </li>
 </ul>
 </div>
@@ -786,36 +737,114 @@ Response containing list of applicable rules for above request.</p>
 <h2 id="_future_stuff"><a class="anchor" href="#_future_stuff"></a>Future Stuff</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_further_attributes_describing_a_subject"><a class="anchor" href="#_further_attributes_describing_a_subject"></a>Further Attributes describing a Subject</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>type [systemuser|]</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_further_potential_attributes_describing_a_request_environment"><a class="anchor" href="#_further_potential_attributes_describing_a_request_environment"></a>Further potential Attributes describing a Request (Environment)</h3>
+<h3 id="_further_potential_environment_attributes"><a class="anchor" href="#_further_potential_environment_attributes"></a>Further potential Environment Attributes</h3>
 <div class="ulist">
 <ul>
 <li>
 <p><code>geoLocation</code></p>
 </li>
 <li>
-<p><code>dateTimeFron</code> / <code>dateTimeTo</code></p>
+<p><code>dateTimeFrom</code> / <code>dateTimeTo</code></p>
 </li>
 <li>
-<p><code>connection</code></p>
+<p><code>remoteIpv4AddressRange</code></p>
 </li>
 <li>
-<p><code>remoteIpv4Address</code></p>
-</li>
-<li>
-<p><code>remoteIpv6Address</code></p>
+<p><code>remoteIpv6AddressRange</code></p>
 </li>
 <li>
 <p><code>callRate</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="urn_reference"><a class="anchor" href="#urn_reference"></a>URN Reference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The URNs enumerated here are understood and used by the ACS.</p>
+</div>
+<div class="sect2">
+<h3 id="_restorecommerce"><a class="anchor" href="#_restorecommerce"></a>Restorecommerce</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>urn:restorecommerce:acs:*</code> ACS Related</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:model:*</code> Domain model identifiers</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:*</code> Keywords for access control related concepts</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:role</code> Role as in RBAC</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:roleScopingEntity</code> Scopes a role by a given type</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:roleScopeInstance</code> Specify an actual instance of a scoping entity by its ID</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:hierarchicalRoleScoping</code> Specify if hierarchical role scope matching is done (if the property is not configured by default HR scoping is done)</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:ownerIndicatoryEntity</code> Specify the entity which indicates the owner of a resource</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:ownerInstance</code> Specify an actual instance of an owner entity</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:model:entity</code> An entity (type)</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:model:property</code> A property of an entity</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:operation</code> An operation (e. g. a mutation or query in a GraphQL API or a gRPC method)</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:read</code> Read access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:modify</code> Modify (update) access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:create</code> Create access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:delete</code> Delete access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:execute</code> Execute access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:action:drop</code> Drop access</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:environment:autenticationMaxAge</code> Maximum time in seconds since the last authentication of the subject has been performed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_xacml"><a class="anchor" href="#_xacml"></a>XACML</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>urn:oasis:names:tc:xacml:1.0:resource:resource-id</code> A resource ID which can uniquely identify an instance of a given entity type</p>
+</li>
+<li>
+<p>ex: <code>urn:oasis:names:tc:xacml:1.0:subject:subject-id</code> An ID of a subject</p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm</code> Diverse rule combining algorithms</p>
+</li>
+<li>
+<p><code>urn:oasis:names:tc:xacml:1.0:action:action-id</code> Denotes an action ID that in-turn defines an action performed on the given resource</p>
 </li>
 </ul>
 </div>
