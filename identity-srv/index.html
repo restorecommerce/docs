@@ -366,6 +366,9 @@
 <p><code>uniqueEmailConstraint</code> [<code>true</code>]: <code>name</code> and <code>email</code> fields for registering / creating user are unique (by default if this config is missing its true), if set to false it allows to register / create users with same email identifier, however <code>name</code> should always be unique.</p>
 </li>
 <li>
+<p><code>loginIdentifierProperty</code> [<code>name</code>, <code>email</code>]: list of identifiers to enable user to login, if the config is missing then by default user can login with either name or email.</p>
+</li>
+<li>
 <p><code>userActivationRequired</code> [<code>true</code>]: if set to <code>false</code>, users do not require account activation to be able to log in and use their account.</p>
 </li>
 <li>

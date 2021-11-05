@@ -281,6 +281,9 @@
 by matching the Job type with the Queue name.
 In the case when there is no match the jobs are being added to the default Queue.</p>
 </li>
+<li>
+<p>Inbuilt mechanism to clean up completed / failed jobs.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -306,13 +309,19 @@ and <a href="https://github.com/restorecommerce/scheduling-srv/blob/master/test/
 for job processing, where <code>max</code> is the maximum number of jobs processed, per <code>duration</code> in milliseconds.</p>
 </li>
 <li>
-<p>Queues can be configured for <a href="https://github.com/OptimalBits/bull/blob/develop/REFERENCE.md#queue">advancedSettings</a> for configuring <code>lockDuration</code> and other properties in the <a href="https://github.com/restorecommerce/scheduling-srv/blob/master/cfg/config.json#L79">configuration</a>, if the values are missing then <code>bull</code> configures to default values.</p>
+<p>Queues can be configured for <a href="https://github.com/OptimalBits/bull/blob/develop/REFERENCE.md#queue">advancedSettings</a> for configuring <code>lockDuration</code> and other properties in the <a href="https://github.com/restorecommerce/scheduling-srv/blob/master/cfg/config.json#L379">configuration</a>, if the values are missing then <code>bull</code> configures to default values.</p>
 </li>
 <li>
 <p><code>authorization:enable</code>: default value is <code>true</code>, if set to <code>true</code> then access-control check is performed, if value is set to <code>false</code> then access-control check is overridden.</p>
 </li>
 <li>
 <p><code>authorization:enforce</code>: default value is <code>true</code>, if set to <code>true</code> then result of access-control-check is enforced, if value is set to <code>false</code> the result of access-control check if logged and ignored.</p>
+</li>
+<li>
+<p><code>queueCleanup:cleanInterval</code>: clean interval in milliseconds to remove completed / failed jobs from all queues.</p>
+</li>
+<li>
+<p><code>queueCleanup:ttlAfterFinished</code>: time to live after the job is in completed / failed state, default value is 604800000 (7 days) and this default configuration is applicable only if <code>queueCleanup:cleanInterval</code> is set.</p>
 </li>
 </ul>
 </div>
