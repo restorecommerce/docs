@@ -77,7 +77,6 @@ You can make changes to the patch by:
 
 1. Removing current UI directory: `rm -rf ui`
 2. Cloning Antora UI: `git clone https://gitlab.com/antora/antora-ui-default.git ui && cd ui`
-3. Checking out the current known working hash: `git checkout 4f54fb8f47a51bdb37140f176ddbe1a6a5ecb1c1`
-4. Applying the current patch so you don't lose previous changes: `git apply ../restorecommerce-docs.patch`
-5. Make any changes to the UI you wish. You can build the UI using: `$(npm bin)/gulp bundle` (don't forget to `npm install`)
-6. Save the diff back into the patch file: `git add -A && git diff --cached > ../restorecommerce-docs.patch`
+3. Applying the current patch so you don't lose previous changes: `git apply ../restorecommerce-docs.patch`
+4. Make any changes to the UI you wish. You can build the UI using: `$(npm bin)/gulp bundle` (don't forget to `npm install`)
+5. Save the diff back into the patch file: `git add -A && git diff --cached > ../restorecommerce-docs.patch`
