@@ -274,16 +274,6 @@ index 8a094a4..1ac4540 100644
          </div>
        </div>
      </div>
-diff --git a/src/partials/header-scripts.hbs b/src/partials/header-scripts.hbs
-index b9e907c..67663df 100644
---- a/src/partials/header-scripts.hbs
-+++ b/src/partials/header-scripts.hbs
-@@ -1 +1,5 @@
- {{!-- Add header scripts here --}}
-+<link rel="stylesheet"
-+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-+<link rel="stylesheet"
-+      href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
 diff --git a/src/partials/toolbar.hbs b/src/partials/toolbar.hbs
 index c6e9ea6..a6ec810 100644
 --- a/src/partials/toolbar.hbs
