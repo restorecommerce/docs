@@ -241,25 +241,6 @@ index cdeeb47..c6313e0 100644
 -  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
 +  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
  </footer>
-diff --git a/src/partials/footer-scripts.hbs b/src/partials/footer-scripts.hbs
-index 266a3ed..b2ca46d 100644
---- a/src/partials/footer-scripts.hbs
-+++ b/src/partials/footer-scripts.hbs
-@@ -3,3 +3,14 @@
- {{#if env.SITE_SEARCH_PROVIDER}}
- {{> search-scripts}}
- {{/if}}
-+
-+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-+<script>
-+  docsearch({
-+    apiKey: '{{env.SEARCH_API_KEY}}',
-+    appId: '{{env.SEARCH_APP_ID}}',
-+    indexName: '{{env.SEARCH_INDEX_NAME}}',
-+    inputSelector: '#search-input',
-+    debug: true,
-+  })
-+</script>
 diff --git a/src/partials/header-content.hbs b/src/partials/header-content.hbs
 index 8a094a4..1ac4540 100644
 --- a/src/partials/header-content.hbs

@@ -3,7 +3,7 @@
   "scripts": {
     "build": "run-s build:ui build:docs",
     "build:ui": "sh build_ui.sh",
-    "build:docs": "FORCE_SHOW_EDIT_PAGE_LINK=true CI=true antora antora-playbook.yml --clean --fetch",
+    "build:docs": "FORCE_SHOW_EDIT_PAGE_LINK=true SITE_SEARCH_PROVIDER=true CI=true antora antora-playbook.yml --clean --fetch",
     "serve": "ws -p 8081 -d build/site",
     "serve:dev": "ws -d build/site",
     "scrape:dev": "docker run -it --rm --network host -e APPLICATION_ID=$APPLICATION_ID -e API_KEY=$API_KEY -e \"CONFIG=$(cat ./docsearch/config-development.json | jq -r tostring)\" algolia/docsearch-scraper",
