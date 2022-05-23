@@ -7,7 +7,7 @@ if [ ! -d "ui" ]; then
     cd ui
 
     # Patch-compatible commit hash
-    # git checkout 4f54fb8f47a51bdb37140f176ddbe1a6a5ecb1c1
+    git checkout 0a4f0a2fbdf7c44f589c80693b0be3b27b8d2c30
     git apply ../restorecommerce-docs.patch
 
     # Remove git root
