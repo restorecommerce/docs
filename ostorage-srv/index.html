@@ -236,14 +236,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../technical-documentation/0.0.1/index.html">Technical Documentation</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../technical-documentation/0.0.1/index.html">0.0.1</a>
-        </li>
-      </ul>
-    </li>
   </ul>
 </div>
     </div>
@@ -252,7 +244,6 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../technical-documentation/0.0.1/introduction/introduction.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Object Storage Service</a></li>
@@ -286,14 +277,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Abstracting object storage through <a href="https://grpc.io/docs/">gRPC</a>.</p>
+<p>Smart facade for S3 object storage exposed via <a href="https://grpc.io/docs/">gRPC</a>.</p>
 </li>
 <li>
-<p>It uses an <a href="https://www.npmjs.com/package/aws-sdk">AWS SDK</a> client for connecting to an object storage framework.</p>
+<p>It uses the <a href="https://www.npmjs.com/package/aws-sdk">AWS SDK</a> client for connecting to S3 compatible stores.</p>
 </li>
 <li>
-<p>This service can be used with an Object Storage Server compatible with the S3 API and this can be configured in
-<a href="https://github.com/restorecommerce/ostorage-srv/blob/master/cfg/config.json">config.json</a>.</p>
+<p>Built in access control enforement based on the <a href="https://github.com/restorecommerce/access-control-srv">ACS</a>.</p>
+</li>
+<li>
+<p>Overcomes limitation of metadata in S3 by allowing to store meta data in redis.</p>
 </li>
 </ul>
 </div>
