@@ -463,29 +463,60 @@ Currently <code>ngram</code> and <code>pipeline</code> type analyzers are suppor
 </div>
 <div class="paragraph">
 <p>To enable the full text search for entity the collection name and view configuration file should be specified in <a href="https://github.com/restorecommerce/chassis-srv/blob/master/test/cfg/config.json#L22">configuration</a>.
-Enable search:
-<code>database.arango.arangoSearch</code>: a list containing <code>collectionName</code> and path to View and Analyzer configuration file</p>
+Enable search with <code>database.arango.arangoSearch</code> a list containing <code>collectionName</code> and <code>path</code> to View and Analyzer configuration file</p>
 </div>
 <div class="paragraph">
-<p>Refer <a href="https://github.com/restorecommerce/chassis-srv/blob/master/test/views/users_view.json#L22">user view</a> configuration for test View and Analyzer configuration.</p>
+<p>Refer <a href="https://github.com/restorecommerce/chassis-srv/blob/master/test/views/users_view.json#">user view</a> configuration for test View and Analyzer configuration.</p>
 </div>
 <div class="paragraph">
-<p>Analyzer Configuration:
-<code>analyzers</code> (string [ ]): supported analyzers list
-<code>analyzerOptions.type</code> (string): type of analyzer currently <code>ngram</code> and <code>pipeline</code> are supported
-<code>analyzerOptions.properties.min</code> (number): minimum n-gram size to match from search string
-<code>analyzerOptions.properties.max</code> (number): maximum n-gram size to match from search string
-<code>analyzerOptions.properties.preserveOriginal</code> (boolean): <code>true</code> to include the original value as well, <code>false</code> to produce the n-grams based on min and max only
-<code>analyzerOptions.properties.startMarker</code> (string, optional): this value will be prepended to n-grams which include the beginning of the input. Can be used for matching prefixes. Choose a character or sequence as marker which does not occur in the input.
-<code>analyzerOptions.properties.endMarker</code> (string, optional): this value will be appended to n-grams which include the end of the input. Can be used for matching suffixes. Choose a character or sequence as marker which does not occur in the input.
-<code>analyzerOptions.properties.streamType</code> (string, optional): type of the input stream <code>binary</code> one byte is considered as one character (default) <code>utf8</code> one Unicode codepoint is treated as one character.</p>
+<p>The following Analyzer specific configuration properties are available :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>analyzers</code> [<code>string [ ]</code>]: supported analyzers list</p>
+</li>
+<li>
+<p><code>analyzerOptions.type</code> [<code>string</code>]: type of analyzer currently <code>ngram</code> and <code>pipeline</code> are supported</p>
+</li>
+<li>
+<p><code>analyzerOptions.properties.min</code> [<code>number</code>]: minimum n-gram size to match from search string</p>
+</li>
+<li>
+<p><code>analyzerOptions.properties.max</code> [<code>number</code>]: maximum n-gram size to match from search string</p>
+</li>
+<li>
+<p><code>analyzerOptions.properties.preserveOriginal</code> [<code>boolean</code>]: <code>true</code> to include the original value as well, <code>false</code> to produce the n-grams based on min and max only</p>
+</li>
+<li>
+<p><code>analyzerOptions.properties.startMarker</code> [<code>string, optional</code>]: this value will be prepended to n-grams which include the beginning of the input. Can be used for matching prefixes. Choose a character or sequence as marker which does not occur in the input.</p>
+</li>
+<li>
+<p><code>analyzerOptions.properties.endMarker</code> [<code>string, optional</code>]: this value will be appended to n-grams which include the end of the input. Can be used for matching suffixes. Choose a character or sequence as marker which does not occur in the input.</p>
+</li>
+<li>
+<p><code>analyzerOptions.properties.streamType</code> [<code>string, optional</code>]: type of the input stream <code>binary</code> one byte is considered as one character (default) <code>utf8</code> one Unicode codepoint is treated as one character.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>View Configuration:
-<code>view.CollectionName</code> (string): collection name to which view links to.
-<code>view.viewName</code>(string): View name
-<code>view.similarityThreshold</code> (number): to assess the similarity of longer strings that share subsequences value betwen <code>0.0</code> and <code>1.0</code>
-<code>view.options</code>: View Options containing list of <code>fields</code> to be indexed with applicable <code>analyzers</code> for each field.</p>
+<p>The following View specific configuration properties are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view.CollectionName</code> [<code>string</code>]: collection name to which view links to.</p>
+</li>
+<li>
+<p><code>view.viewName</code> [<code>string</code>]: View name</p>
+</li>
+<li>
+<p><code>view.similarityThreshold</code> [<code>number</code>]: to assess the similarity of longer strings that share subsequences value betwen <code>0.0</code> and <code>1.0</code></p>
+</li>
+<li>
+<p><code>view.options</code>: View Options containing list of <code>fields</code> to be indexed with applicable <code>analyzers</code> for each field.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Refer test for further
