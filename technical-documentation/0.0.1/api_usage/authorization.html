@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Authorization :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="technical-documentation" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Technical Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction/introduction.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/architecture.html">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../installation/installation.html">Installation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../operation/operation.html">Operation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API Usage</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="basics.html">Basics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crud-actions.html">CRUD Actions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="querying.html">Querying</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="authorization.html">Authorization</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html">Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#building">Building</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../development/development.html#running">Running</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-locally">Locally</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-docker">As a container</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#environment">Environment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#testing">Testing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/roles.html">Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/tenants.html">Tenants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/attribute-based-access-control.html">Attribute Based Access Control</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Technical Documentation</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../access-control-srv/index.html">Access Control Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../catalog-srv/index.html">Catalog Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../chassis-srv/index.html">Chassis Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../fulfillment-srv/index.html">Fulfillment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../identity-srv/index.html">Identity Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../indexing-srv/index.html">Indexing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../invoicing-srv/index.html">Invoicing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../notification-srv/index.html">Notification Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ostorage-srv/index.html">Object Storage Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ordering-srv/index.html">Ordering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../payment-srv/index.html">Payment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../pdf-rendering-srv/index.html">PDF Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../rendering-srv/index.html">Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../resource-srv/index.html">Resource Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../scheduling-srv/index.html">Scheduling Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Technical Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../introduction/introduction.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Technical Documentation</a></li>
+    <li>API Usage</li>
+    <li><a href="authorization.html">Authorization</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/docs/edit/master/modules/ROOT/pages/api_usage/authorization.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Authorization</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Data privacy protection through fine-grained access control is a key feature of Invend based APIs.
+Read more about the powerful <a href="xxx">Attribute Based Access Control</a> concepts employed.
+Access can be restricted by the following orthogonal dimensions which are explained in detail below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Resource</p>
+</li>
+<li>
+<p>Operation modification semantics</p>
+</li>
+<li>
+<p>Ownership scope</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The general process to implement access restrictions for an API is:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Define business roles.</strong> Define the business roles that your application requires.
+For example, you might create roles for unauthenticated users, customers, and administrators.</p>
+</li>
+<li>
+<p><strong>Define the rules of a business role.</strong> For example, you might allow unauthenticated users to read products, but disallow modifications of them.
+Every action not explicitly allowed by a rule is denied.</p>
+</li>
+<li>
+<p><strong>Grant business roles.</strong> Business roles are the authorization currency and grantees are enabled to perform the defined actions.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><code>code</code>  in this section denote the values which are used in the JSON based policy definition syntax.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resource"><a class="anchor" href="#_resource"></a>Resource</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Resources are the fundamental elements in a Web API.
+See <a href="xxx">how to define resources</a>.
+The IRI of such a resource is used to refer to the resource definition with the <code>res</code> property.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operation_modification_semantics"><a class="anchor" href="#_operation_modification_semantics"></a>Operation Modification Semantics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following mapping shows the basic resource operations, their HTTP methods and their corresponding identifier for the modification semantics used in the policy language:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Operation</th>
+<th class="tableblock halign-left valign-top">HTTP Method</th>
+<th class="tableblock halign-left valign-top">Modification Semantics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AppendResourceOperation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>c</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CreateOrReplaceOperation&lt;/span&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>c</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RetrieveResourceOperation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>r</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UpdateResourceOperation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PATCH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>u</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeleteResourceOperation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DELETE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>d</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ownership_scope"><a class="anchor" href="#_ownership_scope"></a>Ownership Scope</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The ownership scope can be set to the following values with the given meaning:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>user</code>: resources owned by a user,</p>
+</li>
+<li>
+<p><code>org</code>:  resources owned by an organization,</p>
+</li>
+<li>
+<p><code>app</code>:  resources belonging to an application (everything below a domain).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These scopes have the following set relations: user &sub;
+org &sub;
+app.
+This <em>hierarchy is considered</em> when authorization decisions are made.</p>
+</div>
+<div class="paragraph">
+<p>For example access is granted if access is requested in the user scope but the subject is actually granted in the app scope as the user scope is included in the app scope.</p>
+</div>
+<div class="sect2">
+<h3 id="_possessive_properties"><a class="anchor" href="#_possessive_properties"></a>Possessive Properties</h3>
+<div class="paragraph">
+<p>Some of these scopes require possessive properties to be present on resources to take effect.
+Such properties allow to identify the owner of a resource.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If an access restriction is defined which corresponds to a possessive property and is missing in a resource instance, the restrictions will not take effect.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following property types are supported as possessive properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>dct:creator</code> for <code>user</code> and <code>org</code> which take the IRI of a user or organization as value.</p>
+</li>
+<li>
+<p>The application is implicitly known by the domain part of the resource IRI.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scope_instances"><a class="anchor" href="#_scope_instances"></a>Scope Instances</h3>
+<div class="paragraph">
+<p>When access restrictions are enforced, scopes can only take effect in combination with a <em>scope instance</em> which is the IRI of a resource corresponding to the scope.
+The ownership scopes correspond to the following resource types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>user</code>: User resource,</p>
+</li>
+<li>
+<p><code>org</code>: Organization resource,</p>
+</li>
+<li>
+<p><code>app</code>: Application resource.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_business_roles"><a class="anchor" href="#_business_roles"></a>Business Roles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Business roles (usually mapped to <code>/business_roles/</code>) are used to specify constraints expressed in the aforementioned dimensions in a JSON-based <a href="http://en.wikipedia.org/wiki/Domain-specific_language">DSL</a> which has the following format:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"policy": [
+  {"res": "&lt;resource IRI&gt;", "mask": "&lt;c|r|u|d&gt;", "scope": "&lt;user|org|app&gt;"}
+  ...
+]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A BR contains a <code>policy</code> with a set of rules about which modification semantics, defined by the <code>mask</code> property, a grantee can apply to the resource <code>res</code> in the scope <code>scope</code>.
+There might be multiple rules for a resource.</p>
+</div>
+<div class="paragraph">
+<p>Business roles can freely be modeled according to your needs.
+For example to model the organizational structure of a sales division in a company, a 'generalmanager', 'salesmanager' or 'salesman' might be introduced for an application.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_granting_business_roles"><a class="anchor" href="#_granting_business_roles"></a>Granting Business Roles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Business roles are granted to users with the <code>businessRoles</code> property on a user resource like so:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"businessRoles": [
+                  {
+                    "br": "&lt;BR IRI&gt;",
+                    "scopes": [
+                       {
+                         "scope": "&lt;user|org|app&gt;",
+                         "scopeInst": "&lt;scope instance IRI&gt;"
+                       }
+                     ]
+                  },
+                  ...
+                ]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This BR assignment tells the authorization layer which scope instance should be applied for any rule with the given scope for the given BR.
+From a business perspective you could say that the user takes up the BR within the given scope (application, org or user).
+If no instance is defined for the scope <code>user</code> like in this example, the current user is assumed as scope instance;
+this is natural as a user should be able to access resources created by him.</p>
+</div>
+<div class="paragraph">
+<p>The <code>scope</code> of the assignment does not grant or limit any permissions to the user it is merely to define the type of the instances for the corresponding scope in the BR rules.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_business_role_delegation"><a class="anchor" href="#_business_role_delegation"></a>Business Role Delegation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The basic principle is natural: A resource owner may grant other clients access to them.
+The granting of BRs is limited by the BR&#8217;s <code>grantable</code> property which allows to define BRs whose grantees may grant the BR to other users.
+As an example, this definition of a BR would allow only the holder of the <em>appadmin</em> BR to grant the BR to other users and the assignment is bound to to the scope <em>app</em> with instance <em>app-x</em>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"grantable": [
+              {"by":
+                {"holderOfBr": "&lt;BR IRI&gt;",
+                  "assignment": {
+                    "scope": "&lt;user|org|app&gt;",
+                    "scopeInst": "&lt;scope instance IRI&gt;"
+                  }
+                }
+              }
+              ...
+           ]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A delegatable BR can be created by allowing the grantees of a BR to grant it.
+This must explicitly allowed by setting the <code>delegatable</code> flag to true on the assignment.</p>
+</div>
+</div>
+</div>
+<h1 id="_how_are_access_restrictions_enforced" class="sect0"><a class="anchor" href="#_how_are_access_restrictions_enforced"></a>How are Access Restrictions enforced?</h1>
+<div class="openblock partintro">
+<div class="content">
+To take full advantage of Invend&#8217;s authorization capabilities, it is beneficial to understand how access restrictions are enforced.
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scope_and_instance_determination"><a class="anchor" href="#_scope_and_instance_determination"></a>Scope and Instance Determination</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>How does the API determine the ownership scope that a client tries to access?</p>
+</div>
+<div class="paragraph">
+<p>Automatically, the most permissive scope the client is allowed to access is selected implicitly.
+The following scope instances are selected for the respective scopes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>user</code>: defaults to the user IRI of the user conducting the request,</p>
+</li>
+<li>
+<p><code>org</code>: defaults to the IRI of user&#8217;s organization,</p>
+</li>
+<li>
+<p><code>app</code>: defaults to the IRI of the accessed application.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Scopes and scope instances can also be explicitly defined per request as described in XXX.
+Explicit scope definition is usually not required.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_decision_algorithm"><a class="anchor" href="#_decision_algorithm"></a>Decision Algorithm</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following properties of a request are taken into account to make an authorization decision:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The accessed application.</p>
+</li>
+<li>
+<p>The accessed resource.</p>
+</li>
+<li>
+<p>The modification semantics of the performed operation.
+(according to the HTTP method).</p>
+</li>
+<li>
+<p>The access scope and the associated scope instance, if explicitly specified.</p>
+</li>
+<li>
+<p>The subject accessing the resource.</p>
+</li>
+<li>
+<p>The definitions of the BRs assigned to the user/ subject.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With this information, the authentication layer makes a per-request decision.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unauthenticated_user"><a class="anchor" href="#_unauthenticated_user"></a>Unauthenticated User</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An application may define an <em>unauthenticated user</em> using the <code>unauthUser</code> which may receive business roles as any other user allowing for fine-grained access control for public APIs and conversely, to create private applications.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    appId: '6R8M1A8Y4W',
+    apiKey: 'c841b401396e9fbf7feee5d82a638003',
+    indexName: 'restorecommerce',
+    container: '#search-field',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

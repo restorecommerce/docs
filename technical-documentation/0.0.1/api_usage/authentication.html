@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>API-Key Authentication for Third party Apps :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="technical-documentation" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Technical Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction/introduction.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/architecture.html">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../installation/installation.html">Installation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../operation/operation.html">Operation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API Usage</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="basics.html">Basics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crud-actions.html">CRUD Actions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="querying.html">Querying</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authorization.html">Authorization</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html">Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#building">Building</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../development/development.html#running">Running</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-locally">Locally</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-docker">As a container</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#environment">Environment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#testing">Testing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/roles.html">Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/tenants.html">Tenants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/attribute-based-access-control.html">Attribute Based Access Control</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Technical Documentation</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../access-control-srv/index.html">Access Control Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../catalog-srv/index.html">Catalog Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../chassis-srv/index.html">Chassis Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../fulfillment-srv/index.html">Fulfillment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../identity-srv/index.html">Identity Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../indexing-srv/index.html">Indexing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../invoicing-srv/index.html">Invoicing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../notification-srv/index.html">Notification Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ostorage-srv/index.html">Object Storage Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ordering-srv/index.html">Ordering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../payment-srv/index.html">Payment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../pdf-rendering-srv/index.html">PDF Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../rendering-srv/index.html">Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../resource-srv/index.html">Resource Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../scheduling-srv/index.html">Scheduling Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Technical Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../introduction/introduction.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Technical Documentation</a></li>
+    <li>API Usage</li>
+    <li><a href="authentication.html">Authentication</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/docs/edit/master/modules/ROOT/pages/api_usage/authentication.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">API-Key Authentication for Third party Apps</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The authentication flows for services acting on a client&#8217;s behalf and browser based applications differ as described in the following.</p>
+</div>
+<h3 id="_api_keys" class="discrete">API Keys</h3>
+<div class="paragraph">
+<p>calls that do not need to identify a particular user, you can use an application API key.
+This is useful for server-side applications, or web applications that do not require the user to sign in with Google.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_key_endpoint"><a class="anchor" href="#_api_key_endpoint"></a>API Key Endpoint</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The api key endpoint is usually mapped to:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{api domain}/api_keys/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure you always use TLS for any request to the api key endpoint.
+Note that TLS is only available on the sub domain of <code>invend.eu</code> and not on DNS aliases.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generating_an_api_key"><a class="anchor" href="#_generating_an_api_key"></a>Generating an API Key</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An authorized user is allowed to generate an api key by using the endpoint.</p>
+</div>
+<div class="paragraph">
+<p>A request for generating an API key has the following form:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>POST /api_keys/ HTTP/1.1
+Host: {api domain}.invend.eu
+Accept: application/ld+json
+Content-Length: {lengt}
+Content-Type: application/ld+json
+Authorization: Bearer {access_token}</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response"><a class="anchor" href="#_response"></a>Response</h3>
+<div class="paragraph">
+<p>On successful authentication, the response has the following form:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 201 Created
+{
+  "@context": {linked_data_context},
+  "title": "Created",
+  "statusCode": 201,
+  "seeAlso": {api_key_id}
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_an_api_key"><a class="anchor" href="#_using_an_api_key"></a>Using an API Key</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>key</code> property of created <code>api_key</code> resource can be used to perform authenticated requests against the API.
+The key is sent using the HTTP Authorization header.
+A request using an access token has this form:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>GET /{resource path} HTTP/1.1
+Host: {api domain}.invend.eu
+Authorization: {api_key}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_invalidating_an_api_key"><a class="anchor" href="#_invalidating_an_api_key"></a>Invalidating an API Key</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to invalidate the api key, <code>DELETE</code> against the api key endpoint with a valid bearer token authorization header as with normal API requests like this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>DELETE /api_keys/{api_key_id} HTTP/1.1
+Host: {api domain}.invend.eu
+Authorization: Bearer {access_token}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A successful invalidation is indicated by:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 204 No Content</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The response body is empty.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_responses"><a class="anchor" href="#_error_responses"></a>Error Responses</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_api_key_endpoint_2"><a class="anchor" href="#_api_key_endpoint_2"></a>API Key Endpoint</h3>
+<div class="paragraph">
+<p>If the request is syntactically incorrect, an error response in accordance to the basic error response of the API</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_api_key_usage"><a class="anchor" href="#_api_key_usage"></a>API Key Usage</h3>
+<div class="paragraph">
+<p>Error responses when accessing protected resources</p>
+</div>
+<div class="paragraph">
+<p>Invalid api key response:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 401 Unauthorized
+{
+  "@context": {linked_data_context},
+  "@type": "Error",
+  "date": {error_date},
+  "statusCode": 401,
+  "title": "Unauthorized",
+  "description": "Invalid API key",
+  "seeAlso": "https://dev.invend.eu"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expired api key response:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 401 Unauthorized
+{
+  "@context": {linked_data_context},
+  "@type": "Error",
+  "date": {error_date},
+  "statusCode": 401,
+  "title": "Unauthorized",
+  "description": "API key expired",
+  "seeAlso": "https://dev.invend.eu"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Please <a href="mailto:dev@invend.eu">contact us</a> if you want to integrate Invend with your cloud service.</p>
+</div>
+</div>
+</div>
+</div>
+<h1 id="_oauth_2_authentication_for_resource_owners" class="sect0"><a class="anchor" href="#_oauth_2_authentication_for_resource_owners"></a>OAuth 2 Authentication for Resource Owners</h1>
+<div class="openblock partintro">
+<div class="content">
+Access restricted resources require clients to be authenticated when accessing them.
+The API uses the <a href="http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html">OAuth 2 protocol</a> for authentication.
+</div>
+</div>
+<div class="sect1">
+<h2 id="_token_endpoint"><a class="anchor" href="#_token_endpoint"></a>Token Endpoint</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The token endpoint is usually mapped to:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{api domain}/oauth2/token</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure you always use TLS for any request to the token endpoint.
+Note that TLS is only available on the sub domain of <code>invend.eu</code> and not on DNS aliases.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Tokens might have read/ write access and should be treated like passwords.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_obtaining_an_access_token"><a class="anchor" href="#_obtaining_an_access_token"></a>Obtaining an Access Token</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A token is obtained using the <a href="http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html">Resource Owner Password Credentials Grant</a> authentication scheme.</p>
+</div>
+<div class="paragraph">
+<p>The corresponding OAuth flow provides an optional token endpoint protection employing the <a href="http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html#client-password">Client Password</a> authentication scheme or the <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a> scheme.
+The former corresponds to the <code>client_id</code>/ <code>client_secret</code> parameter pair.
+As the user takes both OAuth defined roles, the resource owner and the client application roles, in this scenario, they are not used.
+As there is no intermediary party involved in the authentication flow, the client can safely send his credentials directly to the server.</p>
+</div>
+<div class="paragraph">
+<p>A request for an authentication has the following form:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>POST /oauth2/token HTTP/1.1
+Host: {api domain}.invend.eu
+Accept: application/json
+Content-Length: {lengt}
+Content-Type: application/x-www-form-urlencoded
+grant_type=password&amp;username={user}&amp;password={pass}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>username</code>/ <code>password</code> parameters contain the user&#8217;s credentials.</p>
+</div>
+<div class="sect2">
+<h3 id="_token_response"><a class="anchor" href="#_token_response"></a>Token Response</h3>
+<div class="paragraph">
+<p>On successful authentication, the response has the following form:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{
+  "access_token": "{access_token}",
+  "token_type": "bearer",
+  "refresh_token": "{refresh_token}"
+  "expires_in": 14400
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>expires_in</code> property holds the number of seconds the access token is valid.
+By default, access tokens have a life time of four hours and refresh tokens of one year.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_an_access_token"><a class="anchor" href="#_using_an_access_token"></a>Using an Access Token</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The returned access token can be used to perform authenticated requests against the API.
+The token is sent using the <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-22">OAuth 2 bearer token scheme</a> with the corresponding [HTTP Authorization header] (<a href="http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html#token-types" class="bare">http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html#token-types</a>).
+A request using an access token has this form:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>GET /{resource path} HTTP/1.1
+Host: {api domain}.invend.eu
+Authorization: Bearer {access_token}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_refreshing_an_access_token"><a class="anchor" href="#_refreshing_an_access_token"></a>Refreshing an Access Token</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Expired access tokens can be refreshed using the refresh token.
+In order to stay authenticated, a refresh attempt should be started 25 minutes before the token expires and then re-tried every five minutes if it fails for technical reasons like unavailable Internet connection or server side errors.</p>
+</div>
+<div class="paragraph">
+<p>A token-refresh request looks as follows:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>POST /oauth2/token HTTP/1.1
+Host: {api domain}.invend.eu
+Accept: */*
+Content-Length: {length}
+Content-Type: application/x-www-form-urlencoded
+grant_type=password&amp;username={user}&amp;password={pass}
+grant_type=refresh_token&amp;refresh_token={access_token}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A new refresh token is issued;
+the client must discard the old refresh token and replace it with the new one.
+The response has the same form as with an initial authentication.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_permanent_log_ins"><a class="anchor" href="#_permanent_log_ins"></a>Permanent Log-Ins</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Users may choose to stay logged-in with their current device/ user agent beyond their use of an app.
+Therefore we recommend to persist the token information in the user agent&#8217;s local storage facility.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_invalidating_tokens"><a class="anchor" href="#_invalidating_tokens"></a>Invalidating Tokens</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to invalidate the access token and effectively log out, <code>DELETE</code> against the token endpoint with a valid bearer token authorization header as with normal API requests like this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>DELETE /oauth2/token HTTP/1.1
+Host: {api domain}.invend.eu
+Authorization: Bearer {access_token}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A successful invalidation is indicated by:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 204 No Content</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The response body is empty.
+This request also invalidates the corresponding refresh token.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Make sure that you destroy any token information stored on client-side.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_error_responses_2"><a class="anchor" href="#_error_responses_2"></a>Error Responses</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_token_endpoint_2"><a class="anchor" href="#_token_endpoint_2"></a>Token Endpoint</h3>
+<div class="paragraph">
+<p>If the request is syntactically incorrect or carries invalid credentials, an error response in accordance to the <a href="http://tools.ietf.org/id/draft-ietf-oauth-v2-31.html#token-errors">error response section</a> in the OAuth 2 specification is generated.</p>
+</div>
+<div class="paragraph">
+<p>The format of error responses strictly adheres to the OAuth 2 specification and differs from the others in this API.</p>
+</div>
+<div class="paragraph">
+<p>In the following some possible error scenarios are exemplified.</p>
+</div>
+<div class="paragraph">
+<p>A bad request (missing parameter in this case) is responded to with:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 400 Bad Request
+{
+  "error": "invalid_request",
+  "error_description": "missing password parameter"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Invalid resource owner credentials response:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 400 Bad Request
+{
+  "error": "invalid_grant",
+  "error_description": "invalid resource owner credentials"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Invalid refresh token:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 400 Bad Request
+{
+  "error": "invalid_grant",
+  "error_description": "invalid refresh token"
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_token_usage"><a class="anchor" href="#_token_usage"></a>Token Usage</h3>
+<div class="paragraph">
+<p>Error responses when accessing protected resources accord to the <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-22">error response section</a> in the Bearer Token Usage specification.</p>
+</div>
+<div class="paragraph">
+<p>Invalid bearer token response:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>HTTP/1.1 401 Unauthorized
+{
+  "error": "invalid_token",
+  "erro_description": "The access token expired"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_who_am_i"><a class="anchor" href="#_who_am_i"></a>Who am I?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The user resource supports a query string parameter <code>me</code> to identify the matching user resource for the current request.
+This is useful if a client wants to check the status of an authentication token.
+For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>https://meta.invend.eu/users/?me</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The response is a collection with a single entry.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_account_security"><a class="anchor" href="#_account_security"></a>Account Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following measures are taken to prevent accounts from being compromised:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Passwords must not be shorter than eight characters.</p>
+</li>
+<li>
+<p>After 10 subsequent failed login attempts, the account is locked for 10 seconds to hinder brute force attacks.</p>
+</li>
+<li>
+<p>OAuth 2 access tokens with limited validity require regular token refresh.
+This limits the potential damage imposed by a leaked access token.</p>
+</li>
+<li>
+<p>Permanent logins based on tokens should be persisted in the user agent&#8217;s local storage instead of cookies which are subject to domain based sniffing an CSRF.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    appId: '6R8M1A8Y4W',
+    apiKey: 'c841b401396e9fbf7feee5d82a638003',
+    indexName: 'restorecommerce',
+    container: '#search-field',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

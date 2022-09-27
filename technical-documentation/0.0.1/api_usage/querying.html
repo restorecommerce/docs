@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Querying :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="technical-documentation" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Technical Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction/introduction.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/architecture.html">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../installation/installation.html">Installation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../operation/operation.html">Operation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API Usage</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="basics.html">Basics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crud-actions.html">CRUD Actions</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="querying.html">Querying</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authorization.html">Authorization</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html">Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#building">Building</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../development/development.html#running">Running</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-locally">Locally</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-docker">As a container</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#environment">Environment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#testing">Testing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/roles.html">Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/tenants.html">Tenants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/attribute-based-access-control.html">Attribute Based Access Control</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Technical Documentation</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../access-control-srv/index.html">Access Control Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../catalog-srv/index.html">Catalog Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../chassis-srv/index.html">Chassis Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../fulfillment-srv/index.html">Fulfillment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../identity-srv/index.html">Identity Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../indexing-srv/index.html">Indexing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../invoicing-srv/index.html">Invoicing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../notification-srv/index.html">Notification Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ostorage-srv/index.html">Object Storage Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ordering-srv/index.html">Ordering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../payment-srv/index.html">Payment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../pdf-rendering-srv/index.html">PDF Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../rendering-srv/index.html">Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../resource-srv/index.html">Resource Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../scheduling-srv/index.html">Scheduling Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Technical Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../introduction/introduction.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Technical Documentation</a></li>
+    <li>API Usage</li>
+    <li><a href="querying.html">Querying</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/docs/edit/master/modules/ROOT/pages/api_usage/querying.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Querying</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Querying is the umbrella term for filtering and search in this context.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_filtering"><a class="anchor" href="#_filtering"></a>Filtering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Resources can be filtered with the <code>filters</code> query string parameter:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?filters={attribute}{comparator}{value}[,{attribute}{comparator}{value}]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Multiple filters can be combined by colon separated concatenation.
+The filters are combined with a logical <em>AND</em> operation.
+Attributes are the schema defined names of the resource.
+The following comparators are supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>:</code> equality</p>
+</li>
+<li>
+<p><code>&lt;&gt;</code> inequality</p>
+</li>
+<li>
+<p><code>&lt;</code> lower than</p>
+</li>
+<li>
+<p><code>&lt;:</code> lower than equals</p>
+</li>
+<li>
+<p><code>&gt;</code> greater than</p>
+</li>
+<li>
+<p><code>&gt;:</code> greater than equals</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?filters=created&gt;2014,created&lt;2014-10-01</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>returns all resources, that have been created between <em>Jan.
+1st, 2014</em> and <em>Oct.
+1st, 2014</em>.
+By default no filters are applied.</p>
+</div>
+<div class="paragraph">
+<p>Range values are supported for the equality comparator for numerical attributes only.
+A range value:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{min}..{max}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Min should be less than or equal to max.
+Min and max values are included in the range.
+For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?filters=price:100..500</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>returns all resources whose price attribute lies within the range from 100 to 500, inclusively.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_full_text_search"><a class="anchor" href="#_full_text_search"></a>Full Text Search</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Full-text search within a resource is initiated by providing a single or multiple search terms with the <code>?s</code> query string parameter on the endpoint of the collection of the resource:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{?s}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?s=germany</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>searches in the given resource for an item which has a property with the value 'germany'.
+The result is a collection with matching entries.</p>
+</div>
+<div class="paragraph">
+<p>The corresponding affordance is the <code>hydra:search</code>.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    appId: '6R8M1A8Y4W',
+    apiKey: 'c841b401396e9fbf7feee5d82a638003',
+    indexName: 'restorecommerce',
+    container: '#search-field',
+    debug: true,
+  })
+</script>
+  </body>
+</html>
