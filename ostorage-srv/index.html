@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Object Storage Service :: Restorecommerce Documentation</title>
-    <meta name="generator" content="Antora 3.1.3">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
   </head>
@@ -406,7 +406,7 @@ Object Key Naming Guidelines</a> are allowed.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">bytes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Blob.</p></td>
 </tr>
 <tr>
@@ -463,13 +463,13 @@ Object Key Naming Guidelines</a> are allowed.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content_type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ContentType header - A standard MIME type describing the format of the contents</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content_language</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ContentLanguage header - The language the content is in</p></td>
 </tr>
 <tr>
@@ -550,7 +550,7 @@ Object Key Naming Guidelines</a> are allowed.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">metadata attached to Object</p></td>
 </tr>
 <tr>
@@ -596,7 +596,7 @@ Requests are performed using <code>io.restorecommerce.ostorage.GetRequest</code>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Object Key</p></td>
 </tr>
 <tr>
@@ -630,7 +630,7 @@ Requests are performed using <code>io.restorecommerce.ostorage.GetRequest</code>
 <h3 id="api_ostorage_list"><a class="anchor" href="#api_ostorage_list"></a><code>List</code></h3>
 <div class="paragraph">
 <p>Used to list all the Objects in a Bucket from the Storage Server.
-Requests are performed using <code>io.restorecommerce.ostorage.ListRequest</code> protobuf message as input and response is <code>io.restorecommerce.ostorage.ObjectsData</code> message.</p>
+Requests are performed using <code>io.restorecommerce.ostorage.ListRequest</code> protobuf message as input and response is <code>io.restorecommerce.ostorage.ListResponse</code> message.</p>
 </div>
 <div class="paragraph">
 <p><code>io.restorecommerce.ostorage.ListRequest</code></p>
@@ -658,7 +658,7 @@ Requests are performed using <code>io.restorecommerce.ostorage.ListRequest</code
 <td class="tableblock halign-left valign-top"><p class="tableblock">bucket name to list the Objects from, if bucket name is missing then all Objects from all buckets are listed</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filters</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">io.restorecommerce.filter.FilterOp</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filter based on fieldName, operation, value</p></td>
@@ -684,7 +684,7 @@ Requests are performed using <code>io.restorecommerce.ostorage.ListRequest</code
 </tbody>
 </table>
 <div class="paragraph">
-<p><code>io.restorecommerce.ostorage.ObjectsData</code></p>
+<p><code>io.restorecommerce.ostorage.ListResponse</code></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -703,10 +703,49 @@ Requests are performed using <code>io.restorecommerce.ostorage.ListRequest</code
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">object_data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.ostorage.ObjectData</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">response</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.ostorage.ObjectsDataWithPayloadStatus</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Objects data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Objects moved</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operation_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/libs/blob/master/packages/protos/io/restorecommerce/status.proto"><code>io.restorecommerce.status.OperationStatus</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operation status</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.ObjectsDataWithPayloadStatus</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payload</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.ostorage.ObjectData</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object payload</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/libs/blob/master/packages/protos/io/restorecommerce/status.proto"><code>io.restorecommerce.status.Status</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object List status</p></td>
 </tr>
 </tbody>
 </table>
@@ -811,19 +850,19 @@ Requests are performed using <code>io.restorecommerce.ostorage.MoveRequestList</
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">destination bucket name to move the Object</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">destination Object key name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sourceObject</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">source bucket and key name</p></td>
 </tr>
 <tr>
@@ -860,16 +899,10 @@ Requests are performed using <code>io.restorecommerce.ostorage.MoveRequestList</
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">response</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">responses</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.ostorage.MoveResponsePayloadWithStatus</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List of Objects moved</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Subject details</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">operation_status</p></td>
@@ -968,7 +1001,7 @@ Requests are performed using <code>io.restorecommerce.ostorage.MoveRequestList</
 <h3 id="api_ostorage_delete"><a class="anchor" href="#api_ostorage_delete"></a><code>Delete</code></h3>
 <div class="paragraph">
 <p>Used to delete the Object mapped to the Bucket from the Storage Server.
-Requests are performed using <code>io.restorecommerce.ostorage.Bucket</code> protobuf message as input and response is <code>google.protobuf.Empty</code> message.</p>
+Requests are performed using <code>io.restorecommerce.ostorage.Bucket</code> protobuf message as input and response is <code>io.restorecommerce.resourcebase.DeleteResponse</code> message.</p>
 </div>
 <div class="paragraph">
 <p><code>io.restorecommerce.ostorage.DeleteRequest</code></p>
@@ -1018,8 +1051,8 @@ If options are not provided, the object&#8217;s metadata is being preserved.
 When options are provided the metadata is being replaced.</p>
 </div>
 <div class="paragraph">
-<p>Requests are performed using <code>io.restorecommerce.ostorage.CopyRequest</code> protobuf message as input
-and response is <code>io.restorecommerce.ostorage.CopyResponse</code> message.</p>
+<p>Requests are performed using <code>io.restorecommerce.ostorage.CopyRequestList</code> protobuf message as input
+and response is <code>io.restorecommerce.ostorage.CopyResponseList</code> message.</p>
 </div>
 <div class="paragraph">
 <p>The copy operation can also be used to update the metadata of an object (including tagging).
@@ -1027,7 +1060,7 @@ In this case the concatenation of <code>bucket</code> and <code>key</code> input
 is specified in the <code>io.restorecommerce.ostorage.CopyRequest</code> and if tagging is not specified then by default the tags from source objects are copied to the new object.</p>
 </div>
 <div class="paragraph">
-<p><code>io.restorecommerce.ostorage.CopyRequest</code></p>
+<p><code>io.restorecommerce.ostorage.CopyRequestList</code></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1056,33 +1089,6 @@ is specified in the <code>io.restorecommerce.ostorage.CopyRequest</code> and if 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Subject details</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p><code>io.restorecommerce.ostorage.CopyResponse</code></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 16%;">
-<col style="width: 20%;">
-<col style="width: 44%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Label</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">response</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/ostorage.proto"><code>[] io.restorecommerce.ostorage.CopyResponseItem</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List of response objects</p></td>
 </tr>
 </tbody>
 </table>
@@ -1134,6 +1140,72 @@ is specified in the <code>io.restorecommerce.ostorage.CopyRequest</code> and if 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/ostorage.proto"><code>io.restorecommerce.ostorage.Options</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object metadata attached to Object.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.CopyResponseList</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">responses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.ostorage.CopyResponsePayloadWithStatus</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of Objects copied</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operation_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/libs/blob/master/packages/protos/io/restorecommerce/status.proto"><code>io.restorecommerce.status.OperationStatus</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operation status</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>io.restorecommerce.ostorage.CopyResponsePayloadWithStatus</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 16%;">
+<col style="width: 20%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payload</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.ostorage.CopyResponseItem</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copy Response payload</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/libs/blob/master/packages/protos/io/restorecommerce/status.proto"><code>io.restorecommerce.status.Status</code></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object Copy status</p></td>
 </tr>
 </tbody>
 </table>

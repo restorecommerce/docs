@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Notification Service :: Restorecommerce Documentation</title>
-    <meta name="generator" content="Antora 3.1.3">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
   </head>
@@ -343,7 +343,7 @@ and responses are a <code>google.protobuf.Empty</code> message.</p>
 <th class="tableblock halign-left valign-top">Field</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Email</th>
+<th class="tableblock halign-left valign-top">Label</th>
 <th class="tableblock halign-left valign-top">Log</th>
 </tr>
 </thead>
@@ -352,7 +352,7 @@ and responses are a <code>google.protobuf.Empty</code> message.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.notification_req.Email</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">email channel properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 <tr>
@@ -360,28 +360,28 @@ and responses are a <code>google.protobuf.Empty</code> message.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.notification_req.Log</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">log channel properties</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URL of a hbs template</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">body</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URL of a hbs template</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">transport</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Directly declares the transportation channel. Possible values: <code>email</code> or <code>log</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">provider</p></td>
@@ -415,7 +415,7 @@ and responses are a <code>google.protobuf.Empty</code> message.</p>
 <th class="tableblock halign-left valign-top">Field</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Email</th>
+<th class="tableblock halign-left valign-top">Label</th>
 <th class="tableblock halign-left valign-top">Log</th>
 </tr>
 </thead>
@@ -466,7 +466,7 @@ and responses are a <code>google.protobuf.Empty</code> message.</p>
 <th class="tableblock halign-left valign-top">Field</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Email</th>
+<th class="tableblock halign-left valign-top">Label</th>
 <th class="tableblock halign-left valign-top">Log</th>
 </tr>
 </thead>
@@ -476,7 +476,7 @@ and responses are a <code>google.protobuf.Empty</code> message.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logging level ex: <code>info</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 </tr>
 </tbody>
 </table>
@@ -500,7 +500,7 @@ Attachment properties are based on the standard <a href="https://community.nodem
 <th class="tableblock halign-left valign-top">Field</th>
 <th class="tableblock halign-left valign-top">Type</th>
 <th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Email</th>
+<th class="tableblock halign-left valign-top">Label</th>
 <th class="tableblock halign-left valign-top">Log</th>
 </tr>
 </thead>
@@ -509,56 +509,56 @@ Attachment properties are based on the standard <a href="https://community.nodem
 <td class="tableblock halign-left valign-top"><p class="tableblock">filename</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filename to be reported as the name of the attached file, use of unicode is allowed. If you do not want to use a filename, set this value as false, otherwise a filename is generated automatically</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String, Buffer or a Stream contents for the attachment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">buffer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">bytes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">binary data eg.: images</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">path to a file or an URL (data uris are allowed as well) if you want to stream the file instead of including it (better for larger attachments)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content_type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional content type for the attachment, if not set will be derived from the filename property</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">content_disposition</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional content disposition type for the attachment, defaults to <code>attachment</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cid</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional content ID for using inline images in HTML message source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">encoding</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If set and content is string, then encodes the content to a Buffer using the specified encoding. Example values: base64, hex, binary etc. Useful if you want to use binary attachments in a JSON formatted e-mail object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
 </tr>
 </tbody>

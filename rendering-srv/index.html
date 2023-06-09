@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Rendering Service :: Restorecommerce Documentation</title>
-    <meta name="generator" content="Antora 3.1.3">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
   </head>
@@ -368,7 +368,7 @@ a module which has several custom helpers for handlebars.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Request ID</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">payload</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payloads</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.rendering.Payload</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List of templates and data</p></td>
@@ -461,43 +461,10 @@ a module which has several custom helpers for handlebars.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Same value as the respective <code>RenderRequest</code> id</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">response</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.rendering.Response</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">responses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>google.protobuf.Any</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List of rendered outputs</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p><code>io.restorecommerce.rendering.Response</code></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 16%;">
-<col style="width: 20%;">
-<col style="width: 44%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Label</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JSON mapping of template labels to rendered output</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">content-type ex: 'application\html' or 'application\text'</p></td>
 </tr>
 </tbody>
 </table>

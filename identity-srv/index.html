@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Identity Service :: Restorecommerce Documentation</title>
-    <meta name="generator" content="Antora 3.1.3">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
   </head>
@@ -523,13 +523,13 @@ Multiple fields are supported as-well.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User ID, unique, key</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Meta info</p></td>
 </tr>
 <tr>
@@ -541,13 +541,13 @@ Multiple fields are supported as-well.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first_name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User’s first name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">last_name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User’s last name</p></td>
 </tr>
 <tr>
@@ -694,7 +694,7 @@ Multiple fields are supported as-well.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Role ID</p></td>
 </tr>
 <tr>
@@ -880,19 +880,19 @@ Multiple fields are supported as-well.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user id of the authenticated user</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">scope</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">target scope of user</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">role_associations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.user.RoleAssociation</code>[]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A list of roles with their associated attributes</p></td>
 </tr>
 <tr>
@@ -910,7 +910,7 @@ Multiple fields are supported as-well.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">token</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">token value</p></td>
 </tr>
 </tbody>
@@ -937,7 +937,7 @@ Multiple fields are supported as-well.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">role scoping instance / root node value of Organization</p></td>
 </tr>
 <tr>
@@ -960,7 +960,7 @@ Multiple fields are supported as-well.</p>
 <p>The microservice exposes the below CRUD operations for creating or modifying User resources.</p>
 </div>
 <div class="paragraph">
-<p><code>io.restorecommerce.user.Service</code></p>
+<p><code>io.restorecommerce.user.UserService</code></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1102,13 +1102,13 @@ configuration value. If disabled, the only endpoint for user creation is <code>C
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first_name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User’s first name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">last_name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User’s last name</p></td>
 </tr>
 <tr>
@@ -1221,12 +1221,6 @@ Requests are performed providing <code>io.restorecommerce.user.ChangePasswordReq
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User name or User email</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">password</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -1609,19 +1603,19 @@ as input and responses are a <code>google.protobuf.Empty</code> message.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User ID</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User EmailID</p></td>
 </tr>
 <tr>
@@ -1750,7 +1744,7 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Subject details</p></td>
 </tr>
 </tbody>
@@ -1796,7 +1790,7 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">subject details</p></td>
 </tr>
 </tbody>
@@ -1823,7 +1817,7 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Role identifier</p></td>
 </tr>
 <tr>
@@ -1847,7 +1841,7 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">meta</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/protos/blob/master/io/restorecommerce/meta.proto"><code>io.restorecommerce.meta.Meta</code></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Meta info</p></td>
 </tr>
 </tbody>
@@ -1858,7 +1852,7 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 <p>The microservice exposes the below CRUD operations for creating or modifying Role resources.</p>
 </div>
 <div class="paragraph">
-<p><code>io.restorecommerce.role.Service</code></p>
+<p><code>io.restorecommerce.role.RoleService</code></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1941,7 +1935,7 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token name</p></td>
 </tr>
 <tr>
@@ -1953,7 +1947,7 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">token</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">token value</p></td>
 </tr>
 <tr>
@@ -1988,7 +1982,7 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 <p>The microservice exposes the below operations for upsert, find and delete Token resources.</p>
 </div>
 <div class="paragraph">
-<p><code>io.restorecommerce.token.Service</code></p>
+<p><code>io.restorecommerce.token.TokenService</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -2020,13 +2014,13 @@ in <a href="https://github.com/restorecommerce/identity-srv/blob/master/cfg/conf
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token identifier</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">payload</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token payload (id_token)</p></td>
 </tr>
 <tr>
@@ -2078,7 +2072,7 @@ protobuf message as input and response is <code>google.protobuf.Any</code> messa
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Token identifier</p></td>
 </tr>
 <tr>
@@ -2090,7 +2084,7 @@ protobuf message as input and response is <code>google.protobuf.Any</code> messa
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.auth.Subject</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Subject details</p></td>
 </tr>
 </tbody>
