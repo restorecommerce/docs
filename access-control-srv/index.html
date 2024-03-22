@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Access Control Service :: Restorecommerce Documentation</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.1.7">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
   </head>
@@ -261,6 +261,14 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <a class="title" href="../technical-documentation/0.0.1/index.html">Technical Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../technical-documentation/0.0.1/index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>
     </div>
@@ -269,6 +277,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
+  <a href="../technical-documentation/0.0.1/introduction/introduction.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Access Control Service</a></li>
@@ -381,7 +390,7 @@ This GraphQL endpoint can be configured using <code>adapter.graphql.url</code> p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rule ID</p></td>
 </tr>
 <tr>
@@ -417,7 +426,7 @@ This GraphQL endpoint can be configured using <code>adapter.graphql.url</code> p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">effect</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Effect</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rule effect; possible values are <code>PERMIT</code> and <code>DENY</code></p></td>
 </tr>
 </tbody>
@@ -442,27 +451,27 @@ This GraphQL endpoint can be configured using <code>adapter.graphql.url</code> p
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">subject</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Property</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">subjects</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.attribute.Attribute</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Entity requesting access</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">resources</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Property</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.attribute.Attribute</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Resources to be accessed</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">action</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.access_control.Property</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">actions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.attribute.Attribute</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Action to be performed on resources</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p><code>io.restorecommerce.access_control.Property</code></p>
+<p><code>io.restorecommerce.attribute.Attribute</code></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -483,14 +492,20 @@ This GraphQL endpoint can be configured using <code>adapter.graphql.url</code> p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute ID</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.attribute.Attribute</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nested Attributes</p></td>
 </tr>
 </tbody>
 </table>
@@ -521,48 +536,9 @@ This GraphQL endpoint can be configured using <code>adapter.graphql.url</code> p
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filters</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.rule.Filter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.filter.FilterOp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List of argument keys to be passed from <code>Request#context</code> to <code>query</code></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p><code>io.restorecommerce.rule.Filter</code></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 16%;">
-<col style="width: 20%;">
-<col style="width: 44%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Label</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">field</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">field to query</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">operation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">operation</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
 </tr>
 </tbody>
 </table>
@@ -594,7 +570,7 @@ This GraphQL endpoint can be configured using <code>adapter.graphql.url</code> p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Policy ID</p></td>
 </tr>
 <tr>
@@ -657,7 +633,7 @@ This GraphQL endpoint can be configured using <code>adapter.graphql.url</code> p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Policy ID</p></td>
 </tr>
 <tr>
@@ -681,7 +657,7 @@ This GraphQL endpoint can be configured using <code>adapter.graphql.url</code> p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">policies</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[ ] <code>io.restorecommerce.policy.Policy</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List of policies binded to a policy set</p></td>
 </tr>
 <tr>
@@ -822,11 +798,12 @@ Requests are performed providing <code>io.restorecommerce.access_control.Request
 a <code>io.restorecommerce.access_control.ReverseQuery</code> message.</p>
 </div>
 <div class="paragraph">
-<p>NOTE : For <code>IsAllowed</code> and <code>WhatIsAllowed</code> operations if <code>context</code> contains only the subject identifier, then the service will emit a message
+<p>NOTE : For <code>IsAllowed</code> and <code>WhatIsAllowed</code> operations if <code>context</code> contains the subject token and identifier, then the service will emit a message
 to <a href="https://github.com/restorecommerce/access-control-srv/blob/master/cfg/config.json#L326">Kafka-topic</a> with event name <code>hierarchicalScopesRequest</code>
 and service resonsible for creating the hierarchical scopes will consume this message and send back <code>hierarchicalScopesResponse</code> which is then saved
-to redis <a href="https://github.com/restorecommerce/access-control-srv/blob/master/cfg/config.json#L11">subject</a> cache by this service.
-If the Subject <a href="https://docs.restorecommerce.io/identity-srv/index.html#api_user">role associations</a> are modified then this service invalidates both the subject cache and <code>acs-client</code> cache.</p>
+to redis <a href="https://github.com/restorecommerce/access-control-srv/blob/master/cfg/config.json#L8">subject</a> cache by this service.
+If the Subject <a href="https://docs.restorecommerce.io/identity-srv/index.html#api_user">role associations</a> are modified then this service invalidates both the subject cache and <code>acs-client</code> cache.
+This cache for storing subject and hierarchical scopes is mandatory for optimal performance of the service.</p>
 </div>
 <div class="paragraph">
 <p><code>io.restorecommerce.access_control.Request</code></p>
@@ -883,14 +860,14 @@ If the Subject <a href="https://docs.restorecommerce.io/identity-srv/index.html#
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">policy_sets</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>io.restorecommerce.policy_set.PolicySetRQ</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">List of applicable policy sets</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">obligation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">obligations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/restorecommerce/libs/blob/master/packages/protos/io/restorecommerce/attribute.proto#L5"><code>io.restorecommerce.attribute.Attribute [ </a></code>]</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list of Obligation attached to rules / policies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obligations attached to rules / policies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">operation_status</p></td>
@@ -922,7 +899,7 @@ If the Subject <a href="https://docs.restorecommerce.io/identity-srv/index.html#
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Policy Set ID</p></td>
 </tr>
 <tr>
@@ -973,7 +950,7 @@ If the Subject <a href="https://docs.restorecommerce.io/identity-srv/index.html#
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Policy ID</p></td>
 </tr>
 <tr>
@@ -997,7 +974,7 @@ If the Subject <a href="https://docs.restorecommerce.io/identity-srv/index.html#
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">has_rules</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Flag to infer if effect should be considered or not</p></td>
 </tr>
 <tr>
@@ -1030,7 +1007,7 @@ If the Subject <a href="https://docs.restorecommerce.io/identity-srv/index.html#
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Policy Set ID</p></td>
 </tr>
 <tr>

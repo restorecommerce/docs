@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>ABAC Core for Restorecommerce :: Restorecommerce Documentation</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.1.7">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
   </head>
@@ -261,6 +261,14 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <a class="title" href="../technical-documentation/0.0.1/index.html">Technical Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../technical-documentation/0.0.1/index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>
     </div>
@@ -269,6 +277,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
+  <a href="../technical-documentation/0.0.1/introduction/introduction.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Access Control Service</a></li>
@@ -337,11 +346,11 @@ inspired by <a href="http://en.wikipedia.org/wiki/XACML">XACML</a>.</p>
 - description
 - contextQuery            GraphQL Queries whose results are provided in the data context of the evaluated code to provide essential information for the decision making
 - target
-  - resource
+  - resources
     - attribute
       - id                ex: urn:restorecommerce:acs:names:model:entity
       - value             ex: urn:restorecommerce:model:device.Device
-  - action
+  - actions
     - attribute
       - id                ex: urn:oasis:names:tc:xacml:1.0:action:action-id
       - value             ex: urn:restorecommerce:acs:names:action:create
@@ -353,7 +362,7 @@ inspired by <a href="http://en.wikipedia.org/wiki/XACML">XACML</a>.</p>
 <div class="sect2">
 <h3 id="_general"><a class="anchor" href="#_general"></a>General</h3>
 <div class="paragraph">
-<p>The <code>subject</code>, <code>resource</code>, <code>action</code> properties are arrays and can contain 1..n elements.</p>
+<p>The <code>subjects</code>, <code>resources</code>, <code>actions</code> properties are arrays and can contain 1..n elements.</p>
 </div>
 </div>
 </div>
@@ -391,22 +400,22 @@ as demanding such evaluation would require a replication of this functionality a
 <h3 id="_request"><a class="anchor" href="#_request"></a><code>Request</code></h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- subject
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- subjects
   # To identify subject by its ID
   - id         ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
   - value      ex: &lt;subject identifier&gt;
 
   # To identify role scoping entity
   - id         ex: urn:restorecommerce:acs:names:roleScopingEntity
-  - value      ex: urn:restorecommerce:model:organization.Organization
+  - value      ex: urn:restorecommerce:acs:model:organization.Organization
 
   # To identify role scoping instance
   - id         ex: urn:restorecommerce:acs:names:roleScopeInstance
     value:     ex: &lt;organization identifier&gt;
-- resource
+- resources
   # To identify a domain model type
   - id         ex: maskedProperty
-  - value      ex: urn:restorecommerce:model:user.User
+  - value      ex: urn:restorecommerce:acs:model:user.User
 
   # To identify a single resource by its ID
   - id         ex: urn:oasis:names:tc:xacml:1.0:resource:resource-id
@@ -415,7 +424,7 @@ as demanding such evaluation would require a replication of this functionality a
   # To identify a property of the selected resource(s)
   - id         ex: urn:restorecommerce:acs:names:model:property
   - value      ex: urn:xingular:model:User#password
-- action
+- actions
   - id         ex: urn:oasis:names:tc:xacml:1.0:action:action-id
   - value      ex: urn:restorecommerce:acs:names:action:modify
 - context</code></pre>
@@ -427,7 +436,7 @@ as demanding such evaluation would require a replication of this functionality a
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- decision: PERMIT | DENY | NOT-APPLICABLE | INDETERMINATE
-- obligation: [obligation]</code></pre>
+- obligations: [obligations]</code></pre>
 </div>
 </div>
 </div>
@@ -436,28 +445,28 @@ as demanding such evaluation would require a replication of this functionality a
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">- policy_sets: List of applicable policy sets containing only the applicable policies and rules
-- obligation: [obligation]</code></pre>
+- obligations: [obligations]</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_obligations"><a class="anchor" href="#_obligations"></a>Obligations</h3>
 <div class="sect3">
-<h4 id="_obligation"><a class="anchor" href="#_obligation"></a><code>obligation</code></h4>
+<h4 id="_obligations_2"><a class="anchor" href="#_obligations_2"></a><code>obligations</code></h4>
 <div class="paragraph">
 <p>An array of obligation attributes along with their values (if applicable)
 that are spcified in the rules that have matched. For example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">obligation:
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">obligations:
   - id: urn:restorecommerce:acs:names:model:entity
     value: ...
-    attribute:
-    - id: urn:restorecommerce:acs:names:obligation:maskedProperty
-      value: urn:restorecommerce:acs:model:user.User#password
-    - id: urn:restorecommerce:acs:names:obligation:maskedProperty
-      value: urn:restorecommerce:acs:model:user.User#roleassociations</code></pre>
+    attributes:
+      - id: urn:restorecommerce:acs:names:obligation:maskedProperty
+        value: urn:restorecommerce:acs:model:user.User#password
+      - id: urn:restorecommerce:acs:names:obligation:maskedProperty
+        value: urn:restorecommerce:acs:model:user.User#roleassociations</code></pre>
 </div>
 </div>
 </div>
@@ -506,11 +515,11 @@ This user aims to 'read' a resource of type <code>Device</code>. The device is o
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">request:
   target:
-    subject:
+    subjects:
       - id: ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
         value: Alice
       - id: urn:restorecommerce:acs:names:roleScopingEntity
-        value: urn:restorecommerce:model:organization.Organization
+        value: urn:restorecommerce:acs:model:organization.Organization
       - id: urn:restorecommerce:acs:names:roleScopeInstance
         value: OrgB
     resources:
@@ -518,7 +527,7 @@ This user aims to 'read' a resource of type <code>Device</code>. The device is o
         value: urn:restorecommerce:model:device.Device
       - id: urn:oasis:names:tc:xacml:1.0:resource:resource-id
         value: deviceX
-    action:
+    actions:
       - id: urn:oasis:names:tc:xacml:1.0:action:action-id
         value: urn:restorecommerce:acs:names:action:read
   context:
@@ -527,11 +536,12 @@ This user aims to 'read' a resource of type <code>Device</code>. The device is o
       name: Alice
       role_associations:
         - role: admin
-        attributes: # a list of attributes associated with the role
-          - id: urn:restorecommerce:acs:names:roleScopingEntity
-            value: urn:restorecommerce:model:organization.Organization
-          - id: urn:restorecommerce:acs:names:roleScopeInstance
-            value: OrgA
+          attributes: # a list of attributes associated with the role
+            - id: urn:restorecommerce:acs:names:roleScopingEntity
+              value: urn:restorecommerce:acs:model:organization.Organization
+              attributes:
+                - id: urn:restorecommerce:acs:names:roleScopeInstance
+                  value: OrgA
       hierarchical_scope: # sub-tree of the scoping entity
         - id: orgA
           children:
@@ -541,18 +551,20 @@ This user aims to 'read' a resource of type <code>Device</code>. The device is o
         name: Device X
         description: A simple device
         meta:
-        created: &lt;timestamp&gt;
-        modified: &lt;timestamp&gt;
-        modified_by: RandomUser
-        owner:
-          - id: urn:restorecommerce:acs:names:ownerIndicatoryEntity
-            value: urn:restorecommerce:model:organization.Organization
-          - id: urn:restorecommerce:acs:names:ownerInstance
-            value: OrgB
-          - id: urn:restorecommerce:acs:names:ownerIndicatoryEntity
-            value: urn:restorecommerce:model:user.User
-          - id: urn:restorecommerce:acs:names:ownerInstance
-            value: RandomUser</code></pre>
+          created: &lt;timestamp&gt;
+          modified: &lt;timestamp&gt;
+          modified_by: RandomUser
+          owners:
+            - id: urn:restorecommerce:acs:names:ownerIndicatoryEntity
+              value: urn:restorecommerce:acs:model:organization.Organization
+              attributes:
+                - id: urn:restorecommerce:acs:names:ownerInstance
+                  value: OrgB
+            - id: urn:restorecommerce:acs:names:ownerIndicatoryEntity
+              value: urn:restorecommerce:acs:model:user.User
+              attributes:
+                - id: urn:restorecommerce:acs:names:ownerInstance
+                  value: RandomUser</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -575,14 +587,14 @@ This user aims to 'read' a resource of type <code>Device</code>. The device is o
             resources:
                 - id: urn:restorecommerce:acs:names:model:entity
                   value: urn:restorecommerce:model:device.Device
-            action:
+            actions:
                 - id: urn:oasis:names:tc:xacml:1.0:action:action-id
                   value: urn:restorecommerce:acs:names:action:read
-            subject:
+            subjects:
                 - id: urn:restorecommerce:acs:names:role
                   value: admin
                 - id: urn:restorecommerce:acs:names:roleScopingEntity
-                  value: urn:restorecommerce:model:organization.Organization
+                  value: urn:restorecommerce:acs:model:organization.Organization
                 - id: urn:restorecommerce:acs:names:hierarchicalRoleScoping
                   value: 'true'
           effect: PERMIT</code></pre>
@@ -610,11 +622,11 @@ This example illustrates permissible actions on two resource entities <code>Addr
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">request:
     target:
-      subject:
+      subjects:
         - id: ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
           value: Alice
         - id: urn:restorecommerce:acs:names:roleScopingEntity
-          value: urn:restorecommerce:model:organization.Organization
+          value: urn:restorecommerce:acs:model:organization.Organization
         - id: urn:restorecommerce:acs:names:roleScopeInstance
           value: OrgA
       resources:
@@ -622,7 +634,7 @@ This example illustrates permissible actions on two resource entities <code>Addr
           value: urn:restorecommerce:model:address.Address
         - id: urn:restorecommerce:acs:names:model:entity
           value: urn:restorecommerce:model:country.Country
-      action:
+      actions:
         - id: urn:oasis:names:tc:xacml:1.0:action:action-id
           value: urn:restorecommerce:acs:names:action:create
         - id: urn:oasis:names:tc:xacml:1.0:action:action-id
@@ -639,9 +651,10 @@ This example illustrates permissible actions on two resource entities <code>Addr
           - role: admin
             attributes: # a list of attributes associated with the role
               - id: urn:restorecommerce:acs:names:roleScopingEntity
-                value: urn:restorecommerce:model:organization.Organization
-              - id: urn:restorecommerce:acs:names:roleScopeInstance
-                value: OrgA
+                value: urn:restorecommerce:acs:model:organization.Organization
+                attributes:
+                  - id: urn:restorecommerce:acs:names:roleScopeInstance
+                    value: OrgA
         hierarchical_scope: # sub-tree of the scoping entity
           - id: orgA
             children:
@@ -670,16 +683,16 @@ Here the matching response as <code>PolicySetList</code> containing list of appl
             resources:
                 - id: urn:restorecommerce:acs:names:model:entity
                   value: urn:restorecommerce:model:address.Address
-            action:
+            actions:
                 - id: urn:oasis:names:tc:xacml:1.0:action:action-id
                   value: urn:restorecommerce:acs:names:action:create
                 - id: urn:oasis:names:tc:xacml:1.0:action:action-id
                   value: urn:restorecommerce:acs:names:action:read
-            subject:
+            subjects:
                 - id: urn:restorecommerce:acs:names:role
                   value: admin
                 - id: urn:restorecommerce:acs:names:roleScopingEntity
-                  value: urn:restorecommerce:model:organization.Organization
+                  value: urn:restorecommerce:acs:model:organization.Organization
           effect: PERMIT
     - name: Country Policy
       description: A policy which contains country-related rules
@@ -691,16 +704,16 @@ Here the matching response as <code>PolicySetList</code> containing list of appl
             resources:
                 - id: urn:restorecommerce:acs:names:model:entity
                   value: urn:restorecommerce:model:country.Country
-            action:
+            actions:
                 - id: urn:oasis:names:tc:xacml:1.0:action:action-id
                   value: urn:restorecommerce:acs:names:action:modify
                 - id: urn:oasis:names:tc:xacml:1.0:action:action-id
                   value: urn:restorecommerce:acs:names:action:delete
-            subject:
+            subjects:
                 - id: urn:restorecommerce:acs:names:role
                   value: admin
                 - id: urn:restorecommerce:acs:names:roleScopingEntity
-                  value: urn:restorecommerce:model:organization.Organization
+                  value: urn:restorecommerce:acs:model:organization.Organization
           effect: PERMIT</code></pre>
 </div>
 </div>
@@ -708,7 +721,59 @@ Here the matching response as <code>PolicySetList</code> containing list of appl
 <div class="sect4">
 <h5 id="_operation_based"><a class="anchor" href="#_operation_based"></a>Operation based</h5>
 <div class="paragraph">
-<p>A rule using an operation attribute:</p>
+<p>Request and Rule using an operation attribute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yml hljs" data-lang="yml">request:
+  target:
+    subjects:
+      - id: ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
+        value: Alice
+      - id: urn:restorecommerce:acs:names:roleScopingEntity
+        value: urn:restorecommerce:acs:model:organization.Organization
+      - id: urn:restorecommerce:acs:names:roleScopeInstance
+        value: OrgA
+    resources:
+      - id: urn:restorecommerce:acs:names:operation
+        value: mutation.orgDelete
+    actions:
+      - id: urn:oasis:names:tc:xacml:1.0:action:action-id
+        value: urn:restorecommerce:acs:names:action:execute
+  context:
+    subject:
+      id: Alice
+      name: Alice
+      role_associations:
+        - role: admin
+          attributes: # a list of attributes associated with the role
+            - id: urn:restorecommerce:acs:names:roleScopingEntity
+              value: urn:restorecommerce:acs:model:organization.Organization
+            attributes:
+              - id: urn:restorecommerce:acs:names:roleScopeInstance
+                value: OrgA
+      hierarchical_scope: # sub-tree of the scoping entity
+        - id: orgA
+          children:
+            - id: orgB
+    resources:
+      - id: mutation.orgDelete
+        meta:
+        created: &lt;timestamp&gt;
+        modified: &lt;timestamp&gt;
+        modified_by: RandomUser
+        owners:
+          - id: urn:restorecommerce:acs:names:ownerIndicatoryEntity
+            value: urn:restorecommerce:acs:model:organization.Organization
+            attributes:
+              - id: urn:restorecommerce:acs:names:ownerInstance
+                value: OrgA
+          - id: urn:restorecommerce:acs:names:ownerIndicatoryEntity
+            value: urn:restorecommerce:acs:model:user.User
+            attributes:
+              - id: urn:restorecommerce:acs:names:ownerInstance
+                value: RandomUser</code></pre>
+</div>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -720,14 +785,14 @@ rules:
       resources:
           - id: urn:restorecommerce:acs:names:operation
             value: mutation.orgDelete
-      action:
+      actions:
           - id: urn:oasis:names:tc:xacml:1.0:action:action-id
             value: urn:restorecommerce:acs:names:action:execute
-      subject:
+      subjects:
           - id: urn:restorecommerce:acs:names:role
             value: admin
           - id: urn:restorecommerce:acs:names:roleScopingEntity
-            value: urn:restorecommerce:model:organization.Organization
+            value: urn:restorecommerce:acs:model:organization.Organization
     effect: PERMIT</code></pre>
 </div>
 </div>
@@ -817,6 +882,15 @@ rules:
 </li>
 <li>
 <p><code>urn:restorecommerce:acs:names:model:property</code> A property of an entity</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:network:src:domain</code> A source domain in the WWW</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:network:src:ipv4Range</code> An IPv4 source address range</p>
+</li>
+<li>
+<p><code>urn:restorecommerce:acs:names:network:src:ipv6Range</code> An IPv6 source address range</p>
 </li>
 <li>
 <p><code>urn:restorecommerce:acs:names:operation</code> An operation (e. g. a mutation or query in a GraphQL API or a gRPC method)</p>

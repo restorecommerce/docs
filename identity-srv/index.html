@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Identity Service :: Restorecommerce Documentation</title>
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.1.7">
     <link rel="stylesheet" href="../_/css/site.css">
     <script>var uiRootPath = '../_'</script>
   </head>
@@ -280,6 +280,14 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <a class="title" href="../technical-documentation/0.0.1/index.html">Technical Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../technical-documentation/0.0.1/index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>
     </div>
@@ -288,6 +296,7 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
+  <a href="../technical-documentation/0.0.1/introduction/introduction.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Identity Service</a></li>
@@ -327,7 +336,7 @@
 <p>User-to-Role associations with arbitrary scoping</p>
 </li>
 <li>
-<p>User account creation (self-service, by privileged user, by invitation)</p>
+<p>User account creation using any of the following options: self-service, by privileged user, by invitation</p>
 </li>
 <li>
 <p>Password change as self-service</p>
@@ -345,7 +354,7 @@
 <p>Token management service</p>
 </li>
 <li>
-<p>Authentication Log Service</p>
+<p>Authentication log audit log</p>
 </li>
 </ul>
 </div>
@@ -360,7 +369,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><code>uniqueEmailConstraint</code> [<code>true</code>]: <code>name</code> and <code>email</code> fields for registering / creating user are unique (by default if this config is missing its true), if set to false it allows to register / create users with same email identifier, however <code>name</code> should always be unique.</p>
+<p><code>uniqueEmailConstraint</code> [<code>true</code>]: <code>name</code> and <code>email</code> fields for registering/ creating user are unique, if set to <code>false</code> it allows to register/ create users with same email identifier, however <code>name</code> must always be unique.</p>
 </li>
 <li>
 <p><code>loginIdentifierProperty</code> [<code>name</code>, <code>email</code>]: list of identifiers to enable user to login, if the config is missing then by default user can login with either name or email.</p>
@@ -369,26 +378,28 @@
 <p><code>userActivationRequired</code> [<code>true</code>]: if set to <code>false</code>, users do not require account activation to be able to log in and use their account.</p>
 </li>
 <li>
-<p><code>register</code> [<code>true</code>]: if set to <code>false</code>, the <code>Register</code> endpoint is disabled and users can only be created through the bulk creation method <code>Create</code>, which can be seen as an admin-only operation.</p>
+<p><code>register</code> [<code>true</code>]: if set to <code>false</code>, the <code>Register</code> endpoint is disabled and users cannot self sign up but only be created through the bulk creation method <code>Create</code> which is usually only available to adminstrative user roles.</p>
 </li>
 <li>
 <p><code>enableEmail</code> [<code>true</code>]: if set to <code>true</code>, emails are sent out upon specific events, like account creation and email change.</p>
 </li>
 <li>
-<p><code>activationURL</code>: URL to show link in activation email to activate the account.</p>
+<p><code>activationURL</code>: URL used for link in activation email to activate the account.</p>
 </li>
 <li>
-<p><code>emailConfirmationURL</code>: URL to show link in confirmation email to confirm email address change.</p>
+<p><code>inactivatedAccountExpiry</code> in seconds [<code>undefined</code>]: if set to a number of seconds, the account will completely be removed from the system (log date will be retained) if no activation has been performed since the given number of seconds.</p>
 </li>
 <li>
-<p><code>invitationURL</code>: URL to show link in invitation email to accept invitation.</p>
+<p><code>emailConfirmationURL</code>: URL used for link in confirmation email to confirm email address change.</p>
 </li>
 <li>
-<p><code>data</code>: additional fields can be provided inside data. These fields can then be
-used inside the hbs templates.</p>
+<p><code>invitationURL</code>: URL used for link in invitation email to accept invitation.</p>
 </li>
 <li>
-<p><code>hbsTemplates</code>: contains URLs for <a href="https://handlebarsjs.com/">Handlebars templates</a> and served via external web application. These templates are used in email sent by system for different user operations like <code>Register</code>, <code>RequestEmailChange</code> and <code>RequestPasswordChange</code>.</p>
+<p><code>data</code>: additional fields can be provided inside data. These fields can then be used inside the hbs templates.</p>
+</li>
+<li>
+<p><code>hbsTemplates</code>: contains URLs for externally served <a href="https://handlebarsjs.com/">Handlebars templates</a>. These templates are used in emails sent by system for different operations like <code>Register</code>, <code>RequestEmailChange</code> and <code>RequestPasswordChange</code>.</p>
 </li>
 <li>
 <p><code>minUsernameLength</code>: minimum length for the user’s <code>name</code>.</p>
@@ -397,16 +408,16 @@ used inside the hbs templates.</p>
 <p><code>maxUsernameLength</code>: maximum length for the user’s <code>name</code>.</p>
 </li>
 <li>
-<p><code>obfuscateAuthNErrorReason</code>: default value is <code>false</code>, if set to <code>true</code> the login error details are obfuscated and generalized error message is shown.</p>
+<p><code>obfuscateAuthNErrorReason</code>:`false`, if set to <code>true</code> the login error details are obfuscated and generalized error message is shown.</p>
 </li>
 <li>
-<p><code>authorization:enable</code>: default value is <code>true</code>, if set to <code>true</code> then access-control check is performed, if value is set to <code>false</code> then access-control check is overridden.</p>
+<p><code>authorization:enable</code> [<code>true</code>]: if set to <code>true</code> then access-control check is performed, if set to <code>false</code> then access-control check is overridden.</p>
 </li>
 <li>
-<p><code>authorization:enforce</code>: default value is <code>true</code>, if set to <code>true</code> then result of access-control-check is enforced, if value is set to <code>false</code> the result of access-control check if logged and ignored.</p>
+<p><code>authorization:enforce</code> [<code>true</code>]: if set to <code>true</code> then result of access-control-check is enforced, if value is set to <code>false</code> the result of access-control check is logged and ignored.</p>
 </li>
 <li>
-<p><code>defaultRegisterUserRoles</code>: default role associations configured to be used when registering users</p>
+<p><code>defaultRegisterUserRoles</code>: default role associations granted to newly registered users.</p>
 </li>
 </ul>
 </div>
@@ -666,9 +677,9 @@ Multiple fields are supported as-well.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">last_access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Timestamp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">epoch time of user last access to token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp of user&#8217;s last access</p></td>
 </tr>
 </tbody>
 </table>
@@ -1940,9 +1951,9 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">expires_in</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Timestamp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">expiration date for token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token expiration timestamp</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">token</p></td>
@@ -1964,9 +1975,9 @@ as input and response is <code>google.protobuf.Empty</code> message.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">last_login</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Timestamp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">epoch time of user last logged in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp of user last logged in</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">interactive</p></td>
@@ -2025,9 +2036,9 @@ in <a href="https://github.com/restorecommerce/identity-srv/blob/master/cfg/conf
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">expires_in</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>google.protobuf.Timestamp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Token expiration time in epoch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Token expiration timestamp</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
