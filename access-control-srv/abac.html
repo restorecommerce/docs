@@ -405,11 +405,7 @@ as demanding such evaluation would require a replication of this functionality a
   - id         ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
   - value      ex: &lt;subject identifier&gt;
 
-  # To identify role scoping entity
-  - id         ex: urn:restorecommerce:acs:names:roleScopingEntity
-  - value      ex: urn:restorecommerce:acs:model:organization.Organization
-
-  # To identify role scoping instance
+  # To identify role scoping instance (optional)
   - id         ex: urn:restorecommerce:acs:names:roleScopeInstance
     value:     ex: &lt;organization identifier&gt;
 - resources
@@ -518,10 +514,6 @@ This user aims to 'read' a resource of type <code>Device</code>. The device is o
     subjects:
       - id: ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
         value: Alice
-      - id: urn:restorecommerce:acs:names:roleScopingEntity
-        value: urn:restorecommerce:acs:model:organization.Organization
-      - id: urn:restorecommerce:acs:names:roleScopeInstance
-        value: OrgB
     resources:
       - id: urn:restorecommerce:acs:names:model:entity
         value: urn:restorecommerce:model:device.Device
@@ -616,7 +608,8 @@ which according to the policy&#8217;s combining algorithm means access should be
 <div class="paragraph">
 <p>The operation <code>whatIsAllowed</code> is used when there is not a specific target resource for a request, for example, when Subject aims to see as much resources as possible.
 This example illustrates permissible actions on two resource entities <code>Address</code> and <code>Country</code> for Subject <code>Alice</code> who has the role <code>admin</code> within the scoping entity
-<code>Organization</code> with ID 'OrgA'.</p>
+<code>Organization</code> with ID 'OrgA'. The target role scoping instance in subjects below <code>OrgA</code> is optional for <code>whatIsAllowed</code>, if it is provided then filters are created by <a href="https://github.com/restorecommerce/libs/tree/next/packages/acs-client"><code>acs-client</code></a> based on
+this target role scope instance if not all applicable filters are returned from <code>acs-client</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -625,8 +618,6 @@ This example illustrates permissible actions on two resource entities <code>Addr
       subjects:
         - id: ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
           value: Alice
-        - id: urn:restorecommerce:acs:names:roleScopingEntity
-          value: urn:restorecommerce:acs:model:organization.Organization
         - id: urn:restorecommerce:acs:names:roleScopeInstance
           value: OrgA
       resources:
@@ -730,8 +721,6 @@ Here the matching response as <code>PolicySetList</code> containing list of appl
     subjects:
       - id: ex: urn:oasis:names:tc:xacml:1.0:subject:subject-id
         value: Alice
-      - id: urn:restorecommerce:acs:names:roleScopingEntity
-        value: urn:restorecommerce:acs:model:organization.Organization
       - id: urn:restorecommerce:acs:names:roleScopeInstance
         value: OrgA
     resources:
