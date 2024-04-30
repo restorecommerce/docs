@@ -13,6 +13,6 @@ if [ ! -d "ui" ]; then
     # Remove git root
     rm -rf .git
     npm install
-    $(npm bin)/gulp bundle
+    $(npm root)/.bin/gulp bundle
     cd ..
 fi
