@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Operation :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 3.1.7">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="technical-documentation" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Technical Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction/introduction.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/architecture.html">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../installation/installation.html">Installation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="operation.html">Operation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API Usage</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/basics.html">Basics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/crud-actions.html">CRUD Actions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/querying.html">Querying</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/authorization.html">Authorization</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html">Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#building">Building</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../development/development.html#running">Running</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-locally">Locally</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-docker">As a container</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#environment">Environment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#testing">Testing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/roles.html">Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/tenants.html">Tenants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/attribute-based-access-control.html">Attribute Based Access Control</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Technical Documentation</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../access-control-srv/index.html">Access Control Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../catalog-srv/index.html">Catalog Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../chassis-srv/index.html">Chassis Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../fulfillment-srv/index.html">Fulfillment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../identity-srv/index.html">Identity Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../indexing-srv/index.html">Indexing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../invoicing-srv/index.html">Invoicing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../notification-srv/index.html">Notification Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ostorage-srv/index.html">Object Storage Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ordering-srv/index.html">Ordering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../payment-srv/index.html">Payment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../pdf-rendering-srv/index.html">PDF Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../rendering-srv/index.html">Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../resource-srv/index.html">Resource Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../scheduling-srv/index.html">Scheduling Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Technical Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../introduction/introduction.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Technical Documentation</a></li>
+    <li><a href="operation.html">Operation</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/docs/edit/master/modules/ROOT/pages/operation/operation.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Operation</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Common operational tasks are described in the following.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_backup"><a class="anchor" href="#_backup"></a>Backup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All state is persisted in stateful backing services.
+Some of those backing services are of ephermal nature, so they store information only temporarily, for a short time span.
+Also for some of them, data can be restored from other sources or is irrelevant when expired.
+Obviously, such services do not need to be backed up.
+This leaves the following persistence services which must be part of a full system backup:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Container volume for ArangoDB</p>
+</li>
+<li>
+<p>Container volume for file based storage</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The search index does not need to be backed up as it can be regenerated from GSS based data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_upgrade"><a class="anchor" href="#_upgrade"></a>Upgrade</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each service of the system can be upgraded individually as long as the upgrade does not introduce a breaking API change.
+It is however advisable to stop the whole platform or at least make it unavailable for clients during the upgrade.
+This is to prevent malfunctions or even data inconsitencies.</p>
+</div>
+<div class="paragraph">
+<p>The following upgrade procedure is the same for any service:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stop container</p>
+</li>
+<li>
+<p>pull the latest image version of it</p>
+</li>
+<li>
+<p>start container with same configuration as before</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For a minimum to zero downtime, the <a href="http://martinfowler.com/bliki/BlueGreenDeployment.html">blue/ green deployment method</a> can be applied.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scale"><a class="anchor" href="#_scale"></a>Scale</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The server uses a Node.js clustering module but starts only one worker by default.
+It is possible to increase the number of workers in the server configuration file but this requires to modify the server.
+The preferred model to scale up is to start multiple server containers and have the reverse proxy spraying the requests on them.</p>
+</div>
+<div class="paragraph">
+<p>Depending on the reverse proxy, there might be multiple strategies for the actual distribution of the load.
+A requirement for the load balancing strategy is to route requests coming from the same client to the same container (sticky sessions) for the duration of a page visit at least.
+As there is no HTTP session in Restorecommerce, the client IP address can be used as a hashing key instead.</p>
+</div>
+<div class="paragraph">
+<p>One worker is enough for low-traffic sites, even in the case of up to 50 concurrent clients when ran on reasonably powerful server hardware.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    appId: '6R8M1A8Y4W',
+    apiKey: 'c841b401396e9fbf7feee5d82a638003',
+    indexName: 'restorecommerce',
+    container: '#search-field',
+    debug: true,
+  })
+</script>
+  </body>
+</html>

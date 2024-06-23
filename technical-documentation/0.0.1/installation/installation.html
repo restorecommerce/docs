@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Installation :: Restorecommerce Documentation</title>
+    <meta name="generator" content="Antora 3.1.7">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"/>
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">Restorecommerce Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="navbar-icon" href="https://github.com/restorecommerce"><i class="fa fa-github fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="technical-documentation" data-version="0.0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Technical Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction/introduction.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../architecture/architecture.html">Architecture</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="installation.html">Installation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../operation/operation.html">Operation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">API Usage</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/basics.html">Basics</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/crud-actions.html">CRUD Actions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/querying.html">Querying</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../api_usage/authorization.html">Authorization</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html">Development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#building">Building</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../development/development.html#running">Running</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-locally">Locally</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../development/development.html#running-docker">As a container</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#environment">Environment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/development.html#testing">Testing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/roles.html">Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/tenants.html">Tenants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/attribute-based-access-control.html">Attribute Based Access Control</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Technical Documentation</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../access-control-srv/index.html">Access Control Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../access-control-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../catalog-srv/index.html">Catalog Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../catalog-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../chassis-srv/index.html">Chassis Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../chassis-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../fulfillment-srv/index.html">Fulfillment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../fulfillment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../identity-srv/index.html">Identity Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../identity-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../indexing-srv/index.html">Indexing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../indexing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../invoicing-srv/index.html">Invoicing Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../invoicing-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../notification-srv/index.html">Notification Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../notification-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ostorage-srv/index.html">Object Storage Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ostorage-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../ordering-srv/index.html">Ordering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ordering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../payment-srv/index.html">Payment Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../payment-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../pdf-rendering-srv/index.html">PDF Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../pdf-rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../rendering-srv/index.html">Rendering Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../rendering-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../resource-srv/index.html">Resource Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../resource-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../scheduling-srv/index.html">Scheduling Service</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../scheduling-srv/index.html">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Technical Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../introduction/introduction.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Technical Documentation</a></li>
+    <li><a href="installation.html">Installation</a></li>
+  </ul>
+</nav>
+<!--
+-->
+  <div class="edit-this-page"><a href="https://github.com/restorecommerce/docs/edit/master/modules/ROOT/pages/installation/installation.adoc"><i class="fa fa-edit"></i></a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Installation</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The procedure of installing and running a Restorecommerce system in an orchestrated manner is described here.</p>
+</div>
+<div class="paragraph">
+<p>Currently the following options exist:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Docker-Compose for development and testing and thus not described here.</p>
+</li>
+<li>
+<p>Helm for production.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The intended result of these instructions is to launch a production ready instance of Restorecommerce.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following prerequisites exist:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://helm.sh/">Helm</a> installed on the client host</p>
+</li>
+<li>
+<p>A running K8s <a href="https://kubernetes.io/">cluster</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>with at least 16 GiB RAM available</p>
+</li>
+<li>
+<p>with enough disk storage to hold file objects (client apps, product images etc.)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A public IP address</p>
+</li>
+<li>
+<p>A DNS entry for this IP address</p>
+</li>
+<li>
+<p>An SSL/ TLS certificate for the domain (optional)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As the system is not using sub-domains, a normal SSL certificate is sufficient.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_steps_to_be_performed"><a class="anchor" href="#_steps_to_be_performed"></a>Steps to be performed</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Bring up of the system containers including in bootstrap mode</p>
+</li>
+<li>
+<p>Import of a test data set</p>
+</li>
+<li>
+<p>Invalidate the bootstrap API key</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_system_bring_up"><a class="anchor" href="#_system_bring_up"></a>System Bring-up</h3>
+<div class="paragraph">
+<p>The helm resources can be found in a <a href="https://github.com/restorecommerce/helm">dedicated repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_data_import"><a class="anchor" href="#_data_import"></a>Data Import</h3>
+<div class="paragraph">
+<p>A freshly installed system has no data. To populate it with example data, enter the data directory, run node import.js &lt;API key&gt;
+and choose which data set to import (API key is generated and output to logs by facade-srv at start).
+The corresponding microservices must be running locally, as well as the facade service.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_invalidation_of_the_api_key"><a class="anchor" href="#_invalidation_of_the_api_key"></a>Invalidation of the API Key</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>
+  docsearch({
+    appId: '6R8M1A8Y4W',
+    apiKey: 'c841b401396e9fbf7feee5d82a638003',
+    indexName: 'restorecommerce',
+    container: '#search-field',
+    debug: true,
+  })
+</script>
+  </body>
+</html>
