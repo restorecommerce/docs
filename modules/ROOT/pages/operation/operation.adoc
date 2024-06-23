@@ -11,7 +11,7 @@ Obviously, such services do not need to be backed up.
 This leaves the following persistence services which must be part of a full system backup:
 
 * Container volume for ArangoDB
-* Container volume for file based storeage
+* Container volume for file based storage
 
 The search index does not need to be backed up as it can be regenerated from GSS based data.
 
@@ -33,7 +33,7 @@ For a minimum to zero downtime, the http://martinfowler.com/bliki/BlueGreenDeplo
 
 The server uses a Node.js clustering module but starts only one worker by default.
 It is possible to increase the number of workers in the server configuration file but this requires to modify the server.
-The preferred model to scale is up is to start multiple server containers and have the reverse proxy spraying the requests on them.
+The preferred model to scale up is to start multiple server containers and have the reverse proxy spraying the requests on them.
 
 Depending on the reverse proxy, there might be multiple strategies for the actual distribution of the load.
 A requirement for the load balancing strategy is to route requests coming from the same client to the same container (sticky sessions) for the duration of a page visit at least.
