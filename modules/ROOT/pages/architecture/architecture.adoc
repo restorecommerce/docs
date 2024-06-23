@@ -18,7 +18,7 @@ image::restore_commerce_system_architecture.svg[]
 
 Restorecommerce is http://en.wikipedia.org/wiki/Cloud_computing[cloud] native software which means it leverages contemporary deployment models such as containers and doesn't solve problems which are already covered by typical cloud infrastructures.
 It grew up in the era of http://martinfowler.com/articles/microservices.html[microservices] and is therefore properly decomposed into such.
-Furthermote, it adheres to the principle of http://www.slideshare.net/Kevlin/immutability-ftw[immutability] whenever possible.
+Furthermore, it adheres to the principle of http://www.slideshare.net/Kevlin/immutability-ftw[immutability] whenever possible.
 This is a very powerful combination which makes Restorecommerce highly scalable and easy to evolve and to operate.
 
 == Semantic Web
